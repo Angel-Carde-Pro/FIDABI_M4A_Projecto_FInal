@@ -16,8 +16,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.fidabi.request.LoginRequest;
-import com.example.fidabi.request.LoginResponse;
 import com.example.fidabi_m4a_projecto_final.request.LoginRequest;
 import com.example.fidabi_m4a_projecto_final.request.LoginResponse;
 
