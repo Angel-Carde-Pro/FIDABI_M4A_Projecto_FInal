@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt">
+    <item android:state_checked="true">
+        <shape android:dither="true" android:visible="true" android:shape="rectangle" android:useLevel="false">
+            <gradient android:startColor="#78a1ff" android:endColor="#78a1ff" android:angle="270"/>
+            <corners android:radius="20dp"/>
+            <size android:height="20dp" android:width="20dp"/>
+            <stroke android:width="4dp" android:color="#0000ffff"/>
+        </shape>
+    </item>
+    <item android:state_checked="false">
+        <shape android:dither="true" android:visible="true" android:shape="rectangle" android:useLevel="false">
+            <gradient android:startColor="#dddddd" android:endColor="#dddddd" android:angle="270"/>
+            <corners android:radius="20dp"/>
+            <size android:height="20dp" android:width="20dp"/>
+            <stroke android:width="2dp" android:color="#0000ffff"/>
+        </shape>
+    </item>
+    <item android:state_checked="true">
+        <shape android:dither="true" android:visible="true" android:shape="rectangle" android:useLevel="false">
+            <gradient android:startColor="#1d44e7" android:endColor="#1e84db" android:angle="270"/>
+            <corners android:radius="20dp"/>
+            <size android:height="20dp" android:width="20dp"/>
+            <stroke android:width="4dp" android:color="#0000ffff"/>
+        </shape>
+    </item>
+    <item android:state_checked="false">
+        <shape android:dither="true" android:visible="true" android:shape="rectangle" android:useLevel="false">
+            <gradient android:startColor="#dddddd" android:endColor="#dddddd" android:angle="270"/>
+            <corners android:radius="20dp"/>
+            <size android:height="20dp" android:width="20dp"/>
+            <stroke android:width="2dp" android:color="#0000ffff"/>
+        </shape>
+    </item>
+</selector>

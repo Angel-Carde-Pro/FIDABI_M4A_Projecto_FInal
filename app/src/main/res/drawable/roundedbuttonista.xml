@@ -1,0 +1,15 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/blueistadark" />
+            <corners android:radius="10dp" /> <!-- Radio de los bordes cuando se presiona el botón -->
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/blueista" /> <!-- Color cuando no está presionado -->
+            <corners android:radius="10dp" /> <!-- Radio de los bordes cuando no está presionado -->
+        </shape>
+    </item>
+</selector>
+

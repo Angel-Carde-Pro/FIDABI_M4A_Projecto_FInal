@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_material_light"
+    android:orientation="vertical"
+    android:weightSum="10">
+
+    <ImageView
+        android:id="@+id/insta_logo"
+        android:layout_width="244dp"
+        android:layout_height="173dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="false"
+        android:layout_gravity="center"
+        android:layout_marginTop="250dp"
+        android:layout_marginBottom="-178dp"
+        android:src="@drawable/logoista" />
+
+    <ImageView
+        android:id="@+id/gout_icon"
+        android:layout_width="60dp"
+        android:layout_height="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="false"
+        android:layout_gravity="end"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="50dp"
+        android:src="@drawable/blue_ball" />
+
+    <ImageView
+        android:id="@+id/yellow_circle"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_gravity="center|end"
+        android:layout_marginTop="180dp"
+        android:foregroundGravity="right"
+        android:paddingRight="-100dp"
+        android:src="@drawable/circle_yellow" />
+
+    <ImageView
+        android:id="@+id/img_wave3"
+        android:layout_width="300dp"
+        android:layout_height="260dp"
+        android:layout_gravity="left|end"
+        android:layout_marginLeft="-100dp"
+        android:layout_marginTop="0dp"
+        android:baselineAlignBottom="false"
+        android:foregroundGravity="right"
+        android:src="@drawable/eclipse_12" />
+
+    <ImageView
+        android:id="@+id/img_wave2"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="-800dp"
+        android:foregroundGravity="right"
+        android:paddingRight="-80dp"
+        android:src="@drawable/diffuse_circle" />
+
+</LinearLayout>
