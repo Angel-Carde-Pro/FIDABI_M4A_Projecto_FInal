@@ -7,6 +7,18 @@
     android:layout_height="match_parent"
     android:background="#E4E4E4">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="-15dp"
+            android:src="@drawable/backgroup_popup" />
+
+    </FrameLayout>
+
     <TextView
         android:id="@+id/welcome_mss"
         android:layout_width="203dp"
@@ -55,21 +67,12 @@
         android:layout_height="400dp"
         android:layout_alignParentBottom="true">
 
+        <include layout="@layout/activitymenudebajo" />
+
+
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/more_btn"
-                android:layout_width="65dp"
-                android:layout_height="60dp"
-                android:layout_alignParentStart="false"
-                android:layout_centerInParent="true"
-                android:layout_gravity="end"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="0dp"
-                android:src="@drawable/more_items_icon" />
 
             <TextView
                 android:id="@+id/recent_activiy"
@@ -82,6 +85,18 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/more_btn"
+                android:layout_width="65dp"
+                android:layout_height="60dp"
+                android:layout_alignParentStart="false"
+                android:layout_centerInParent="true"
+                android:layout_gravity="end"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="0dp"
+                android:src="@drawable/more_items_icon" />
 
         </FrameLayout>
     </RelativeLayout>

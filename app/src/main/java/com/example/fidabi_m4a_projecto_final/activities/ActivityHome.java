@@ -18,7 +18,7 @@ public class ActivityHome extends AppCompatActivity {
         role = findViewById(R.id.role_id);
 
         msjWelcome.setText("Hola!, bienvenid@ \n" + getIntent().getStringExtra("primerNombre"));
-        role.setText(getIntent().getStringExtra("rol").toUpperCase());
+        role.setText(getIntent().getStringExtra("rol") );
 
 
     }
