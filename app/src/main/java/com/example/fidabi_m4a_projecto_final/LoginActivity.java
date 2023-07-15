@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.fidabi_m4a_projecto_final.activities.ActivityHome;
 import com.example.fidabi_m4a_projecto_final.request.LoginRequest;
 import com.example.fidabi_m4a_projecto_final.request.LoginResponse;
 
@@ -87,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
                         String nombreRol = rol.getRolNombre();
                         boolean estadoRol = rol.isRolEstado();
 
-                        Intent intent = new Intent(LoginActivity.this, Profile_user.class);
+                        Intent intent = new Intent(LoginActivity.this, ActivityHome.class);
                         intent.putExtra("primerNombre",primerNombre);
                         intent.putExtra("segundoNombre",segundoNombre);
                         intent.putExtra("rol",nombreRol);

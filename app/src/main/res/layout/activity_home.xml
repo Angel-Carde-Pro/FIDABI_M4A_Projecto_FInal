@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:aapt="http://schemas.android.com/aapt"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E4E4E4">
@@ -70,7 +71,7 @@
                 android:src="@drawable/more_items_icon" />
 
             <TextView
-                android:id="@+id/recent_activity"
+                android:id="@+id/recent_activiy"
                 android:layout_width="203dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
@@ -115,9 +116,12 @@
         android:layout_alignParentEnd="false"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="false"
-        android:layout_marginLeft="6dp"
-        android:layout_marginTop="26dp"
-        android:src="@drawable/thumb_swith" />
+        android:layout_marginStart="-1dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="332dp"
+        android:src="@drawable/thumb_swith"
+        tools:src="@drawable/logoista" />
 
     <ImageView
         android:id="@+id/imageView6"

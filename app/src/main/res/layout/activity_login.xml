@@ -6,51 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <ImageView
-        android:id="@+id/debajo"
-        android:layout_width="435dp"
-        android:layout_height="675dp"
-        android:layout_marginTop="304dp"
-        android:layout_marginEnd="-100dp"
-        android:layout_marginBottom="-560dp"
-        tools:clickable="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/trazadogrande" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="-145dp"
-        android:layout_marginBottom="40dp"
-        tools:clickable="false"
-        app:layout_constraintBottom_toTopOf="@+id/debajo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/trazadosmall" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="297dp"
-        android:layout_height="481dp"
-        android:layout_marginEnd="38dp"
-        app:layout_constraintBottom_toTopOf="@+id/debajo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/oval" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="309dp"
-        android:layout_height="281dp"
-        android:layout_marginEnd="38dp"
-        android:layout_marginBottom="-370dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/logoista" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="217dp"
@@ -87,12 +42,12 @@
         android:id="@+id/edittextpassword"
         android:layout_width="284dp"
         android:layout_height="60dp"
+        android:background="@drawable/roundededittext"
         android:ems="10"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
         android:paddingStart="16dp"
         android:textSize="16dp"
-        android:hint="Contraseña"
-        android:background="@drawable/roundededittext"
-        android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -128,5 +83,47 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.90" />
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="-10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textView"
+        app:srcCompat="@drawable/trazadogrande" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="145dp"
+        android:layout_marginBottom="125dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonacept"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/trazadosmall" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="296dp"
+        android:layout_height="604dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginBottom="208dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/oval" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="340dp"
+        android:layout_height="399dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="145dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonacept"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/logoista" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
