@@ -1,13 +1,8 @@
-package com.example.fidabi_m4a_projecto_final;
+package com.example.fidabi_m4a_projecto_final.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.os.Bundle;
-
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -16,12 +11,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.fidabi_m4a_projecto_final.activities.ActivityHome;
+import com.example.fidabi_m4a_projecto_final.ApiClient;
+import com.example.fidabi_m4a_projecto_final.Profile_user;
+import com.example.fidabi_m4a_projecto_final.R;
 import com.example.fidabi_m4a_projecto_final.request.LoginRequest;
 import com.example.fidabi_m4a_projecto_final.request.LoginResponse;
 
-import java.sql.CallableStatement;
-import java.sql.Types;
 import java.util.List;
 
 import retrofit2.Call;

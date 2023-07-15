@@ -1,12 +1,13 @@
+package com.example.fidabi_m4a_projecto_final.activities;
 
-package com.example.fidabi_m4a_projecto_final;
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.example.fidabi_m4a_projecto_final.R;
 
 public class MainActivity extends AppCompatActivity {
     Button buttoncontinue;

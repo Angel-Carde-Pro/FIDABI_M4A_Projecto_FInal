@@ -36,7 +36,8 @@
         android:textAlignment="textStart"
         android:textColor="@color/white"
         android:textSize="14sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        tools:context=".activities.ActivityHome"/>
 
     <TextView
         android:id="@+id/welcome_mss2"
