@@ -1,16 +1,21 @@
 package com.example.fidabi_m4a_projecto_final.activities;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.fidabi_m4a_projecto_final.R;
 import com.example.fidabi_m4a_projecto_final.configs.Bottomenu;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 public class ActivityHome extends AppCompatActivity {
     TextView msjWelcome, role;
@@ -55,5 +60,26 @@ public class ActivityHome extends AppCompatActivity {
         Bottomenu.configurationMenu(menuView,categView);
 
 
+    }
+
+    public void onclick(View view) {
+
+        IntentIntegrator integrator = new IntentIntegrator(this);
+        integrator.initiateScan();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if (result != null) {
+            if (result.getContents() != null) {
+                String scannedData = result.getContents();
+                // Aquí puedes manejar los datos escaneados como desees
+                Toast.makeText(this, "Código QR escaneado: " + scannedData, Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Escaneo cancelado", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }

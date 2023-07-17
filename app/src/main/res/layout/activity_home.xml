@@ -26,6 +26,20 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="0dp"
             android:src="@drawable/more_items_icon" />
+
+
+
+        <ImageView
+            android:id="@+id/user_profile_photo"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="-1dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="332dp"
+            android:src="@drawable/thumb_swith"
+            tools:src="@drawable/logoista" />
+
     </FrameLayout>
 
     <TextView
@@ -95,6 +109,18 @@
         android:src="@drawable/notification_icon_off" />
 
     <ImageView
+        android:id="@+id/sanner"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="false"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="75dp"
+        android:onClick="onclick"
+        android:src="@drawable/escaner" />
+
+    <ImageView
         android:id="@+id/imageView7"
         android:layout_width="80dp"
         android:layout_height="6dp"
@@ -105,21 +131,6 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="160dp"
         android:src="@drawable/linea_oran" />
-
-    <ImageView
-        android:id="@+id/user_profile_photo"
-        android:layout_width="80dp"
-        android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="false"
-        android:layout_marginStart="-1dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="332dp"
-        android:src="@drawable/thumb_swith"
-        tools:src="@drawable/logoista" />
 
     <ImageView
         android:id="@+id/imageView6"
