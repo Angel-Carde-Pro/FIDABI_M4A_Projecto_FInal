@@ -5,12 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.fidabi_m4a_projecto_final.GlobalData;
 import com.example.fidabi_m4a_projecto_final.R;
 import com.example.fidabi_m4a_projecto_final.configs.Bottomenu;
+import com.example.fidabi_m4a_projecto_final.configs.Categories;
 
 public class ActivityHome extends AppCompatActivity {
     TextView msjWelcome, role;
@@ -20,6 +21,10 @@ public class ActivityHome extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         msjWelcome = findViewById(R.id.welcome_mss2);
         role = findViewById(R.id.role_id);
+
+        GlobalData glob = GlobalData.getInstance();
+        glob.setRol(getIntent().getStringExtra("rol"));
+        glob.setPrimerNombre(getIntent().getStringExtra("primerNombre"));
 
         msjWelcome.setText("Hola!, bienvenid@ \n" + getIntent().getStringExtra("primerNombre"));
         role.setText(getIntent().getStringExtra("rol") );
@@ -53,7 +58,7 @@ public class ActivityHome extends AppCompatActivity {
 
         //se llama la configuracion de los botones
         Bottomenu.configurationMenu(menuView,categView);
-
+        Categories.configurationCategory(categView);
 
     }
 }

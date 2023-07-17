@@ -31,7 +31,7 @@
     <string name="recent_activity">Actividad Reciente</string>
     <string name="welcome_mss">Bienvenido a FIBADI ⭐</string>
     <string name="welcome_user_name">Hola, bienvenid@\n</string>
-    <string name="role_id">Administrador</string>
+    <string name="role_id">[ROL]</string>
     <string name="categories">Categorías</string>
     <string name="recover_your_account">Recupera tu cuenta</string>
     <string name="recover_your_account_btn">Recuperar Cuenta</string>

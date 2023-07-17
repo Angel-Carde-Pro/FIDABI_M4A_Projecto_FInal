@@ -1,6 +1,7 @@
 package com.example.fidabi_m4a_projecto_final.configs;
 
 import android.animation.Animator;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewAnimationUtils;
@@ -13,21 +14,20 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.example.fidabi_m4a_projecto_final.Profile_user;
 import com.example.fidabi_m4a_projecto_final.R;
 
 public class Bottomenu {
 
-    private RelativeLayout contenedorDesplegable;
-    private RelativeLayout layoutDesplegable;
     private static boolean desplegue = false;
     public static void configurationMenu(View view, View categView){
-        Button home,categ,admi, search;
-        ImageView scaner;
+        Button home,scaner,admi, search;
+        ImageView categ;
 
-        System.out.println("adasdmadknaskdlaklmdklasjdklajkljadlkjaslkdjalkjsdlkjasldkjas");
-
+        //Que no muestre las categorias
         categView.setVisibility(View.INVISIBLE);
 
+        //HOME configuracion del boton
         home = view.findViewById(R.id.homebtn);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,9 +37,9 @@ public class Bottomenu {
             }
         });
 
-        //
-        scaner = view.findViewById(R.id.categorias);
-        scaner.setOnClickListener(new View.OnClickListener() {
+        //CATEG configuracion del boton con animaciones
+        categ = view.findViewById(R.id.categorias);
+        categ.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 System.out.println("parapendejo");
@@ -53,6 +53,18 @@ public class Bottomenu {
             }
             }
         });
+
+        //SEARCH OR PROFILE configuracion del boton
+        search = view.findViewById(R.id.search_bar);
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent profile = new Intent(view.getContext(), Profile_user.class);
+                view.getContext().startActivity(profile);
+
+            }
+        });
+
         }
 
     private static void desplegarLayout(View layout) {
