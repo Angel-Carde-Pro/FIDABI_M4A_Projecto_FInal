@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content">
 
                 <ToggleButton
-                    android:id="@+id/home"
+                    android:id="@+id/homebtn"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_centerVertical="true"
@@ -48,7 +48,7 @@
                     android:layout_height="48dp"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="32dp"
-                    android:layout_toRightOf="@+id/home"
+                    android:layout_toRightOf="@+id/homebtn"
                     android:background="@drawable/button_add"
                     android:textOff=""
                     android:textOn="" />

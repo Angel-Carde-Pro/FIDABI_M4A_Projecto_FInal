@@ -30,14 +30,17 @@
                 android:layout_height="wrap_content">
 
                 <Button
-                    android:id="@+id/home"
+                    android:id="@+id/homebtn"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="25dp"
                     android:background="@drawable/icon_home"
                     android:backgroundTint="#402CB1"
-                    android:padding="4dp" />
+                    android:padding="4dp"
+                    android:clickable="true"
+
+                    />
 
                 <Button
                     android:id="@+id/scan"
@@ -45,8 +48,9 @@
                     android:layout_height="48dp"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="32dp"
-                    android:layout_toRightOf="@+id/home"
-                    android:background="@drawable/button_add" />
+                    android:layout_toRightOf="@+id/homebtn"
+                    android:background="@drawable/button_add"
+                    />
 
                 <ImageView
                     android:id="@+id/categorias"
@@ -56,6 +60,7 @@
                     android:layout_centerInParent="true"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="0dp"
+                    android:clickable="true"
                     android:src="@drawable/home_center_button_bg" />
 
                 <Button
@@ -74,7 +79,8 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="20dp"
-                    android:background="@drawable/user_icon" />
+                    android:background="@drawable/user_icon"
+                     />
 
             </RelativeLayout>
         </FrameLayout>

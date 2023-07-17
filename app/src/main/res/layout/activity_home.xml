@@ -17,6 +17,15 @@
             android:layout_marginBottom="-15dp"
             android:src="@drawable/backgroup_popup" />
 
+        <ImageView
+            android:id="@+id/more_btn"
+            android:layout_width="65dp"
+            android:layout_height="60dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="300dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="0dp"
+            android:src="@drawable/more_items_icon" />
     </FrameLayout>
 
     <TextView
@@ -66,39 +75,12 @@
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:layout_alignParentBottom="true">
+        <include
+            android:id="@+id/bottomcointainer"
+            layout="@layout/activity_bottom_menu"
+            />
 
-        <include layout="@layout/activitymenudebajo" />
 
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/recent_activiy"
-                android:layout_width="203dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginBottom="10dp"
-                android:text="@string/recent_activity"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/more_btn"
-                android:layout_width="65dp"
-                android:layout_height="60dp"
-                android:layout_alignParentStart="false"
-                android:layout_centerInParent="true"
-                android:layout_gravity="end"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="0dp"
-                android:src="@drawable/more_items_icon" />
-
-        </FrameLayout>
     </RelativeLayout>
 
     <ImageView
@@ -158,9 +140,21 @@
         android:layout_alignParentEnd="false"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="false"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="190dp"
         android:layout_marginBottom="-15dp"
         android:paddingRight="-100dp"
         android:src="@drawable/hoja_1" />
+
+    <TextView
+        android:id="@+id/recent_activiy"
+        android:layout_width="203dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="270dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/recent_activity"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>
