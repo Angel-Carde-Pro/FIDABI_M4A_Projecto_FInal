@@ -51,8 +51,11 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> parent of b742371 (animaciones y otros)
                 <LinearLayout
                     android:id="@+id/item_1"
                     android:layout_width="match_parent"
@@ -124,6 +127,9 @@
                         android:textSize="15sp" />
 
                 </LinearLayout>
+<<<<<<< HEAD
+>>>>>>> parent of b742371 (animaciones y otros)
+=======
 >>>>>>> parent of b742371 (animaciones y otros)
 
 
