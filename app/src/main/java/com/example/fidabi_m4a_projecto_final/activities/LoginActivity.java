@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fidabi_m4a_projecto_final.ApiClient;
-import com.example.fidabi_m4a_projecto_final.GlobalData;
+import com.example.fidabi_m4a_projecto_final.Profile_user;
 import com.example.fidabi_m4a_projecto_final.R;
 import com.example.fidabi_m4a_projecto_final.request.LoginRequest;
 import com.example.fidabi_m4a_projecto_final.request.LoginResponse;
@@ -56,7 +56,6 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
     public void login (){
-
         LoginRequest logre= new LoginRequest();
         logre.setUsuario(txtcorreo.getText().toString());
         logre.setPassword(txtpassword.getText().toString());
@@ -77,11 +76,13 @@ public class LoginActivity extends AppCompatActivity {
                     String primerNombre = persona.getPerPrimerNom();
                     String segundoNombre = persona.getPerSegundoNom();
                     String telefono = persona.getPerTelefono();
+
                     List<LoginResponse.Rol> roles = loginResponse.getRoles();
                     for (LoginResponse.Rol rol : roles) {
                         int codigoRol = rol.getRolCod();
                         String nombreRol = rol.getRolNombre();
                         boolean estadoRol = rol.isRolEstado();
+
                         Intent intent = new Intent(LoginActivity.this, ActivityHome.class);
                         intent.putExtra("primerNombre",primerNombre);
                         intent.putExtra("segundoNombre",segundoNombre);
