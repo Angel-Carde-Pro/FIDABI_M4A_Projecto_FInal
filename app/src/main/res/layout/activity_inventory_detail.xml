@@ -43,6 +43,7 @@
         android:textStyle="bold" />
 
     <ImageView
+
         android:id="@+id/user_profile_photo2"
         android:layout_width="600dp"
         android:layout_height="270dp"
@@ -56,4 +57,5 @@
         android:layout_marginRight="265dp"
         android:backgroundTint="#FD9D1A"
         android:src="@drawable/inventario_icon" />
+
 </RelativeLayout>
