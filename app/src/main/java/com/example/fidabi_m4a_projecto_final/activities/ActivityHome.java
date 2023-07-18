@@ -9,6 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.fidabi_m4a_projecto_final.GlobalData;
 import com.example.fidabi_m4a_projecto_final.R;
 import com.example.fidabi_m4a_projecto_final.configs.Bottomenu;
 import com.example.fidabi_m4a_projecto_final.configs.Categories;
@@ -24,6 +25,11 @@ public class ActivityHome extends AppCompatActivity {
 
         msjWelcome.setText("Hola!, bienvenid@ \n" + getIntent().getStringExtra("primerNombre"));
         role.setText(getIntent().getStringExtra("rol") );
+
+
+        GlobalData glob = GlobalData.getInstance();
+        glob.setRol(getIntent().getStringExtra("rol"));
+        glob.setPrimerNombre(getIntent().getStringExtra("primerNombre"));
 
         //Este layout es del home donde se va a mostrar el menu y lo demas
         RelativeLayout container = findViewById(R.id.bottomcointainer);
