@@ -87,7 +87,7 @@ public class ActivityHome extends AppCompatActivity {
                 Toast.makeText(this, "Código QR escaneado: " + scannedData, Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(this, "Escaneo cancelado", Toast.LENGTH_SHORT).show();
-                //chupalo danny perro
+
             }
         }
     }
