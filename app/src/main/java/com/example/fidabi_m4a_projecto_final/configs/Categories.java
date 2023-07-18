@@ -1,6 +1,9 @@
         package com.example.fidabi_m4a_projecto_final.configs;
 
+        import android.view.LayoutInflater;
         import android.view.View;
+        import android.widget.ImageView;
+        import android.widget.LinearLayout;
         import android.widget.TextView;
 
         import com.example.fidabi_m4a_projecto_final.ApiClient;
@@ -38,14 +41,22 @@ public class Categories {
         call.enqueue(new retrofit2.Callback<List<CatResponse>>(){
             @Override
             public void onResponse(Call<List<CatResponse>> call, Response<List<CatResponse>> response) {
-                String jsonRespose = response.body().toString();
-                List<CatResponse> categories = parseoJSON(jsonRespose);
-                TextView nombre = view.findViewById(R.id.nombredesc);
+                List<CatResponse> categories = response.body();
+                LinearLayout categoryContainer = view.findViewById(R.id.contanerliner);
 
 
-                for (CatResponse catResponse : categories){
-                    nombre.setText(catResponse.getCat_nombre());
+                for (CatResponse category : categories){
+                    // Inflar el diseño de la categoría
+                    View categoryView = LayoutInflater.from(view.getContext()).inflate(R.layout.category_item, null);
 
+                    // Establecer los datos de la categoría en los elementos del diseño
+                    ImageView categoryImage = categoryView.findViewById(R.id.category_image);
+                    TextView categoryName = categoryView.findViewById(R.id.category_name);
+                    categoryImage.setImageResource(R.drawable.inventario_icon); // Coloca la imagen apropiada
+                    categoryName.setText(category.getCat_nombre());
+
+                    // Agregar la vista de categoría al contenedor
+                    categoryContainer.addView(categoryView);
                 }
             }
 
@@ -56,33 +67,5 @@ public class Categories {
         });
 
     }
-    public static List<CatResponse> parseoJSON(String JSON){
 
-        List<CatResponse> categories = new ArrayList<>();
-        try {
-            //Tranformar el json como array
-            JSONArray jsonArra = new JSONArray(JSON);
-            for (int i = 0; i < jsonArra.length(); i++){
-
-                //Obtener el json como objeto para poder sacar los datos
-                JSONObject jsonObject = jsonArra.getJSONObject(i);
-
-                //Asignar los datos del json como variables
-                int catCod = jsonObject.getInt("cat_cod");
-                String catNombre = jsonObject.getString("cat_nombre");
-                String catDescripcion = jsonObject.getString("cat_descripcion");
-                boolean catEstado = jsonObject.getBoolean("cat_estado");
-
-                CatResponse category = new CatResponse(catCod,catNombre,catDescripcion,catEstado);
-
-                categories.add(category);
-
-
-
-            }
-        }catch (JSONException e){
-            e.printStackTrace();
-        }
-        return categories;
-    }
 }

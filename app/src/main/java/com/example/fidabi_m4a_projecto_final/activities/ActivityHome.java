@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.fidabi_m4a_projecto_final.R;
 import com.example.fidabi_m4a_projecto_final.configs.Bottomenu;
+import com.example.fidabi_m4a_projecto_final.configs.Categories;
 
 public class ActivityHome extends AppCompatActivity {
     TextView msjWelcome, role;
@@ -53,6 +54,7 @@ public class ActivityHome extends AppCompatActivity {
 
         //se llama la configuracion de los botones
         Bottomenu.configurationMenu(menuView,categView);
+        Categories.configurationCategory(categView);
 
 
     }
