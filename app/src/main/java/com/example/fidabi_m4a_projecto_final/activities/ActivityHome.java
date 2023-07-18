@@ -1,6 +1,5 @@
 package com.example.fidabi_m4a_projecto_final.activities;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -21,6 +20,8 @@ import com.google.zxing.integration.android.IntentIntegrator;
 
 public class ActivityHome extends AppCompatActivity {
     TextView msjWelcome, role;
+    private View scan;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,17 +30,17 @@ public class ActivityHome extends AppCompatActivity {
         role = findViewById(R.id.role_id);
 
         msjWelcome.setText("Hola!, bienvenid@ \n" + getIntent().getStringExtra("primerNombre"));
-        role.setText(getIntent().getStringExtra("rol") );
+        role.setText(getIntent().getStringExtra("rol"));
 
 
         GlobalData glob = GlobalData.getInstance();
         glob.setRol(getIntent().getStringExtra("rol"));
         glob.setPrimerNombre(getIntent().getStringExtra("primerNombre"));
 
-        //Este layout es del home donde se va a mostrar el menu y lo demas
+        // Este layout es del home donde se va a mostrar el menú y lo demás
         RelativeLayout container = findViewById(R.id.bottomcointainer);
 
-        //Estas views son los layout a ocupar para el menu y categorias desplegable
+        // Estas views son los layouts a ocupar para el menú y categorías desplegables
         View menuView = LayoutInflater.from(this).inflate(R.layout.activity_bottom_menu, container, false);
         View categView = LayoutInflater.from(this).inflate(R.layout.activity_categories, container, false);
 
@@ -58,36 +59,42 @@ public class ActivityHome extends AppCompatActivity {
         categParams.addRule(RelativeLayout.ABOVE, menuView.getId());
         categView.setLayoutParams(categParams);
 
-        //Se asignara donde se mostrara los layout
+        // Se asignará dónde se mostrarán los layouts
         container.addView(categView);
         container.addView(menuView);
 
-
-        //se llama la configuracion de los botones
-        Bottomenu.configurationMenu(menuView,categView);
+        // Se llama la configuración de los botones
+        Bottomenu.configurationMenu(menuView, categView);
         Categories.configurationCategory(categView);
 
-    }
-    //abrir scanner
-
-    public void onclick(View view) {
-
-        IntentIntegrator integrator = new IntentIntegrator(this);
-        integrator.initiateScan();
+        scan = findViewById(R.id.scanner);
+        scan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Iniciar el escaneo del código QR
+                IntentIntegrator integrator = new IntentIntegrator(ActivityHome.this);
+                integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE);
+                integrator.setPrompt("Escanear código QR");
+                integrator.setCameraId(0);
+                integrator.setBeepEnabled(false);
+                integrator.setOrientationLocked(false);
+                integrator.initiateScan();
+            }
+        });
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
+        // Obtener el resultado del escaneo del código QR
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if (result != null) {
             if (result.getContents() != null) {
-                String scannedData = result.getContents();
-                // Aquí puedes manejar los datos escaneados como desees
-                Toast.makeText(this, "Código QR escaneado: " + scannedData, Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, "Escaneo cancelado", Toast.LENGTH_SHORT).show();
-
+                // Crear un intent para abrir la actividad de información del bien
+                Intent informacionBienIntent = new Intent(ActivityHome.this, ActivityInformacionBien.class);
+                informacionBienIntent.putExtra("qrContent", result.getContents());
+                startActivity(informacionBienIntent);
             }
         }
     }
