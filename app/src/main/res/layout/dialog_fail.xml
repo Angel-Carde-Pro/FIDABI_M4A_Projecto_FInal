@@ -61,7 +61,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
-                android:text="@string/success_alert"
+                android:text="@string/fail_alert"
                 android:textAlignment="center"
                 android:textColor="@color/background_material_dark"
                 android:textSize="20sp"
@@ -77,7 +77,7 @@
                 android:fontFamily="sans-serif"
                 android:gravity="center_horizontal"
                 android:lines="2"
-                android:text="@string/success_mssg"
+                android:text="@string/fail_mssg"
                 android:textColor="@color/background_floating_material_dark"
                 android:textSize="20sp" />
 
