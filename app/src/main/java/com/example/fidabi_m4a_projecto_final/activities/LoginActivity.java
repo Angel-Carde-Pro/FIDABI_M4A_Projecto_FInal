@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fidabi_m4a_projecto_final.ApiClient;
+import com.example.fidabi_m4a_projecto_final.GlobalData;
 import com.example.fidabi_m4a_projecto_final.Profile_user;
 import com.example.fidabi_m4a_projecto_final.R;
 import com.example.fidabi_m4a_projecto_final.request.LoginRequest;
@@ -65,6 +66,7 @@ public class LoginActivity extends AppCompatActivity {
         loginResponseCall.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+
                 if (response.isSuccessful()){
                     Toast.makeText(LoginActivity.this, "Login Correcto",Toast.LENGTH_LONG).show();
                     loginResponse = response.body();

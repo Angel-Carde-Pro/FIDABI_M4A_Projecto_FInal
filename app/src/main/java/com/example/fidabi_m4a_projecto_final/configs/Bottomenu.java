@@ -1,6 +1,7 @@
 package com.example.fidabi_m4a_projecto_final.configs;
 
 import android.animation.Animator;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewAnimationUtils;
@@ -13,6 +14,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.example.fidabi_m4a_projecto_final.Profile_user;
 import com.example.fidabi_m4a_projecto_final.R;
 
 public class Bottomenu {
@@ -21,7 +23,7 @@ public class Bottomenu {
     private RelativeLayout layoutDesplegable;
     private static boolean desplegue = false;
     public static void configurationMenu(View view, View categView){
-        Button home,categ,admi, search;
+        Button home,categ,admi, profile;
         ImageView scaner;
 
         System.out.println("adasdmadknaskdlaklmdklasjdklajkljadlkjaslkdjalkjsdlkjasldkjas");
@@ -53,7 +55,18 @@ public class Bottomenu {
             }
             }
         });
+        profile = view.findViewById(R.id.search_bar);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent profile = new Intent(view.getContext(), Profile_user.class);
+                view.getContext().startActivity(profile);
+            }
+        });
+
         }
+
+
 
     private static void desplegarLayout(View layout) {
         // Obtener la altura del layout
