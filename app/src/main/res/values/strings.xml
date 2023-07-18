@@ -33,6 +33,9 @@
     <string name="welcome_user_name">Hola, bienvenid@\n</string>
     <string name="role_id">Administrador</string>
     <string name="categories">Categorías</string>
+    <string name="update">Actualizar</string>
+    <string name="update_custodio">Actualizar Custodio</string>
+    <string name="data_user_custodio">Datos del custodio</string>
     <string name="recover_your_account">Recupera tu cuenta</string>
     <string name="recover_your_account_btn">Recuperar Cuenta</string>
     <string name="categories_id">[category_id]</string>
