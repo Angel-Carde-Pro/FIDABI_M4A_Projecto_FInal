@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fidabi_m4a_projecto_final.R;
 
-
+//holaaaa
 public class ActivityInformacionBien extends AppCompatActivity {
         private TextView resultado;
 
