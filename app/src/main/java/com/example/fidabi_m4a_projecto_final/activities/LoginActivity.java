@@ -12,8 +12,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fidabi_m4a_projecto_final.ApiClient;
-import com.example.fidabi_m4a_projecto_final.GlobalData;
-import com.example.fidabi_m4a_projecto_final.Profile_user;
 import com.example.fidabi_m4a_projecto_final.R;
 import com.example.fidabi_m4a_projecto_final.request.LoginRequest;
 import com.example.fidabi_m4a_projecto_final.request.LoginResponse;
@@ -35,10 +33,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Button myButton = findViewById(R.id.buttonacept);
-        myButton.setBackgroundResource(R.drawable.roundedbuttonista);
-        btnacept = findViewById(R.id.buttonacept);
-        btxolvido = findViewById(R.id.txtrecuperar);
+        btnacept = findViewById(R.id.Iniciar_Sesion_btn);
+        btnacept.setBackgroundResource(R.drawable.roundedbuttonista);
+        btxolvido = findViewById(R.id.recover_account_txt);
         txtcorreo = findViewById(R.id.editmail);
         txtpassword = findViewById(R.id.edittextpassword);
 
