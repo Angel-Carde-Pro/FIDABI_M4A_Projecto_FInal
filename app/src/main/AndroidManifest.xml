@@ -31,7 +31,6 @@
             android:name=".activities.ActivityInformacionBien"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
         <activity
             android:name=".activities.LoginActivity"
             android:exported="false"
@@ -44,8 +43,6 @@
             android:name=".Profile_user"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
-
     </application>
 
 </manifest>
