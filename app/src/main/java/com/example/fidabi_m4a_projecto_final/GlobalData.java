@@ -3,7 +3,6 @@ package com.example.fidabi_m4a_projecto_final;
 public class GlobalData {
     public String PrimerNombre;
     public String Rol;
-
     public String usuarios;
 
     //Para que solo acceda
@@ -44,10 +43,9 @@ public class GlobalData {
         this.usuarios = usuarios;
     }
 
-    public void cerrarsesion(){
+    public void cerrarsesion() {
         setPrimerNombre("");
         setRol("");
         setUsuarios("");
     }
-
 }

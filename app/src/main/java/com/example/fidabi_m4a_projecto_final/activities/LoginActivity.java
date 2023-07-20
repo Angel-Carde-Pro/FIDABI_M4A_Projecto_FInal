@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     //variables del login activity
     Button btnacept;
     TextView btxolvido;
-    EditText txtcorreo,txtpassword;
+    EditText txtcorreo, txtpassword;
     private LoginResponse loginResponse;
 
     @Override
@@ -43,18 +43,19 @@ public class LoginActivity extends AppCompatActivity {
         btnacept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (TextUtils.isEmpty(txtcorreo.getText().toString())||TextUtils.isEmpty(txtpassword.getText().toString())){
-                    Toast.makeText(LoginActivity.this,"Correo/Contraseña son necesarios",Toast.LENGTH_LONG).show();
+                if (TextUtils.isEmpty(txtcorreo.getText().toString()) || TextUtils.isEmpty(txtpassword.getText().toString())) {
+                    Toast.makeText(LoginActivity.this, "Correo/Contraseña son necesarios", Toast.LENGTH_LONG).show();
 
-                }else{
+                } else {
                     //logearse
                     login();
                 }
             }
         });
     }
-    public void login (){
-        LoginRequest logre= new LoginRequest();
+
+    public void login() {
+        LoginRequest logre = new LoginRequest();
         logre.setUsuario(txtcorreo.getText().toString());
         logre.setPassword(txtpassword.getText().toString());
 
@@ -64,13 +65,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
 
-                if (response.isSuccessful()){
+                if (response.isSuccessful()) {
                     Intent intent = new Intent(LoginActivity.this, ActivityHome.class);
 
-                    Toast.makeText(LoginActivity.this, "Login Correcto",Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Login Correcto", Toast.LENGTH_LONG).show();
                     loginResponse = response.body();
 
-                            /* PARA QUE FUNCU¡IONE EL JSON EN EL LOGIN RESPONSE PONER
+                            /* PARA QUE FUNCUCIONE EL JSON EN EL LOGIN RESPONSE PONER
                             TODO EL RESPONSE DEL JSON*/
 
                     LoginResponse.Persona persona = loginResponse.getPersona();
@@ -80,22 +81,21 @@ public class LoginActivity extends AppCompatActivity {
                     //intent para pasar el response a otro activity
 
 
-
                     List<LoginResponse.Rol> roles = loginResponse.getRoles();
                     for (LoginResponse.Rol rol : roles) {
                         int codigoRol = rol.getRolCod();
                         String nombreRol = rol.getRolNombre();
                         boolean estadoRol = rol.isRolEstado();
 
-                        intent.putExtra("primerNombre",primerNombre);
-                        intent.putExtra("segundoNombre",segundoNombre);
-                        intent.putExtra("rol",nombreRol);
+                        intent.putExtra("primerNombre", primerNombre);
+                        intent.putExtra("segundoNombre", segundoNombre);
+                        intent.putExtra("rol", nombreRol);
 
 
                     }
                     // Otros campos de LoginResponse
                     String usuario = loginResponse.getUsuario();
-                    intent.putExtra("usuariosnick",usuario);
+                    intent.putExtra("usuariosnick", usuario);
                     startActivity(intent);
                     String contrasenia = loginResponse.getContrasenia();
                     boolean estadoUsuario = loginResponse.isUsuEstado();
@@ -103,16 +103,15 @@ public class LoginActivity extends AppCompatActivity {
 
                     // Continuar con el flujo de tu aplicación, como iniciar una nueva actividad
 
-                }else{
+                } else {
                     Toast.makeText(LoginActivity.this, "Login Fallo", Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
-                Toast.makeText(LoginActivity.this,"ERROR: "+t.getLocalizedMessage(),Toast.LENGTH_LONG).show();
+                Toast.makeText(LoginActivity.this, "ERROR: " + t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
             }
         });
-
     }
 }

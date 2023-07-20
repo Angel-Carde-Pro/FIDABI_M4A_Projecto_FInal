@@ -34,12 +34,16 @@ public class Profile_user extends AppCompatActivity {
 //        sessionclose.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                //Comienza una nueva activity y cierra las demas
-//                Intent intent = new Intent(Profile_user.this, LoginActivity.class);
-//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-//                startActivity(intent);
-//                glob.cerrarsesion();
+//                  Cerrar_Sesion(glob);
 //            }
 //        });
 //    }
+
+    public void Cerrar_Sesion(GlobalData glob) {
+        //Comienza una nueva activity y cierra las demas
+        Intent intent = new Intent(Profile_user.this, LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        glob.cerrarsesion();
+    }
 }

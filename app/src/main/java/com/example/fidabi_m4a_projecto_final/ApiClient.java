@@ -8,12 +8,12 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
-    private static Retrofit getRetrofit(){
+    private static Retrofit getRetrofit() {
         HttpLoggingInterceptor httpLoginInterceptor = new HttpLoggingInterceptor();
         httpLoginInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(httpLoginInterceptor).build();
 
-        Retrofit retrofit = new Retrofit.Builder( )
+        Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
 
                 //colocar ip personal (ipconfig en cmd)(http://ip:8080/)
@@ -22,8 +22,9 @@ public class ApiClient {
                 .build();
         return retrofit;
     }
-    public static UserService getUserService(){
-        UserService userService= getRetrofit().create(UserService.class);
+
+    public static UserService getUserService() {
+        UserService userService = getRetrofit().create(UserService.class);
         return userService;
     }
 }

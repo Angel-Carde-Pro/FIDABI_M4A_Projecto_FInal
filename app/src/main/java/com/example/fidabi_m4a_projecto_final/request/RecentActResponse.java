@@ -4,12 +4,12 @@ import java.util.Date;
 
 public class RecentActResponse {
 
-/*
-* "act_cod": 1,
-    "usuario": "Rector",
-    "act_tabla": "MAQUINARIA Y EQUIPO:1 BANCO MÓVIL PARA MÁQUINAS DESARMABLES 8120-0",
-    "act_accion": "Usted fue asignado",
-    "fecha": "2023-07-19"*/
+    /*
+    * "act_cod": 1,
+        "usuario": "Rector",
+        "act_tabla": "MAQUINARIA Y EQUIPO:1 BANCO MÓVIL PARA MÁQUINAS DESARMABLES 8120-0",
+        "act_accion": "Usted fue asignado",
+        "fecha": "2023-07-19"*/
     private Long act_cod;
     private String usuario;
     private String act_tabla;

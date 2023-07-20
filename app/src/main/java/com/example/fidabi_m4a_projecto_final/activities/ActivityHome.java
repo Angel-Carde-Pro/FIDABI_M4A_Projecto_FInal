@@ -37,8 +37,6 @@ public class ActivityHome extends AppCompatActivity {
         glob.setPrimerNombre(getIntent().getStringExtra("primerNombre"));
         glob.setUsuarios(getIntent().getStringExtra("usuariosnick"));
 
-
-
         // Container donde esta ubicado el menubottom
         RelativeLayout container = findViewById(R.id.bottomcointainer);
 
@@ -67,14 +65,12 @@ public class ActivityHome extends AppCompatActivity {
         container.addView(menuView);
         container.addView(recentView);
 
-
-
         // Se llama la configuración de los botones
         Bottomenu.configurationMenu(menuView, categView);
         Categories.configurationCategory(categView);
         RecentActiv.configurationRecentAc(recentView);
 
-       scan = findViewById(R.id.scanner);
+        scan = findViewById(R.id.scanner);
         scan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,7 +85,7 @@ public class ActivityHome extends AppCompatActivity {
             }
         });
     }
-//holaaa
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

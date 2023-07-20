@@ -20,7 +20,7 @@ import retrofit2.Response;
 
 public class RecentActiv {
 
-    public static void configurationRecentAc(View view){
+    public static void configurationRecentAc(View view) {
         RecentActRequest reacres = new RecentActRequest();
         GlobalData glob = GlobalData.getInstance();
         reacres.setUsuarios(glob.getUsuarios());
@@ -38,8 +38,8 @@ public class RecentActiv {
                 System.out.println(actList.get(0));
 
 
-                for (RecentActResponse recentActRes : actList){
-                    View recentView = LayoutInflater.from(view.getContext()).inflate(R.layout.recent_activ,null);
+                for (RecentActResponse recentActRes : actList) {
+                    View recentView = LayoutInflater.from(view.getContext()).inflate(R.layout.recent_activ, null);
                     TextView accion = view.findViewById(R.id.accion);
                     TextView descripcion = view.findViewById(R.id.descrip);
 
