@@ -6,15 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.fidabi_m4a_projecto_final.GlobalData;
 import com.example.fidabi_m4a_projecto_final.R;
 import com.example.fidabi_m4a_projecto_final.configs.Bottomenu;
 import com.example.fidabi_m4a_projecto_final.configs.Categories;
+import com.example.fidabi_m4a_projecto_final.configs.RecentActiv;
 import com.google.zxing.integration.android.IntentResult;
 import com.google.zxing.integration.android.IntentIntegrator;
 
@@ -32,17 +31,21 @@ public class ActivityHome extends AppCompatActivity {
         msjWelcome.setText("Hola!, bienvenid@ \n" + getIntent().getStringExtra("primerNombre"));
         role.setText(getIntent().getStringExtra("rol"));
 
-
+        /* DATOS GLOBALES */
         GlobalData glob = GlobalData.getInstance();
         glob.setRol(getIntent().getStringExtra("rol"));
         glob.setPrimerNombre(getIntent().getStringExtra("primerNombre"));
+        glob.setUsuarios(getIntent().getStringExtra("usuariosnick"));
 
-        // Este layout es del home donde se va a mostrar el menú y lo demás
+
+
+        // Container donde esta ubicado el menubottom
         RelativeLayout container = findViewById(R.id.bottomcointainer);
 
         // Estas views son los layouts a ocupar para el menú y categorías desplegables
         View menuView = LayoutInflater.from(this).inflate(R.layout.activity_bottom_menu, container, false);
         View categView = LayoutInflater.from(this).inflate(R.layout.activity_categories, container, false);
+        View recentView = LayoutInflater.from(this).inflate(R.layout.recent_activ, container, false);
 
         // Establecer las reglas de posicionamiento
         RelativeLayout.LayoutParams menuParams = new RelativeLayout.LayoutParams(
@@ -62,12 +65,16 @@ public class ActivityHome extends AppCompatActivity {
         // Se asignará dónde se mostrarán los layouts
         container.addView(categView);
         container.addView(menuView);
+        container.addView(recentView);
+
+
 
         // Se llama la configuración de los botones
         Bottomenu.configurationMenu(menuView, categView);
         Categories.configurationCategory(categView);
+        RecentActiv.configurationRecentAc(recentView);
 
-        scan = findViewById(R.id.scanner);
+       scan = findViewById(R.id.scanner);
         scan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

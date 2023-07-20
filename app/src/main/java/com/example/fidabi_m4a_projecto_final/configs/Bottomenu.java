@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.example.fidabi_m4a_projecto_final.GlobalData;
 import com.example.fidabi_m4a_projecto_final.Profile_user;
 import com.example.fidabi_m4a_projecto_final.R;
 
@@ -19,9 +20,6 @@ public class Bottomenu {
     public static void configurationMenu(View view, View categView){
         Button home,categ,admi, profile;
         ImageView scaner;
-
-        System.out.println("adasdmadknaskdlaklmdklasjdklajkljadlkjaslkdjalkjsdlkjasldkjas");
-
         categView.setVisibility(View.INVISIBLE);
 
         home = view.findViewById(R.id.homebtn);
