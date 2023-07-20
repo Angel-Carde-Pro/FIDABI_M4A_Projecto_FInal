@@ -65,6 +65,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
 
                 if (response.isSuccessful()){
+                    Intent intent = new Intent(LoginActivity.this, ActivityHome.class);
+
                     Toast.makeText(LoginActivity.this, "Login Correcto",Toast.LENGTH_LONG).show();
                     loginResponse = response.body();
 
@@ -75,6 +77,9 @@ public class LoginActivity extends AppCompatActivity {
                     String primerNombre = persona.getPerPrimerNom();
                     String segundoNombre = persona.getPerSegundoNom();
                     String telefono = persona.getPerTelefono();
+                    //intent para pasar el response a otro activity
+
+
 
                     List<LoginResponse.Rol> roles = loginResponse.getRoles();
                     for (LoginResponse.Rol rol : roles) {
@@ -82,18 +87,19 @@ public class LoginActivity extends AppCompatActivity {
                         String nombreRol = rol.getRolNombre();
                         boolean estadoRol = rol.isRolEstado();
 
-                        Intent intent = new Intent(LoginActivity.this, ActivityHome.class);
                         intent.putExtra("primerNombre",primerNombre);
                         intent.putExtra("segundoNombre",segundoNombre);
                         intent.putExtra("rol",nombreRol);
-                        startActivity(intent);
+
 
                     }
-                    //intent para pasar el response a otro activity
                     // Otros campos de LoginResponse
                     String usuario = loginResponse.getUsuario();
+                    intent.putExtra("usuariosnick",usuario);
+                    startActivity(intent);
                     String contrasenia = loginResponse.getContrasenia();
                     boolean estadoUsuario = loginResponse.isUsuEstado();
+
 
                     // Continuar con el flujo de tu aplicación, como iniciar una nueva actividad
 
