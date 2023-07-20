@@ -35,7 +35,7 @@
             android:layout_marginTop="200dp">
 
             <ToggleButton
-                android:id="@+id/search_bar"
+                android:id="@+id/user_settings"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"

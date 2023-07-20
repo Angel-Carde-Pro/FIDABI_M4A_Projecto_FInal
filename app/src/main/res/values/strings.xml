@@ -41,9 +41,15 @@
     <string name="recover_your_account">Recupera tu cuenta</string>
     <string name="recover_your_account_btn">Recuperar Cuenta</string>
     <string name="categories_id">[category_id]</string>
+    <string name="details_txt">DETALLES</string>
     <string name="selected_category_id">[Categoría Seleccionada]</string>
     <string name="search_mss">Que es lo que estas buscando?</string>
     <string name="see_more">Ver Más</string>
     <string name="recover_account_mss">Ingresa tu correo electrónico o número de celular para buscar tu cuenta.</string>
     <string name="fail_mssg">Fallo al intentar guardar la información, por favor revise su conexión a internet</string>
+    <string name="home_dsc_btn">ir al home</string>
+    <string name="scan_dsc_btn">Abrir opciones de scaneo</string>
+    <string name="user_profile_dsc_btn">Abrir opciones del perfil y otros más.</string>
+    <string name="admin_dsc_btn">Abrir opciones de administración.</string>
+    <string name="categories_dsc_btn">Abrir todas las categorias disponibles.</string>
 </resources>

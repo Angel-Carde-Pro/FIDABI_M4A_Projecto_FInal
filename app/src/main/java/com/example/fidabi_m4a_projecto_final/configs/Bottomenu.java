@@ -1,16 +1,10 @@
 package com.example.fidabi_m4a_projecto_final.configs;
 
-import android.animation.Animator;
 import android.content.Intent;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewAnimationUtils;
-import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -55,7 +49,7 @@ public class Bottomenu {
             }
             }
         });
-        profile = view.findViewById(R.id.search_bar);
+        profile = view.findViewById(R.id.user_settings);
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

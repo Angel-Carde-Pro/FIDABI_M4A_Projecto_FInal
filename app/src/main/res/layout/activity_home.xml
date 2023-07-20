@@ -28,17 +28,14 @@
             android:src="@drawable/more_items_icon" />
 
 
-
         <ImageView
             android:id="@+id/user_profile_photo"
-            android:layout_width="80dp"
+            android:layout_width="60dp"
             android:layout_height="50dp"
-            android:layout_marginStart="-1dp"
-            android:layout_marginLeft="4dp"
+            android:layout_marginLeft="15dp"
             android:layout_marginTop="20dp"
-            android:layout_marginRight="332dp"
             android:src="@drawable/thumb_swith"
-            tools:src="@drawable/logoista" />
+            tools:src="@drawable/user_profile" />
 
     </FrameLayout>
 
