@@ -33,6 +33,8 @@
     <string name="welcome_user_name">Hola, bienvenid@\n</string>
     <string name="role_id">Administrador</string>
     <string name="categories">Categorías</string>
+    <string name="list_custodios">Listar Custodios</string>
+    <string name="search_results">Resultados de la busqueda</string>
     <string name="update">Actualizar</string>
     <string name="update_custodio">Actualizar Custodio</string>
     <string name="data_user_custodio">Datos del custodio</string>
@@ -41,6 +43,7 @@
     <string name="categories_id">[category_id]</string>
     <string name="selected_category_id">[Categoría Seleccionada]</string>
     <string name="search_mss">Que es lo que estas buscando?</string>
+    <string name="see_more">Ver Más</string>
     <string name="recover_account_mss">Ingresa tu correo electrónico o número de celular para buscar tu cuenta.</string>
     <string name="fail_mssg">Fallo al intentar guardar la información, por favor revise su conexión a internet</string>
 </resources>

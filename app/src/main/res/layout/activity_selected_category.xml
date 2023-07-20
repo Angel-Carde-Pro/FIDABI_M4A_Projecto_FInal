@@ -51,7 +51,7 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/categories3"
+        android:id="@+id/filtros_txt"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
