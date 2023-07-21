@@ -1,66 +1,140 @@
 package com.example.fidabi_m4a_projecto_final.request;
 
-import java.util.Date;
+import java.util.List;
 
 public class RecentActResponse {
+    private long his_cod;
+    private String his_fecha;
+    private String his_detalles;
+    private UsuarioResponse usuario;
+    private BienResponse bien;
 
-/*
-* "act_cod": 1,
-    "usuario": "Rector",
-    "act_tabla": "MAQUINARIA Y EQUIPO:1 BANCO MÓVIL PARA MÁQUINAS DESARMABLES 8120-0",
-    "act_accion": "Usted fue asignado",
-    "fecha": "2023-07-19"*/
-    private Long act_cod;
-    private String usuario;
-    private String act_tabla;
-    private String act_accion;
-    private Date fecha;
-
-    public RecentActResponse(Long act_cod, String usuario, String act_tabla, String act_accion, Date fecha) {
-        this.act_cod = act_cod;
-        this.usuario = usuario;
-        this.act_tabla = act_tabla;
-        this.act_accion = act_accion;
-        this.fecha = fecha;
+    public long getHis_cod() {
+        return his_cod;
     }
 
-    public Long getAct_cod() {
-        return act_cod;
+    public void setHis_cod(long his_cod) {
+        this.his_cod = his_cod;
     }
 
-    public void setAct_cod(Long act_cod) {
-        this.act_cod = act_cod;
+    public String getHis_fecha() {
+        return his_fecha;
     }
 
-    public String getUsuario() {
+    public void setHis_fecha(String his_fecha) {
+        this.his_fecha = his_fecha;
+    }
+
+    public String getHis_detalles() {
+        return his_detalles;
+    }
+
+    public void setHis_detalles(String his_detalles) {
+        this.his_detalles = his_detalles;
+    }
+
+    public UsuarioResponse getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(String usuario) {
+    public void setUsuario(UsuarioResponse usuario) {
         this.usuario = usuario;
     }
 
-    public String getAct_tabla() {
-        return act_tabla;
+    public BienResponse getBien() {
+        return bien;
     }
 
-    public void setAct_tabla(String act_tabla) {
-        this.act_tabla = act_tabla;
+    public void setBien(BienResponse bien) {
+        this.bien = bien;
     }
 
-    public String getAct_accion() {
-        return act_accion;
+    // Clase interna para representar la parte "usuario" de la respuesta JSON
+    public static class UsuarioResponse {
+        private long usu_cod;
+        private PersonaResponse persona;
+        private List<RolResponse> roles;
+        private String usuario;
+        private String contrasenia;
+        private boolean usu_estado;
+
+        // Getters y Setters
     }
 
-    public void setAct_accion(String act_accion) {
-        this.act_accion = act_accion;
+    // Clase interna para representar la parte "persona" de la respuesta JSON
+    public static class PersonaResponse {
+        private long perCod;
+        private String perCedula;
+        private String perPrimerNom;
+        private String perSegundoNom;
+        private String perApellidoPater;
+        private String perApellidoMater;
+        private String perTelefono;
+        private String perGenero;
+        private String perEmail;
+        private String perFechaNac;
+
+        // Getters y Setters
     }
 
-    public Date getFecha() {
-        return fecha;
+    // Clase interna para representar la parte "roles" de la respuesta JSON
+    public static class RolResponse {
+        private int rol_cod;
+        private String rol_nombre;
+        private boolean rol_estado;
+
+        // Getters y Setters
     }
 
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
+    // Clase interna para representar la parte "bien" de la respuesta JSON
+    public static class BienResponse {
+        private long bien_cod;
+        private String bien_codigoG;
+        private String bien_modelo;
+        private String bien_marca;
+        private String bien_estado;
+        private String bien_detalles;
+        private String bien_descripcion;
+        private String bien_serie;
+        private int bien_precio;
+        private boolean bien_estadoA;
+        private Object bien_estado_asignado;
+        private UbicacionResponse ubicacion;
+        private PropietarioResponse propietario;
+        private CategoriaResponse categoria;
+        private UsuarioResponse usuario;
+
+        // Getters y Setters
+    }
+
+    // Clase interna para representar la parte "ubicacion" de la respuesta JSON
+    public static class UbicacionResponse {
+        private int ubi_cod;
+        private String ubi_nombre;
+        private String ubi_departamento;
+        private boolean ubi_estado;
+
+        // Getters y Setters
+    }
+
+    // Clase interna para representar la parte "propietario" de la respuesta JSON
+    public static class PropietarioResponse {
+        private int pro_cod;
+        private String pro_nombre;
+        private String pro_direccion;
+        private String pro_telefono;
+        private boolean pro_estado;
+
+        // Getters y Setters
+    }
+
+    // Clase interna para representar la parte "categoria" de la respuesta JSON
+    public static class CategoriaResponse {
+        private int cat_cod;
+        private String cat_nombre;
+        private String cat_descripcion;
+        private boolean cat_estado;
+
+        // Getters y Setters
     }
 }

@@ -43,8 +43,8 @@ public class RecentActiv {
                     for (RecentActResponse recentActRes : actList){
                         View recentView = LayoutInflater.from(view.getContext()).inflate(R.layout.recent_activ, null);
 
-                        accion.setText(recentActRes.getAct_accion());
-                        descripcion.setText(recentActRes.getAct_tabla());
+                        //accion.setText(recentActRes.getAct_accion());
+                        //descripcion.setText(recentActRes.getAct_tabla());
 
                         containerrecent.addView(recentView);
                     }

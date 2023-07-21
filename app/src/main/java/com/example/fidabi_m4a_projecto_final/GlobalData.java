@@ -4,7 +4,7 @@ public class GlobalData {
     public String PrimerNombre;
     public String Rol;
 
-    public String usuarios;
+    public int usuarios;
 
     //Para que solo acceda
     private static GlobalData instance;
@@ -36,18 +36,18 @@ public class GlobalData {
         Rol = rol;
     }
 
-    public String getUsuarios() {
+    public int getUsuarios() {
         return usuarios;
     }
 
-    public void setUsuarios(String usuarios) {
+    public void setUsuarios(int usuarios) {
         this.usuarios = usuarios;
     }
 
     public void cerrarsesion(){
         setPrimerNombre("");
         setRol("");
-        setUsuarios("");
+        setUsuarios(0);
     }
 
 }
