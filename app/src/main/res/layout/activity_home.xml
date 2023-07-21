@@ -5,7 +5,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E4E4E4">
+    android:background="#0E294E">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="false"
+        android:contentDescription="items"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/contanerliner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="10dp">
+            <!--    row one        -->
+
+            <!--    row two        -->
+
+            <!--    row three        -->
+
+        </LinearLayout>
+    </ScrollView>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -46,7 +69,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="220dp"
         android:text="@string/welcome_mss"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold" />
 
@@ -69,7 +92,7 @@
         android:textColor="@color/white"
         android:textSize="14sp"
         android:textStyle="bold"
-        tools:context=".activities.ActivityHome"/>
+        tools:context=".activities.ActivityHome" />
 
     <TextView
         android:id="@+id/welcome_mss2"
@@ -78,13 +101,13 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="105dp"
         android:text="@string/welcome_user_name"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="80dp"
         android:layout_alignParentBottom="true">
 
         <include
@@ -161,7 +184,7 @@
         android:layout_marginTop="270dp"
         android:layout_marginBottom="10dp"
         android:text="@string/recent_activity"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold" />
 
