@@ -62,4 +62,26 @@
         android:textSize="20sp"
         android:textStyle="bold" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
+        android:layout_alignParentBottom="true"
+        android:contentDescription="items"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/contanerliner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="10dp">
+            <!--    row one        -->
+
+            <!--    row two        -->
+
+            <!--    row three        -->
+
+        </LinearLayout>
+    </ScrollView>
+
 </RelativeLayout>

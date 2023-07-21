@@ -6,7 +6,7 @@
     android:layout_gravity="right"
     android:layout_marginTop="300dp"
     android:background="@drawable/backgroup_popup"
-    android:backgroundTint="#45DFB99B">
+    android:backgroundTint="#FAE9DD">
 
     <TextView
         android:id="@+id/toolTest"
@@ -34,8 +34,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:contentDescription="items"
         android:layout_below="@id/divider"
+        android:contentDescription="items"
         android:scrollbars="none">
 
         <LinearLayout
