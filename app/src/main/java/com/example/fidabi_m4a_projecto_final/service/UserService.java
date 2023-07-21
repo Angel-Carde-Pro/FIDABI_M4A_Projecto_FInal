@@ -23,6 +23,6 @@ public interface UserService {
     @GET("/tecazuay/categoria")
     Call<List<CatResponse>> catList();
 
-    @POST("/tecazuay/actividadrecs/{usuario}")
-    Call<List<RecentActResponse>> recentActList(@Path("usuario") String usuario);
+    @POST("/tecazuay/historialactividades/{his_usu_cod}")
+    Call<List<RecentActResponse>> recentActList(@Path("his_usu_cod") int his_usu_cod);
 }

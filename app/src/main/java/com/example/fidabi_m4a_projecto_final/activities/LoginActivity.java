@@ -94,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     }
                     // Otros campos de LoginResponse
-                    String usuario = loginResponse.getUsuario();
+                    int usuario = loginResponse.getUsuCod();
                     intent.putExtra("usuariosnick",usuario);
                     startActivity(intent);
                     String contrasenia = loginResponse.getContrasenia();

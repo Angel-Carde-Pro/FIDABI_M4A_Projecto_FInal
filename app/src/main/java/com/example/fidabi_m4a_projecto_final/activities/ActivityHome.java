@@ -35,7 +35,7 @@ public class ActivityHome extends AppCompatActivity {
         GlobalData glob = GlobalData.getInstance();
         glob.setRol(getIntent().getStringExtra("rol"));
         glob.setPrimerNombre(getIntent().getStringExtra("primerNombre"));
-        glob.setUsuarios(getIntent().getStringExtra("usuariosnick"));
+            glob.setUsuarios(getIntent().getIntExtra("usuariosnick",0));
 
 
 
