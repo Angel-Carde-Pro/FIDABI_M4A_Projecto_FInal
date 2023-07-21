@@ -1,5 +1,6 @@
         package com.example.fidabi_m4a_projecto_final.configs;
 
+        import android.content.Context;
         import android.view.LayoutInflater;
         import android.view.View;
         import android.widget.ImageView;
@@ -22,7 +23,7 @@
         import retrofit2.Call;
         import retrofit2.Response;
 
-public class Categories {
+public class  Categories {
 
     public static void configurationCategory(View view){
 
@@ -44,10 +45,20 @@ public class Categories {
                 List<CatResponse> categories = response.body();
                 LinearLayout categoryContainer = view.findViewById(R.id.contanerliner);
 
-
                 for (CatResponse category : categories){
                     // Inflar el diseño de la categoría
                     View categoryView = LayoutInflater.from(view.getContext()).inflate(R.layout.category_item, null);
+
+                    // Convertir 20dp a pixels
+                    int marginLeft = dpToPx(20, view.getContext());
+
+                    // Establecer los parámetros de diseño con margen izquierdo
+                    LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.WRAP_CONTENT,     // Ancho de los hijos
+                            LinearLayout.LayoutParams.WRAP_CONTENT      // Alto de los hijos
+                    );
+                    layoutParams.setMargins(marginLeft, 0, 0, 0);     // left, top, right, bottom
+                    categoryView.setLayoutParams(layoutParams);
 
                     // Establecer los datos de la categoría en los elementos del diseño
                     ImageView categoryImage = categoryView.findViewById(R.id.category_image);
@@ -58,6 +69,11 @@ public class Categories {
                     // Agregar la vista de categoría al contenedor
                     categoryContainer.addView(categoryView);
                 }
+
+            }
+
+            public int dpToPx(int dp, Context context){
+                return (int) (dp * context.getResources().getDisplayMetrics().density);
             }
 
             @Override
@@ -65,7 +81,6 @@ public class Categories {
 
             }
         });
-
     }
 
 }
