@@ -13,6 +13,7 @@ import com.example.fidabi_m4a_projecto_final.GlobalData;
 import com.example.fidabi_m4a_projecto_final.R;
 import com.example.fidabi_m4a_projecto_final.configs.Bottomenu;
 import com.example.fidabi_m4a_projecto_final.configs.Categories;
+import com.example.fidabi_m4a_projecto_final.configs.Profile;
 import com.example.fidabi_m4a_projecto_final.configs.RecentActiv;
 import com.google.zxing.integration.android.IntentResult;
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -68,6 +69,7 @@ public class ActivityHome extends AppCompatActivity {
         // Se llama la configuración de los botones
         Bottomenu.configurationMenu(menuView, categView);
         Categories.configurationCategory(categView);
+        Profile.configurationPerfil(categView);
         RecentActiv.configurationRecentAc(recentView);
 
        scan = findViewById(R.id.scanner);

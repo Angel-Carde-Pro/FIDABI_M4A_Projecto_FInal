@@ -18,7 +18,7 @@
 
         public class Profile {
 
-            public static void configurationCategory(View view){
+            public static void configurationPerfil(View view){
                 //Llamamos al get
                 Call<List<CatResponse>> call = ApiClient.getUserService().catList();
                 call.enqueue(new retrofit2.Callback<List<CatResponse>>(){
@@ -45,7 +45,6 @@
                             // Agregar la vista de categoría al contenedor
                             categoryContainer.addView(categoryView);
                         }
-
                     }
 
                     public int dpToPx(int dp, Context context){
