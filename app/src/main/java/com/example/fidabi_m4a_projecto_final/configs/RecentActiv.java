@@ -24,6 +24,8 @@ public class RecentActiv {
         RecentActRequest reacres = new RecentActRequest();
         GlobalData glob = GlobalData.getInstance();
         reacres.setUsuarios(glob.getUsuarios());
+        TextView accion = view.findViewById(R.id.accion);
+        TextView descripcion = view.findViewById(R.id.descrip);
 
         //Obtener la llamada hacia el API
         retrofit2.Call<List<RecentActResponse>> call = ApiClient.getUserService().recentActList(reacres.getUsuarios());
@@ -34,27 +36,26 @@ public class RecentActiv {
             @Override
             public void onResponse(Call<List<RecentActResponse>> call, Response<List<RecentActResponse>> response) {
                 List<RecentActResponse> actList = response.body();
-                LinearLayout containerrecent = view.findViewById(R.id.linearlay);
-                System.out.println(actList.get(0));
+                if (actList != null && !actList.isEmpty()) { // Check if the list is not null and not empty
+                    LinearLayout containerrecent = view.findViewById(R.id.linearlay);
+                    System.out.println(actList.get(0));
 
+                    for (RecentActResponse recentActRes : actList){
+                        View recentView = LayoutInflater.from(view.getContext()).inflate(R.layout.recent_activ, null);
 
-                for (RecentActResponse recentActRes : actList){
-                    View recentView = LayoutInflater.from(view.getContext()).inflate(R.layout.recent_activ,null);
-                    TextView accion = view.findViewById(R.id.accion);
-                    TextView descripcion = view.findViewById(R.id.descrip);
+                        accion.setText(recentActRes.getAct_accion());
+                        descripcion.setText(recentActRes.getAct_tabla());
 
-                    accion.setText(recentActRes.getAct_accion());
-                    descripcion.setText(recentActRes.getAct_tabla());
-
-                    containerrecent.addView(recentView);
-
+                        containerrecent.addView(recentView);
+                    }
+                } else {
+                    accion.setText("No hay acciones recientes");
                 }
-
             }
 
             @Override
             public void onFailure(Call<List<RecentActResponse>> call, Throwable t) {
-
+                // Handle failure if needed
             }
         });
 
