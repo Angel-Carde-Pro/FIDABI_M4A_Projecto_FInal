@@ -59,6 +59,54 @@ public class RecentActResponse {
         private boolean usu_estado;
 
         // Getters y Setters
+
+        public long getUsu_cod() {
+            return usu_cod;
+        }
+
+        public void setUsu_cod(long usu_cod) {
+            this.usu_cod = usu_cod;
+        }
+
+        public PersonaResponse getPersona() {
+            return persona;
+        }
+
+        public void setPersona(PersonaResponse persona) {
+            this.persona = persona;
+        }
+
+        public List<RolResponse> getRoles() {
+            return roles;
+        }
+
+        public void setRoles(List<RolResponse> roles) {
+            this.roles = roles;
+        }
+
+        public String getUsuario() {
+            return usuario;
+        }
+
+        public void setUsuario(String usuario) {
+            this.usuario = usuario;
+        }
+
+        public String getContrasenia() {
+            return contrasenia;
+        }
+
+        public void setContrasenia(String contrasenia) {
+            this.contrasenia = contrasenia;
+        }
+
+        public boolean isUsu_estado() {
+            return usu_estado;
+        }
+
+        public void setUsu_estado(boolean usu_estado) {
+            this.usu_estado = usu_estado;
+        }
     }
 
     // Clase interna para representar la parte "persona" de la respuesta JSON
@@ -74,6 +122,85 @@ public class RecentActResponse {
         private String perEmail;
         private String perFechaNac;
 
+        public long getPerCod() {
+            return perCod;
+        }
+
+        public void setPerCod(long perCod) {
+            this.perCod = perCod;
+        }
+
+        public String getPerCedula() {
+            return perCedula;
+        }
+
+        public void setPerCedula(String perCedula) {
+            this.perCedula = perCedula;
+        }
+
+        public String getPerPrimerNom() {
+            return perPrimerNom;
+        }
+
+        public void setPerPrimerNom(String perPrimerNom) {
+            this.perPrimerNom = perPrimerNom;
+        }
+
+        public String getPerSegundoNom() {
+            return perSegundoNom;
+        }
+
+        public void setPerSegundoNom(String perSegundoNom) {
+            this.perSegundoNom = perSegundoNom;
+        }
+
+        public String getPerApellidoPater() {
+            return perApellidoPater;
+        }
+
+        public void setPerApellidoPater(String perApellidoPater) {
+            this.perApellidoPater = perApellidoPater;
+        }
+
+        public String getPerApellidoMater() {
+            return perApellidoMater;
+        }
+
+        public void setPerApellidoMater(String perApellidoMater) {
+            this.perApellidoMater = perApellidoMater;
+        }
+
+        public String getPerTelefono() {
+            return perTelefono;
+        }
+
+        public void setPerTelefono(String perTelefono) {
+            this.perTelefono = perTelefono;
+        }
+
+        public String getPerGenero() {
+            return perGenero;
+        }
+
+        public void setPerGenero(String perGenero) {
+            this.perGenero = perGenero;
+        }
+
+        public String getPerEmail() {
+            return perEmail;
+        }
+
+        public void setPerEmail(String perEmail) {
+            this.perEmail = perEmail;
+        }
+
+        public String getPerFechaNac() {
+            return perFechaNac;
+        }
+
+        public void setPerFechaNac(String perFechaNac) {
+            this.perFechaNac = perFechaNac;
+        }
         // Getters y Setters
     }
 
@@ -105,6 +232,127 @@ public class RecentActResponse {
         private UsuarioResponse usuario;
 
         // Getters y Setters
+
+
+        public long getBien_cod() {
+            return bien_cod;
+        }
+
+        public void setBien_cod(long bien_cod) {
+            this.bien_cod = bien_cod;
+        }
+
+        public String getBien_codigoG() {
+            return bien_codigoG;
+        }
+
+        public void setBien_codigoG(String bien_codigoG) {
+            this.bien_codigoG = bien_codigoG;
+        }
+
+        public String getBien_modelo() {
+            return bien_modelo;
+        }
+
+        public void setBien_modelo(String bien_modelo) {
+            this.bien_modelo = bien_modelo;
+        }
+
+        public String getBien_marca() {
+            return bien_marca;
+        }
+
+        public void setBien_marca(String bien_marca) {
+            this.bien_marca = bien_marca;
+        }
+
+        public String getBien_estado() {
+            return bien_estado;
+        }
+
+        public void setBien_estado(String bien_estado) {
+            this.bien_estado = bien_estado;
+        }
+
+        public String getBien_detalles() {
+            return bien_detalles;
+        }
+
+        public void setBien_detalles(String bien_detalles) {
+            this.bien_detalles = bien_detalles;
+        }
+
+        public String getBien_descripcion() {
+            return bien_descripcion;
+        }
+
+        public void setBien_descripcion(String bien_descripcion) {
+            this.bien_descripcion = bien_descripcion;
+        }
+
+        public String getBien_serie() {
+            return bien_serie;
+        }
+
+        public void setBien_serie(String bien_serie) {
+            this.bien_serie = bien_serie;
+        }
+
+        public int getBien_precio() {
+            return bien_precio;
+        }
+
+        public void setBien_precio(int bien_precio) {
+            this.bien_precio = bien_precio;
+        }
+
+        public boolean isBien_estadoA() {
+            return bien_estadoA;
+        }
+
+        public void setBien_estadoA(boolean bien_estadoA) {
+            this.bien_estadoA = bien_estadoA;
+        }
+
+        public Object getBien_estado_asignado() {
+            return bien_estado_asignado;
+        }
+
+        public void setBien_estado_asignado(Object bien_estado_asignado) {
+            this.bien_estado_asignado = bien_estado_asignado;
+        }
+
+        public UbicacionResponse getUbicacion() {
+            return ubicacion;
+        }
+
+        public void setUbicacion(UbicacionResponse ubicacion) {
+            this.ubicacion = ubicacion;
+        }
+
+        public PropietarioResponse getPropietario() {
+            return propietario;
+        }
+
+        public void setPropietario(PropietarioResponse propietario) {
+            this.propietario = propietario;
+        }
+
+        public CategoriaResponse getCategoria() {
+            return categoria;
+        }
+
+        public void setCategoria(CategoriaResponse categoria) {
+            this.categoria = categoria;
+        }
+
+        public UsuarioResponse getUsuario() {
+            return usuario;
+        }
+
+        public void setUsuario(UsuarioResponse usuario) {
+            this.usuario = usuario;
+        }
     }
 
     // Clase interna para representar la parte "ubicacion" de la respuesta JSON

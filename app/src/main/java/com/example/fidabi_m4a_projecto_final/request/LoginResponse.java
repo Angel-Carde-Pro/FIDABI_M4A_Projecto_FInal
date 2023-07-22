@@ -4,18 +4,18 @@ import java.io.Serializable;
 import java.util.List;
 
 public class LoginResponse implements Serializable {
-    private int usu_cod;
+    private Long usu_cod;
     private Persona persona;
     private List<Rol> roles;
     private String usuario;
     private String contrasenia;
     private boolean usu_estado;
 
-    public int getUsuCod() {
+    public Long getUsuCod() {
         return usu_cod;
     }
 
-    public void setUsuCod(int usu_cod) {
+    public void setUsuCod(Long usu_cod) {
         this.usu_cod = usu_cod;
     }
 

@@ -8,9 +8,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.example.fidabi_m4a_projecto_final.GlobalData;
-import com.example.fidabi_m4a_projecto_final.Profile_user;
 import com.example.fidabi_m4a_projecto_final.R;
+import com.example.fidabi_m4a_projecto_final.activities.ProfileItemActivity;
 
 public class Bottomenu {
 
@@ -36,7 +35,6 @@ public class Bottomenu {
         scaner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("parapendejo");
             if (!desplegue){
                 desplegarLayout(categView);
                 System.out.println("holabola");
@@ -51,8 +49,9 @@ public class Bottomenu {
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent profile = new Intent(view.getContext(), Profile_user.class);
+                Intent profile = new Intent(view.getContext(), ProfileItemActivity.class);
                 view.getContext().startActivity(profile);
+
             }
         });
 

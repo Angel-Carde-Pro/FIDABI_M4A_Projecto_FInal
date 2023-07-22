@@ -94,7 +94,8 @@ public class LoginActivity extends AppCompatActivity {
 
                     }
                     // Otros campos de LoginResponse
-                    int usuario = loginResponse.getUsuCod();
+                    Long usuario = loginResponse.getUsuCod();
+
                     intent.putExtra("usuariosnick",usuario);
                     startActivity(intent);
                     String contrasenia = loginResponse.getContrasenia();
@@ -110,7 +111,7 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
-                Toast.makeText(LoginActivity.this,"ERROR: "+t.getLocalizedMessage(),Toast.LENGTH_LONG).show();
+                Toast.makeText(LoginActivity.this,"El usuario/contraseña son incorrectos", Toast.LENGTH_SHORT).show();
             }
         });
 

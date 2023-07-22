@@ -5,6 +5,7 @@
     android:padding="8dp">
 
     <LinearLayout
+        android:id="@+id/itemlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/backgroup_popup"
@@ -14,19 +15,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="2dp"
-                android:text="ITEM1"
-                android:textColor="#252450"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-
-        </RelativeLayout>
+            android:layout_height="40dp" />
 
         <RelativeLayout
             android:layout_width="match_parent"

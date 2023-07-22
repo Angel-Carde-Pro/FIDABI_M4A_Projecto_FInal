@@ -23,12 +23,16 @@ public class RecentActiv {
     public static void configurationRecentAc(View view){
         RecentActRequest reacres = new RecentActRequest();
         GlobalData glob = GlobalData.getInstance();
-        reacres.setUsuarios(glob.getUsuarios());
-        TextView accion = view.findViewById(R.id.accion);
-        TextView descripcion = view.findViewById(R.id.descrip);
+        reacres.setUsu_cod(glob.getUsuarios());
+        TextView accion = view.findViewById(R.id.state_txt);
+        TextView descripcion = view.findViewById(R.id.desc_txt);
+        TextView fecha = view.findViewById(R.id.date_txt);
+        TextView usuario = view.findViewById(R.id.usu_txt);
+
+        //OJO AGREGAR VALIDACION DE USUARIO CON UN IF AL CALL
 
         //Obtener la llamada hacia el API
-        retrofit2.Call<List<RecentActResponse>> call = ApiClient.getUserService().recentActList(reacres.getUsuarios());
+        retrofit2.Call<List<RecentActResponse>> call = ApiClient.getUserService().recentActList(reacres);
 
 
         //Obtenenmos JSON
@@ -37,19 +41,24 @@ public class RecentActiv {
             public void onResponse(Call<List<RecentActResponse>> call, Response<List<RecentActResponse>> response) {
                 List<RecentActResponse> actList = response.body();
                 if (actList != null && !actList.isEmpty()) { // Check if the list is not null and not empty
-                    LinearLayout containerrecent = view.findViewById(R.id.linearlay);
+                    LinearLayout containerrecent = view.findViewById(R.id.itemlayout);
                     System.out.println(actList.get(0));
 
                     for (RecentActResponse recentActRes : actList){
-                        View recentView = LayoutInflater.from(view.getContext()).inflate(R.layout.recent_activ, null);
+                        View recentView = LayoutInflater.from(view.getContext()).inflate(R.layout.recent_item, null);
 
                         //accion.setText(recentActRes.getAct_accion());
-                        //descripcion.setText(recentActRes.getAct_tabla());
-
+                        descripcion.setText(recentActRes.getBien().getBien_descripcion());
+                        accion.setText("Le fue asignado");
+                        fecha.setText(recentActRes.getHis_fecha());
                         containerrecent.addView(recentView);
                     }
                 } else {
                     accion.setText("No hay acciones recientes");
+                    descripcion.setText("");
+                    fecha.setText("");
+                    usuario.setText("");
+
                 }
             }
 

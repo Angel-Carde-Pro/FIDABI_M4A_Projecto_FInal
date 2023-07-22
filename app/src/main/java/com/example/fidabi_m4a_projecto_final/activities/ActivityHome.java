@@ -6,13 +6,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.fidabi_m4a_projecto_final.GlobalData;
 import com.example.fidabi_m4a_projecto_final.R;
 import com.example.fidabi_m4a_projecto_final.configs.Bottomenu;
 import com.example.fidabi_m4a_projecto_final.configs.Categories;
+import com.example.fidabi_m4a_projecto_final.configs.Profile;
 import com.example.fidabi_m4a_projecto_final.configs.RecentActiv;
 import com.google.zxing.integration.android.IntentResult;
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -20,6 +24,8 @@ import com.google.zxing.integration.android.IntentIntegrator;
 public class ActivityHome extends AppCompatActivity {
     TextView msjWelcome, role;
     private View scan;
+
+    Button settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,15 +41,16 @@ public class ActivityHome extends AppCompatActivity {
         GlobalData glob = GlobalData.getInstance();
         glob.setRol(getIntent().getStringExtra("rol"));
         glob.setPrimerNombre(getIntent().getStringExtra("primerNombre"));
-            glob.setUsuarios(getIntent().getIntExtra("usuariosnick",0));
+        glob.setUsuarios(getIntent().getLongExtra("usuariosnick",0));
 
         // Container donde esta ubicado el menubottom
         RelativeLayout container = findViewById(R.id.bottomcointainer);
+        LinearLayout container2= findViewById(R.id.contanerliner);
 
         // Estas views son los layouts a ocupar para el menú y categorías desplegables
         View menuView = LayoutInflater.from(this).inflate(R.layout.activity_bottom_menu, container, false);
         View categView = LayoutInflater.from(this).inflate(R.layout.activity_categories, container, false);
-        View recentView = LayoutInflater.from(this).inflate(R.layout.recent_activ, container, false);
+        View recentView = LayoutInflater.from(this).inflate(R.layout.recent_item, container, false);
 
         // Establecer las reglas de posicionamiento
         RelativeLayout.LayoutParams menuParams = new RelativeLayout.LayoutParams(
@@ -63,13 +70,16 @@ public class ActivityHome extends AppCompatActivity {
         // Se asignará dónde se mostrarán los layouts
         container.addView(categView);
         container.addView(menuView);
-        container.addView(recentView);
+        container2.addView(recentView);
 
         // Se llama la configuración de los botones
         Bottomenu.configurationMenu(menuView, categView);
         Categories.configurationCategory(categView);
         RecentActiv.configurationRecentAc(recentView);
 
+
+
+        /*CONFIGURACION DE BOTONES*/
        scan = findViewById(R.id.scanner);
         scan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +92,17 @@ public class ActivityHome extends AppCompatActivity {
                 integrator.setBeepEnabled(false);
                 integrator.setOrientationLocked(false);
                 integrator.initiateScan();
+            }
+        });
+
+        //SETTINGS
+        settings = findViewById(R.id.user_settings);
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent setts = new Intent(ActivityHome.this, ProfileItemActivity.class);
+                startActivity(setts);
+
             }
         });
     }
