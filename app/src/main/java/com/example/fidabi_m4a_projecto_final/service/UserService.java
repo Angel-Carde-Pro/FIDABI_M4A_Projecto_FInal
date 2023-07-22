@@ -25,4 +25,6 @@ public interface UserService {
 
     @POST("/tecazuay/actividadrecs/")
     Call<List<RecentActResponse>> recentActList(@Body RecentActRequest recentActRequest);
+
+
 }

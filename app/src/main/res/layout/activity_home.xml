@@ -83,6 +83,7 @@
         android:textStyle="bold" />
 
     <RelativeLayout
+        android:id="@+id/layoutrelativ"
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:layout_alignParentBottom="true">

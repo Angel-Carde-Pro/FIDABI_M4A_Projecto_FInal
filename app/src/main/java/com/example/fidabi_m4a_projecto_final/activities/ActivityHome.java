@@ -44,8 +44,10 @@ public class ActivityHome extends AppCompatActivity {
         glob.setUsuarios(getIntent().getLongExtra("usuariosnick",0));
 
         // Container donde esta ubicado el menubottom
+
+        /*ESTO*/
         RelativeLayout container = findViewById(R.id.bottomcointainer);
-        LinearLayout container2= findViewById(R.id.contanerliner);
+        RelativeLayout container2= findViewById(R.id.layoutrelativ);
 
         // Estas views son los layouts a ocupar para el menú y categorías desplegables
         View menuView = LayoutInflater.from(this).inflate(R.layout.activity_bottom_menu, container, false);
