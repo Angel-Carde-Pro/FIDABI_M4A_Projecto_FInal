@@ -75,6 +75,7 @@ public class ActivityHome extends AppCompatActivity {
         // Se llama la configuración de los botones
         Bottomenu.configurationMenu(menuView, categView);
         Categories.configurationCategory(categView);
+        Profile.configurationPerfil(categView);
         RecentActiv.configurationRecentAc(recentView);
 
 
