@@ -3,6 +3,7 @@ package com.example.fidabi_m4a_projecto_final.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -33,6 +34,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(getResources().getColor(R.color.azulinicio));
+        }
         btnacept = findViewById(R.id.Iniciar_Sesion_btn);
         btnacept.setBackgroundResource(R.drawable.roundedbuttonista);
         btxolvido = findViewById(R.id.recover_account_txt);
