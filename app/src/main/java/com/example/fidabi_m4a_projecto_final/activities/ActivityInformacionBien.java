@@ -2,8 +2,12 @@ package com.example.fidabi_m4a_projecto_final.activities;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,10 +26,50 @@ public class ActivityInformacionBien extends AppCompatActivity {
     private TextView txtEstado;
     private ApiClient apiClient;
 
+    String selectedOption;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventory_detail);
+
+        // Inicializar el Spinner
+        Spinner spinnerDescripcionLugar = findViewById(R.id.spinner_descripcion_lugar);
+
+        // Obtener el array de opciones del Spinner desde los recursos
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.descripcion_lugar_options,
+                android.R.layout.simple_spinner_item
+        );
+
+        // Especificar el diseño para las opciones que se mostrarán en el Spinner
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // Asignar el adaptador al Spinner
+        spinnerDescripcionLugar.setAdapter(adapter);
+
+        // Escuchador para manejar la selección del Spinner
+        spinnerDescripcionLugar.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // Obtener la opción seleccionada por el usuario (excluyendo la opción "Seleccione una opción")
+                selectedOption = (String) parent.getItemAtPosition(position);
+
+                // Si la opción seleccionada no es "Seleccione una opción", realizar acciones según la opción seleccionada
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Manejar la situación si no se selecciona nada (puedes agregar tu lógica aquí)
+            }
+        });
+
+        // Resto del código en el método onCreate...
+        // (incluyendo la inicialización de otras vistas y el resto de las funciones)
+
+
 
         txtDescripcion = findViewById(R.id.txt_descripcion);
         txtCodigo = findViewById(R.id.cod_txt);
@@ -62,8 +106,13 @@ public class ActivityInformacionBien extends AppCompatActivity {
         btnAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Finalizar el Activity actual y volver al Activity anterior en la pila de actividades
-                finish();
+                if (!selectedOption.equals(getString(R.string.select_option))) {
+                    finish();
+
+                }else {
+                    Toast.makeText(ActivityInformacionBien.this, "Seleccione una opción: ", Toast.LENGTH_SHORT).show();
+
+                }
             }
         });
     }

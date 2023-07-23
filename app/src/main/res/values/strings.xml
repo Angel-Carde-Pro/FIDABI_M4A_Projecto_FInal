@@ -52,4 +52,11 @@
     <string name="user_profile_dsc_btn">Abrir opciones del perfil y otros más.</string>
     <string name="admin_dsc_btn">Abrir opciones de administración.</string>
     <string name="categories_dsc_btn">Abrir todas las categorias disponibles.</string>
+    <string-array name="descripcion_lugar_options">
+        <item>Seleccione una opción</item>
+        <item>Se encuentra en el lugar correcto</item>
+        <item>No se encuentra en el lugar correcto</item>
+    </string-array>
+    <string name="select_option">Seleccione una opción</string>
+
 </resources>
