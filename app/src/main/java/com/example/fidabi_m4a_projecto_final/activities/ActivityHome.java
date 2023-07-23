@@ -18,8 +18,14 @@ import com.example.fidabi_m4a_projecto_final.configs.Bottomenu;
 import com.example.fidabi_m4a_projecto_final.configs.Categories;
 import com.example.fidabi_m4a_projecto_final.configs.Profile;
 import com.example.fidabi_m4a_projecto_final.configs.RecentActiv;
+import com.google.zxing.BarcodeFormat;
 import com.google.zxing.integration.android.IntentResult;
 import com.google.zxing.integration.android.IntentIntegrator;
+import com.journeyapps.barcodescanner.DecoderFactory;
+import com.journeyapps.barcodescanner.DefaultDecoderFactory;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class ActivityHome extends AppCompatActivity {
     TextView msjWelcome, role;
@@ -87,25 +93,15 @@ public class ActivityHome extends AppCompatActivity {
         scan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Iniciar el escaneo del código QR
+                // Iniciar el escaneo de códigos de barras y códigos QR
                 IntentIntegrator integrator = new IntentIntegrator(ActivityHome.this);
-                integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE);
-                integrator.setPrompt("Escanear código QR");
-                integrator.setCameraId(0);
+                integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
+                integrator.setPrompt("Escanear código de barras del Biemn");
+                integrator.setCameraId(0); // Usar el scanner por defecto del teléfono
                 integrator.setBeepEnabled(false);
                 integrator.setOrientationLocked(false);
+
                 integrator.initiateScan();
-            }
-        });
-
-        //SETTINGS
-        settings = findViewById(R.id.user_settings);
-        settings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent setts = new Intent(ActivityHome.this, ProfileItemActivity.class);
-                startActivity(setts);
-
             }
         });
     }
@@ -120,9 +116,10 @@ public class ActivityHome extends AppCompatActivity {
             if (result.getContents() != null) {
                 // Crear un intent para abrir la actividad de información del bien
                 Intent informacionBienIntent = new Intent(ActivityHome.this, ActivityInformacionBien.class);
-                informacionBienIntent.putExtra("qrContent", result.getContents());
+                informacionBienIntent.putExtra("scanned_data", result.getContents());
                 startActivity(informacionBienIntent);
             }
         }
     }
 }
+
