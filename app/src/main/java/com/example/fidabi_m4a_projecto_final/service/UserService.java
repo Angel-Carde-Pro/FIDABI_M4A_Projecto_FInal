@@ -4,6 +4,7 @@ import com.example.fidabi_m4a_projecto_final.request.BienResponse;
 import com.example.fidabi_m4a_projecto_final.request.CatResponse;
 import com.example.fidabi_m4a_projecto_final.request.LoginRequest;
 import com.example.fidabi_m4a_projecto_final.request.LoginResponse;
+import com.example.fidabi_m4a_projecto_final.request.Propietario;
 import com.example.fidabi_m4a_projecto_final.request.RecentActRequest;
 import com.example.fidabi_m4a_projecto_final.request.RecentActResponse;
 
@@ -30,4 +31,6 @@ public interface UserService {
     Call<List<RecentActResponse>> recentActList(@Body RecentActRequest recentActRequest);
     @GET("/tecazuay/bien/codigo-barras")
     Call<BienResponse> obtenerDatosBienPorCodigoBarras(@Query("codigoBarras") String codigoBarras);
+    @GET("/tecazuay/propietarios")
+    Call<List<Propietario>> index();
 }
