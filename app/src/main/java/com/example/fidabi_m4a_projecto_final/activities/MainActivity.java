@@ -1,10 +1,12 @@
 package com.example.fidabi_m4a_projecto_final.activities;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.fidabi_m4a_projecto_final.R;
 
@@ -18,6 +20,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        //cambiar color barra de estado
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(getResources().getColor(R.color.blueista));
+        }
+
+        ImageView imgWave3 = findViewById(R.id.img_wave3);
+        ImageView imgWave2 = findViewById(R.id.img_wave2);
+        ImageView Yellow_circle = findViewById(R.id.yellow_circle);
+
+        // Cargar la animación
+        Animation bubbleAnimation = AnimationUtils.loadAnimation(this, R.anim.bubble_anim);
+
+        // Aplicar la animación al ImageView img_wave3
+        imgWave3.startAnimation(bubbleAnimation);
+        imgWave2.startAnimation(bubbleAnimation);
+        Yellow_circle.startAnimation(bubbleAnimation);
 
         TimerTask tarea = new TimerTask() {
             @Override
@@ -29,6 +47,6 @@ public class MainActivity extends AppCompatActivity {
         };
 
         Timer tiempo = new Timer();
-        tiempo.schedule(tarea, 1000);
+        tiempo.schedule(tarea, 3000);
     }
 }

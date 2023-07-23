@@ -9,4 +9,14 @@
         <item name="borderSize">10dp</item> <!-- Tamaño del borde -->
         <item name="squareViewFinder">true</item> <!-- Mostrar la caja como un cuadrado -->
     </style>
+
+    <!-- Tema de la aplicación -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/blueista</item>
+    </style>
+
+    <!-- Tema de una actividad específica -->
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:statusBarColor">@color/blueista</item>
+    </style>
 </resources>

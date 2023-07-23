@@ -50,7 +50,7 @@ public class ListActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<Propietario>> call, Throwable t) {
 
-                
+
             }
         });
     }
