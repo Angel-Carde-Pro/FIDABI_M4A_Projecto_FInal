@@ -42,7 +42,7 @@
                     android:contentDescription="@string/home_dsc_btn" />
 
                 <Button
-                    android:id="@+id/scan"
+                    android:id="@+id/btn_plus"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_centerVertical="true"

@@ -7,9 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.fidabi_m4a_projecto_final.GlobalData;
@@ -18,14 +16,10 @@ import com.example.fidabi_m4a_projecto_final.configs.Bottomenu;
 import com.example.fidabi_m4a_projecto_final.configs.Categories;
 import com.example.fidabi_m4a_projecto_final.configs.Profile;
 import com.example.fidabi_m4a_projecto_final.configs.RecentActiv;
-import com.google.zxing.BarcodeFormat;
 import com.google.zxing.integration.android.IntentResult;
 import com.google.zxing.integration.android.IntentIntegrator;
-import com.journeyapps.barcodescanner.DecoderFactory;
-import com.journeyapps.barcodescanner.DefaultDecoderFactory;
 
-import java.util.Arrays;
-import java.util.List;
+
 
 public class ActivityHome extends AppCompatActivity {
     TextView msjWelcome, role;
@@ -59,6 +53,7 @@ public class ActivityHome extends AppCompatActivity {
         View menuView = LayoutInflater.from(this).inflate(R.layout.activity_bottom_menu, container, false);
         View categView = LayoutInflater.from(this).inflate(R.layout.activity_categories, container, false);
         View recentView = LayoutInflater.from(this).inflate(R.layout.recent_item, container, false);
+        View listView = LayoutInflater.from(this).inflate(R.layout.listactivity, container, false);
 
         // Establecer las reglas de posicionamiento
         RelativeLayout.LayoutParams menuParams = new RelativeLayout.LayoutParams(
