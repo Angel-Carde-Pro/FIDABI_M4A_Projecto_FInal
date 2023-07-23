@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.example.fidabi_m4a_projecto_final.R;
+import com.example.fidabi_m4a_projecto_final.activities.InventoryActivity;
 import com.example.fidabi_m4a_projecto_final.activities.ListActivity;
 import com.example.fidabi_m4a_projecto_final.activities.ProfileItemActivity;
 
@@ -36,7 +37,7 @@ public class Bottomenu {
             public void onClick(View v) {
 
                 System.out.println("aqui se abre los listados");
-                Intent listActivityIntent = new Intent(view.getContext(), ListActivity.class);
+                Intent listActivityIntent = new Intent(view.getContext(), InventoryActivity.class);
                 view.getContext().startActivity(listActivityIntent);
             }
         });

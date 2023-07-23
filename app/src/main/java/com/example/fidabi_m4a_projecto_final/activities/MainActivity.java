@@ -22,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         //cambiar color barra de estado
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.blueista));
+            getWindow().setStatusBarColor(getResources().getColor(R.color.blancoSplash));
+            getWindow().setNavigationBarColor(getResources().getColor(R.color.blancoSplash));
         }
 
         ImageView imgWave3 = findViewById(R.id.img_wave3);
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         // Cargar la animación
         Animation bubbleAnimation = AnimationUtils.loadAnimation(this, R.anim.bubble_anim);
 
-        // Aplicar la animación al ImageView img_wave3
+        // Aplicar la animación
         imgWave3.startAnimation(bubbleAnimation);
         imgWave2.startAnimation(bubbleAnimation);
         Yellow_circle.startAnimation(bubbleAnimation);

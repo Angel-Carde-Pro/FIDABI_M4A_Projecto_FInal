@@ -36,6 +36,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.azulinicio));
+            getWindow().setNavigationBarColor(getResources().getColor(R.color.azulinicio));
+
         }
         btnacept = findViewById(R.id.Iniciar_Sesion_btn);
         btnacept.setBackgroundResource(R.drawable.roundedbuttonista);
