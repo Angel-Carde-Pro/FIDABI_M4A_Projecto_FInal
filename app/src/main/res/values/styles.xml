@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Otros estilos y atributos aquí -->
+
+    <!-- Estilo para la caja del escáner -->
+    <style name="CustomScannerStyle">
+        <item name="android:background">@color/purple_200</item> <!-- Color morado con 50% de opacidad -->
+        <item name="borderColor">#FFFFFF</item> <!-- Color blanco para el borde -->
+        <item name="borderSize">10dp</item> <!-- Tamaño del borde -->
+        <item name="squareViewFinder">true</item> <!-- Mostrar la caja como un cuadrado -->
+    </style>
+</resources>

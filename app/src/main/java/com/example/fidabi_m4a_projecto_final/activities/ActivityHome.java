@@ -96,10 +96,14 @@ public class ActivityHome extends AppCompatActivity {
                 // Iniciar el escaneo de códigos de barras y códigos QR
                 IntentIntegrator integrator = new IntentIntegrator(ActivityHome.this);
                 integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
-                integrator.setPrompt("Escanear código de barras del Biemn");
+                integrator.setPrompt("Escanear código de barras del Bien");
                 integrator.setCameraId(0); // Usar el scanner por defecto del teléfono
                 integrator.setBeepEnabled(false);
                 integrator.setOrientationLocked(false);
+
+                // Personalizar el escaneo
+                integrator.setCaptureActivity(CustomScannerActivity.class); // Actividad personalizada para el escaneo
+                integrator.setBarcodeImageEnabled(true); // Mostrar el código escaneado en la pantalla
 
                 integrator.initiateScan();
             }

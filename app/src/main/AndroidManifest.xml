@@ -28,6 +28,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".activities.CustomScannerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
             android:name=".activities.ActivityInformacionBien"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
