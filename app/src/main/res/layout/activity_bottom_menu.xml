@@ -31,20 +31,20 @@
 
                 <Button
                     android:id="@+id/homebtn"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="25dp"
                     android:background="@drawable/icon_home"
                     android:backgroundTint="#402CB1"
-                    android:padding="4dp"
                     android:clickable="true"
-                    android:contentDescription="@string/home_dsc_btn" />
+                    android:contentDescription="@string/home_dsc_btn"
+                    android:padding="4dp" />
 
                 <Button
                     android:id="@+id/scan"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="25dp"
                     android:layout_marginLeft="25dp"
@@ -77,8 +77,8 @@
 
                 <Button
                     android:id="@+id/user_settings"
-                    android:layout_width="52dp"
-                    android:layout_height="52dp"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="20dp"
