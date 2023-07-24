@@ -30,6 +30,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".activities.CustomScannerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
             android:name=".activities.ActivityInformacionBien"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
@@ -45,6 +49,14 @@
             android:name=".activities.ProfileItemActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".activities.ListActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".activities.InventoryActivity"
+            android:exported="false"
+            android:theme="@style/AppThemeBarra" />
 
     </application>
 

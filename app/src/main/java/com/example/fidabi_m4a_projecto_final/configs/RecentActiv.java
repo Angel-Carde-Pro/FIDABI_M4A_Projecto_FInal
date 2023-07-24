@@ -19,7 +19,6 @@ import retrofit2.Response;
 
 
 public class RecentActiv {
-
     public static void configurationRecentAc(View view){
         RecentActRequest reacres = new RecentActRequest();
         GlobalData glob = GlobalData.getInstance();
@@ -28,6 +27,7 @@ public class RecentActiv {
         TextView descripcion = view.findViewById(R.id.desc_txt);
         TextView fecha = view.findViewById(R.id.date_txt);
         TextView usuario = view.findViewById(R.id.usu_txt);
+
 
         //OJO AGREGAR VALIDACION DE USUARIO CON UN IF AL CALL
 
@@ -42,7 +42,6 @@ public class RecentActiv {
                 List<RecentActResponse> actList = response.body();
                 if (actList != null && !actList.isEmpty()) { // Check if the list is not null and not empty
                     LinearLayout containerrecent = view.findViewById(R.id.itemlayout);
-                    System.out.println(actList.get(0));
 
                     for (RecentActResponse recentActRes : actList){
                         View recentView = LayoutInflater.from(view.getContext()).inflate(R.layout.recent_item, null);

@@ -11,9 +11,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.fidabi_m4a_projecto_final.GlobalData;
@@ -24,6 +22,8 @@ import com.example.fidabi_m4a_projecto_final.configs.Profile;
 import com.example.fidabi_m4a_projecto_final.configs.RecentActiv;
 import com.google.zxing.integration.android.IntentResult;
 import com.google.zxing.integration.android.IntentIntegrator;
+
+
 
 public class ActivityHome extends AppCompatActivity {
     TextView msjWelcome, role;
@@ -42,6 +42,9 @@ public class ActivityHome extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(getResources().getColor(R.color.blueista));
+        }
         msjWelcome = findViewById(R.id.welcome_mss2);
         role = findViewById(R.id.role_id);
 
@@ -55,13 +58,16 @@ public class ActivityHome extends AppCompatActivity {
         glob.setUsuarios(getIntent().getLongExtra("usuariosnick",0));
 
         // Container donde esta ubicado el menubottom
+
+        /*ESTO*/
         RelativeLayout container = findViewById(R.id.bottomcointainer);
-        LinearLayout container2= findViewById(R.id.contanerliner);
+        RelativeLayout container2= findViewById(R.id.layoutrelativ);
 
         // Estas views son los layouts a ocupar para el menú y categorías desplegables
         View menuView = LayoutInflater.from(this).inflate(R.layout.activity_bottom_menu, container, false);
         View categView = LayoutInflater.from(this).inflate(R.layout.activity_categories, container, false);
         View recentView = LayoutInflater.from(this).inflate(R.layout.recent_item, container, false);
+        View listView = LayoutInflater.from(this).inflate(R.layout.listactivity, container, false);
 
         // Establecer las reglas de posicionamiento
         RelativeLayout.LayoutParams menuParams = new RelativeLayout.LayoutParams(
@@ -96,25 +102,19 @@ public class ActivityHome extends AppCompatActivity {
         scan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Iniciar el escaneo del código QR
+                // Iniciar el escaneo de códigos de barras y códigos QR
                 IntentIntegrator integrator = new IntentIntegrator(ActivityHome.this);
-                integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE);
-                integrator.setPrompt("Escanear código QR");
-                integrator.setCameraId(0);
+                integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
+                integrator.setPrompt("Escanear código de barras del Bien");
+                integrator.setCameraId(0); // Usar el scanner por defecto del teléfono
                 integrator.setBeepEnabled(false);
                 integrator.setOrientationLocked(false);
+
+                // Personalizar el escaneo
+                integrator.setCaptureActivity(CustomScannerActivity.class); // Actividad personalizada para el escaneo
+                integrator.setBarcodeImageEnabled(true); // Mostrar el código escaneado en la pantalla
+
                 integrator.initiateScan();
-            }
-        });
-
-        //SETTINGS
-        settings = findViewById(R.id.user_settings);
-        settings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent setts = new Intent(ActivityHome.this, ProfileItemActivity.class);
-                startActivity(setts);
-
             }
         });
     }
@@ -129,9 +129,12 @@ public class ActivityHome extends AppCompatActivity {
             if (result.getContents() != null) {
                 // Crear un intent para abrir la actividad de información del bien
                 Intent informacionBienIntent = new Intent(ActivityHome.this, ActivityInformacionBien.class);
-                informacionBienIntent.putExtra("qrContent", result.getContents());
+                informacionBienIntent.putExtra("scanned_data", result.getContents());
                 startActivity(informacionBienIntent);
+            }else{
+                finish();
             }
         }
     }
 }
+

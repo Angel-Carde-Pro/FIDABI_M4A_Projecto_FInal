@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.example.fidabi_m4a_projecto_final.R;
+import com.example.fidabi_m4a_projecto_final.activities.InventoryActivity;
+import com.example.fidabi_m4a_projecto_final.activities.ListActivity;
 import com.example.fidabi_m4a_projecto_final.activities.ProfileItemActivity;
 
 public class Bottomenu {
@@ -17,7 +19,7 @@ public class Bottomenu {
     private RelativeLayout layoutDesplegable;
     private static boolean desplegue = false;
     public static void configurationMenu(View view, View categView){
-        Button home,categ,admi, profile;
+        Button home,categ,admi, profile,plus;
         ImageView scaner;
         categView.setVisibility(View.INVISIBLE);
 
@@ -29,7 +31,16 @@ public class Bottomenu {
                 System.out.println("jolallalasldlasldlalsdas");
             }
         });
+        plus = view.findViewById(R.id.btn_plus);
+        plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                System.out.println("aqui se abre los listados");
+                Intent listActivityIntent = new Intent(view.getContext(), InventoryActivity.class);
+                view.getContext().startActivity(listActivityIntent);
+            }
+        });
         //
         scaner = view.findViewById(R.id.categorias);
         scaner.setOnClickListener(new View.OnClickListener() {

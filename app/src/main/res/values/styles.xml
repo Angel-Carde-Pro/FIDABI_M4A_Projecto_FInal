@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Otros estilos y atributos aquí -->
+
+    <!-- Estilo para la caja del escáner -->
+    <style name="CustomScannerStyle">
+        <item name="android:background">@color/purple_200</item> <!-- Color morado con 50% de opacidad -->
+        <item name="borderColor">#FFFFFF</item> <!-- Color blanco para el borde -->
+        <item name="borderSize">10dp</item> <!-- Tamaño del borde -->
+        <item name="squareViewFinder">true</item> <!-- Mostrar la caja como un cuadrado -->
+    </style>
+
+    <!-- Tema de la aplicación -->
+    <style name="AppThemea" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/blueista</item>
+    </style>
+
+    <!-- Tema de una actividad específica -->
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:statusBarColor">@color/blueista</item>
+    </style>
+
+    <style name="AppThemeBarra" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Personaliza el color primario y otros atributos según tus preferencias -->
+        <item name="colorPrimary">@color/azulinicio</item>
+        <item name="colorPrimaryDark">@color/azulinicio</item>
+        <item name="colorAccent">@color/azulinicio</item>
+    </style>
+
+    <!-- Estilo para el AppBarLayout -->
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="ExpandedTitleStyle" parent="@android:style/TextAppearance.Large">
+        <item name="android:textColor">#FFFFFF</item> <!-- Color blanco para el título -->
+    </style>
+
+    <!-- Estilo para el título colapsado -->
+    <style name="CollapsedTitleStyle" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">#FFFFFF</item> <!-- Color blanco para el título -->
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- Theme for the CollapsingToolbarLayout -->
+
+    <!-- Theme for the Toolbar -->
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- Style for the title text in the CollapsingToolbarLayout -->
+    <style name="CollapsingToolbarTitleStyle">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+</resources>

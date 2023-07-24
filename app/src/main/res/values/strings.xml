@@ -22,7 +22,7 @@
     <string name="accept">Aceptar y Continuar</string>
     <string name="hi_user">HOLA!\n[User Name]</string>
     <string name="log_out">Cerrar Sesion</string>
-    <string name="success_alert">Alerta de acción satisfactoria</string>
+    <string name="success_alert">¡Exito!</string>
     <string name="success_mssg">Se guardo la información correctamente</string>
     <string name="fail_alert">Algo ocurrió….</string>
     <string name="reminder_off">Recordatorio apagado</string>
@@ -52,4 +52,11 @@
     <string name="user_profile_dsc_btn">Abrir opciones del perfil y otros más.</string>
     <string name="admin_dsc_btn">Abrir opciones de administración.</string>
     <string name="categories_dsc_btn">Abrir todas las categorias disponibles.</string>
+    <string-array name="descripcion_lugar_options">
+        <item>Seleccione una opción</item>
+        <item>Se encuentra en el lugar correcto</item>
+        <item>No se encuentra en el lugar correcto</item>
+    </string-array>
+    <string name="select_option">Seleccione una opción</string>
+
 </resources>
