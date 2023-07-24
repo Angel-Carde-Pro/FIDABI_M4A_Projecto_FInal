@@ -12,12 +12,25 @@ import com.example.fidabi_m4a_projecto_final.GlobalData;
 import com.example.fidabi_m4a_projecto_final.R;
 
 public class ProfileItemActivity extends AppCompatActivity {
-    RelativeLayout signup;
+    RelativeLayout signup, setting;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_item);
         signup = findViewById(R.id.log_out);
+        setting = findViewById(R.id.ajustes);
+
+
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent timer = new Intent(ProfileItemActivity.this,TimerContaActivity.class );
+                startActivity(timer);
+            }
+        });
+
+
+
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
