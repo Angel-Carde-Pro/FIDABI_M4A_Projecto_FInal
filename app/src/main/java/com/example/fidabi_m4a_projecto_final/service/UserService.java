@@ -7,6 +7,7 @@ import com.example.fidabi_m4a_projecto_final.request.LoginResponse;
 import com.example.fidabi_m4a_projecto_final.request.Propietario;
 import com.example.fidabi_m4a_projecto_final.request.RecentActRequest;
 import com.example.fidabi_m4a_projecto_final.request.RecentActResponse;
+import com.example.fidabi_m4a_projecto_final.request.UdescripcionLugar;
 
 import java.util.List;
 
@@ -14,6 +15,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -33,4 +35,7 @@ public interface UserService {
     Call<BienResponse> obtenerDatosBienPorCodigoBarras(@Query("codigoBarras") String codigoBarras);
     @GET("/tecazuay/propietarios")
     Call<List<Propietario>> index();
+    @PUT("/tecazuay/bien/actualizar-descripcion-lugar/{bien_codigoG}")
+    Call<Void> actualizarDescripcionLugar(@Path("bien_codigoG") String bienCodigoG, @Body UdescripcionLugar udescripcionLugar);
+
 }

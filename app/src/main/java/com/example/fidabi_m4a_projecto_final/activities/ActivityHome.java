@@ -121,6 +121,8 @@ public class ActivityHome extends AppCompatActivity {
                 Intent informacionBienIntent = new Intent(ActivityHome.this, ActivityInformacionBien.class);
                 informacionBienIntent.putExtra("scanned_data", result.getContents());
                 startActivity(informacionBienIntent);
+            }else{
+                finish();
             }
         }
     }
