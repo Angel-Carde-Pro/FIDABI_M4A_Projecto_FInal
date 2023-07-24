@@ -14,15 +14,24 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.fidabi_m4a_projecto_final.ApiClient;
 import com.example.fidabi_m4a_projecto_final.GlobalData;
 import com.example.fidabi_m4a_projecto_final.R;
 import com.example.fidabi_m4a_projecto_final.configs.Bottomenu;
 import com.example.fidabi_m4a_projecto_final.configs.Categories;
 import com.example.fidabi_m4a_projecto_final.configs.Profile;
 import com.example.fidabi_m4a_projecto_final.configs.RecentActiv;
+import com.example.fidabi_m4a_projecto_final.request.FechaBienResponse;
+import com.example.fidabi_m4a_projecto_final.service.UserService;
 import com.google.zxing.integration.android.IntentResult;
 import com.google.zxing.integration.android.IntentIntegrator;
 
+import java.util.Date;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class ActivityHome extends AppCompatActivity {
@@ -135,6 +144,29 @@ public class ActivityHome extends AppCompatActivity {
                 finish();
             }
         }
+    }
+
+    public void fechasproximas(){
+        UserService userService = ApiClient.getUserService();
+
+        Call<List<FechaBienResponse>> call = userService.fechprox();
+        call.enqueue(new Callback<List<FechaBienResponse>>() {
+            @Override
+            public void onResponse(Call<List<FechaBienResponse>> call, Response<List<FechaBienResponse>> response) {
+                List<FechaBienResponse> fechaBienResponses = response.body();
+                for (FechaBienResponse fechas : fechaBienResponses){
+                    String nombre = fechas.getBien_detalles();
+                    String fechaprox = fechas.getBien_fecha_consta();
+
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<List<FechaBienResponse>> call, Throwable t) {
+
+            }   
+        });
     }
 }
 

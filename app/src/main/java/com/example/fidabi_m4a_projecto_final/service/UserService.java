@@ -2,6 +2,7 @@ package com.example.fidabi_m4a_projecto_final.service;
 
 import com.example.fidabi_m4a_projecto_final.request.BienResponse;
 import com.example.fidabi_m4a_projecto_final.request.CatResponse;
+import com.example.fidabi_m4a_projecto_final.request.FechaBienResponse;
 import com.example.fidabi_m4a_projecto_final.request.LoginRequest;
 import com.example.fidabi_m4a_projecto_final.request.LoginResponse;
 import com.example.fidabi_m4a_projecto_final.request.Propietario;
@@ -37,5 +38,9 @@ public interface UserService {
     Call<List<Propietario>> index();
     @PUT("/tecazuay/bien/actualizar-descripcion-lugar/{bien_codigoG}")
     Call<Void> actualizarDescripcionLugar(@Path("bien_codigoG") String bienCodigoG, @Body UdescripcionLugar udescripcionLugar);
+    @PUT("/tecazuay/bien/actualizartodos/{intervalo}")
+    Call<Void> updatevalido(@Path("intervalo") int intervalo);
 
+    @GET("/bien/fechasprox")
+    Call<List<FechaBienResponse>> fechprox ();
 }
