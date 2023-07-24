@@ -60,14 +60,14 @@ public class ActivityHome extends AppCompatActivity {
         // Container donde esta ubicado el menubottom
 
         /*ESTO*/
-        RelativeLayout container = findViewById(R.id.bottomcointainer);
-        RelativeLayout container2= findViewById(R.id.layoutrelativ);
+//        RelativeLayout container = findViewById(R.id.bottomcointainer);
+//        RelativeLayout container2= findViewById(R.id.layoutrelativ);
 
         // Estas views son los layouts a ocupar para el menú y categorías desplegables
-        View menuView = LayoutInflater.from(this).inflate(R.layout.activity_bottom_menu, container, false);
-        View categView = LayoutInflater.from(this).inflate(R.layout.activity_categories, container, false);
-        View recentView = LayoutInflater.from(this).inflate(R.layout.recent_item, container, false);
-        View listView = LayoutInflater.from(this).inflate(R.layout.listactivity, container, false);
+//        View menuView = LayoutInflater.from(this).inflate(R.layout.activity_bottom_menu, container, false);
+//        View categView = LayoutInflater.from(this).inflate(R.layout.activity_categories, container, false);
+//        View recentView = LayoutInflater.from(this).inflate(R.layout.recent_item, container, false);
+//        View listView = LayoutInflater.from(this).inflate(R.layout.listactivity, container, false);
 
         // Establecer las reglas de posicionamiento
         RelativeLayout.LayoutParams menuParams = new RelativeLayout.LayoutParams(
@@ -75,27 +75,25 @@ public class ActivityHome extends AppCompatActivity {
                 RelativeLayout.LayoutParams.WRAP_CONTENT
         );
         menuParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-        menuView.setLayoutParams(menuParams);
+//        menuView.setLayoutParams(menuParams);
 
         RelativeLayout.LayoutParams categParams = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.MATCH_PARENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT
         );
-        categParams.addRule(RelativeLayout.ABOVE, menuView.getId());
-        categView.setLayoutParams(categParams);
+//        categParams.addRule(RelativeLayout.ABOVE, menuView.getId());
+//        categView.setLayoutParams(categParams);
 
         // Se asignará dónde se mostrarán los layouts
-        container.addView(categView);
-        container.addView(menuView);
-        container2.addView(recentView);
+//        container.addView(categView);
+//        container.addView(menuView);
+//        container2.addView(recentView);
 
         // Se llama la configuración de los botones
-        Bottomenu.configurationMenu(menuView, categView);
-        Categories.configurationCategory(categView);
-        Profile.configurationPerfil(categView);
-        RecentActiv.configurationRecentAc(recentView);
-
-
+//        Bottomenu.configurationMenu(menuView, categView);
+//        Categories.configurationCategory(categView);
+//        Profile.configurationPerfil(categView);
+//        RecentActiv.configurationRecentAc(recentView);
 
         /*CONFIGURACION DE BOTONES*/
        scan = findViewById(R.id.scanner);
