@@ -132,6 +132,7 @@ public class ActivityInformacionBien extends AppCompatActivity {
 
     private void mostrarErrorbien() {
         View errorView = getLayoutInflater().inflate(R.layout.dialog_fail, null);
+        errorView.setAlpha(0f); // Inicialmente, configurar la transparencia a 0
 
         TextView tvErrorMessage = errorView.findViewById(R.id.tvErrorMessage);
         tvErrorMessage.setText("El bien no fue encontrado en la base de datos.");
@@ -148,10 +149,14 @@ public class ActivityInformacionBien extends AppCompatActivity {
                 ViewGroup.LayoutParams.MATCH_PARENT
         );
         addContentView(errorView, params);
+
+        // Animación de aparición
+        errorView.animate().alpha(1f).setDuration(500).start();
     }
 
     private void mostrarExitomodbien() {
         View errorView = getLayoutInflater().inflate(R.layout.dialog_exito, null);
+        errorView.setAlpha(0f); // Inicialmente, configurar la transparencia a 0
 
         TextView tvErrorMessage = errorView.findViewById(R.id.MessageExito);
         tvErrorMessage.setText("El bien se actualizó con la descripción del lugar correctamente");
@@ -168,5 +173,9 @@ public class ActivityInformacionBien extends AppCompatActivity {
                 ViewGroup.LayoutParams.MATCH_PARENT
         );
         addContentView(errorView, params);
+
+        // Animación de aparición
+        errorView.animate().alpha(1f).setDuration(300).start();
+        //ready
     }
 }

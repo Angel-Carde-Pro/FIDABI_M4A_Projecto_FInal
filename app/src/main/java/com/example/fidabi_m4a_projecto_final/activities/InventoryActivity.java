@@ -23,7 +23,6 @@ public class InventoryActivity extends AppCompatActivity {
 
         toolbar.setTitle("Listados");
 
-        // Configura el Toolbar como la ActionBar de la actividad
         setSupportActionBar(toolbar);
     }
 
