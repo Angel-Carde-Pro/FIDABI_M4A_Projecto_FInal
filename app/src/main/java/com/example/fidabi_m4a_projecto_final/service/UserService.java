@@ -41,6 +41,6 @@ public interface UserService {
     @PUT("/tecazuay/bien/actualizartodos/{intervalo}")
     Call<Void> updatevalido(@Path("intervalo") int intervalo);
 
-    @GET("/bien/fechasprox")
+    @GET("/tecazuay/bien/fechasprox")
     Call<List<FechaBienResponse>> fechprox ();
 }
