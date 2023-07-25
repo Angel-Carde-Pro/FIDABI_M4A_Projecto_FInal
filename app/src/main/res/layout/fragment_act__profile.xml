@@ -63,7 +63,7 @@
             android:paddingLeft="10dp"
             android:text="@string/acount"
             android:textColor="#252450"
-            android:textSize="18sp"
+            android:textSize="18dp"
             android:textStyle="bold" />
 
         <View

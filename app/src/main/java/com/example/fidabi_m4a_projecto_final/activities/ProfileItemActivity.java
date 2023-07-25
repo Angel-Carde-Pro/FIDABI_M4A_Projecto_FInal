@@ -13,33 +13,30 @@ import com.example.fidabi_m4a_projecto_final.R;
 
 public class ProfileItemActivity extends AppCompatActivity {
     RelativeLayout signup, setting;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile_item);
+        setContentView(R.layout.fragment_act__profile);
         signup = findViewById(R.id.log_out);
         setting = findViewById(R.id.ajustes);
-
-
-        setting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent timer = new Intent(ProfileItemActivity.this,TimerContaActivity.class );
-                startActivity(timer);
-            }
-        });
-
-
-
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 GlobalData data = GlobalData.getInstance();
                 Intent close = new Intent(ProfileItemActivity.this, LoginActivity.class);
-                close.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                close.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(close);
                 data.cerrarsesion();
+            }
+        });
+
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent timer = new Intent(ProfileItemActivity.this, TimerContaActivity.class);
+                startActivity(timer);
             }
         });
     }
