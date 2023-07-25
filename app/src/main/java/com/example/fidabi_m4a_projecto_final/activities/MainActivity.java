@@ -107,6 +107,25 @@ public class MainActivity extends AppCompatActivity {
         // TODO: COLOCAR EL ICONO DE SELECCIONADO
 //        tab.iconImgBtn.setImageResource(R.drawable.home_selected_icon);
 
+        // ** Para pasar datos que fueron traidos del login **
+        Bundle bundle = new Bundle();
+        Fragment fragment = null;
+        switch (selectedTab)
+        {
+            case 1:
+//                bundle.putString("usuariosnick", usuario);
+//                 Adjunta los argumentos al Fragment
+//                tab.fragmentClass.setArguments(bundle);
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+        }
         getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
                 .replace(R.id.fragment_container, tab.fragmentClass, null)

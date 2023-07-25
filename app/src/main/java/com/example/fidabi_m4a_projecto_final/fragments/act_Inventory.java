@@ -51,7 +51,6 @@ public class act_Inventory extends Fragment {
         toolbar.setTitle("Listados");
 
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
-
         return root;
     }
 

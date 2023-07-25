@@ -99,6 +99,11 @@ public class act_home extends Fragment {
         return root;
     }
 
+    private void InstanciarRecentItems()
+    {
+
+    }
+
     public void InitScanButton() {
         IntentIntegrator integrator = IntentIntegrator.forSupportFragment(this);
         integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
