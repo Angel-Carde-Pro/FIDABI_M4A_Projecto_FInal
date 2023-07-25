@@ -36,7 +36,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class act_Inventory extends Fragment {
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

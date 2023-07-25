@@ -28,12 +28,10 @@ public class RecentActiv {
         TextView fecha = view.findViewById(R.id.date_txt);
         TextView usuario = view.findViewById(R.id.usu_txt);
 
-
         //OJO AGREGAR VALIDACION DE USUARIO CON UN IF AL CALL
 
         //Obtener la llamada hacia el API
         retrofit2.Call<List<RecentActResponse>> call = ApiClient.getUserService().recentActList(reacres);
-
 
         //Obtenenmos JSON
         call.enqueue(new Callback<List<RecentActResponse>>() {

@@ -41,7 +41,7 @@ public class Bottomenu {
             }
         });
         //
-        scaner = view.findViewById(R.id.categorias);
+        scaner = view.findViewById(R.id.categorias_btn);
         scaner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

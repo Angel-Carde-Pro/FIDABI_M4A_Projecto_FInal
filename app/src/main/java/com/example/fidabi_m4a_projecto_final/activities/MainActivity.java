@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
         // *CONFIGURACIÓN DE LOS BOTONES DE LA BARRA DE OPCIONES*
         setUpTab(tabs[1], findViewById(R.id.homebtn), act_home.class, ContextCompat.getColor(this, R.color.blueista), R.drawable.icon_home, R.drawable.icon_home);
         setUpTab(tabs[2], findViewById(R.id.btn_plus), act_Inventory.class, ContextCompat.getColor(this, R.color.blueista), R.drawable.icon_home, R.drawable.icon_home);
-        setUpTab(tabs[3], findViewById(R.id.btn_plus), act_home.class, ContextCompat.getColor(this, R.color.blueista), R.drawable.icon_home, R.drawable.icon_home);
-        setUpTab(tabs[4], findViewById(R.id.user_settings), act_home.class, ContextCompat.getColor(this, R.color.blueista), R.drawable.icon_home, R.drawable.icon_home);
+        setUpTab(tabs[3], findViewById(R.id.categorias_btn), act_home.class, ContextCompat.getColor(this, R.color.blueista), R.drawable.icon_home, R.drawable.icon_home);
+        setUpTab(tabs[4], findViewById(R.id.admin), act_home.class, ContextCompat.getColor(this, R.color.blueista), R.drawable.icon_home, R.drawable.icon_home);
         setUpTab(tabs[5], findViewById(R.id.user_settings), Act_Profile.class, ContextCompat.getColor(this, R.color.statusbar_profile), R.drawable.user_icon, R.drawable.user_icon);
 
         ChangeColorStatusBar(tabs[1].statusBarColor);
@@ -94,8 +94,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void selectTab(Tab tab) {
-
-        System.out.println("SASASA"+tab.actionBtn.getAccessibilityClassName());
         // Anula la selección de la pestaña anteriormente seleccionada
         Tab oldTab = tabs[selectedTab];
         // TODO: CAMBIAR EL ICONO DE SELECCIONADO AL NORMAL
