@@ -163,8 +163,37 @@ public class FechaBienResponse {
             private boolean cat_estado;
             private String cat_nombre;
 
-            // Getters y setters
-            // ...
+            public int getCat_cod() {
+                return cat_cod;
+            }
+
+            public void setCat_cod(int cat_cod) {
+                this.cat_cod = cat_cod;
+            }
+
+            public String getCat_descripcion() {
+                return cat_descripcion;
+            }
+
+            public void setCat_descripcion(String cat_descripcion) {
+                this.cat_descripcion = cat_descripcion;
+            }
+
+            public boolean isCat_estado() {
+                return cat_estado;
+            }
+
+            public void setCat_estado(boolean cat_estado) {
+                this.cat_estado = cat_estado;
+            }
+
+            public String getCat_nombre() {
+                return cat_nombre;
+            }
+
+            public void setCat_nombre(String cat_nombre) {
+                this.cat_nombre = cat_nombre;
+            }
         }
 
         public static class Propietario {
@@ -174,8 +203,45 @@ public class FechaBienResponse {
             private String pro_nombre;
             private String pro_telefono;
 
-            // Getters y setters
-            // ...
+            public int getPro_cod() {
+                return pro_cod;
+            }
+
+            public void setPro_cod(int pro_cod) {
+                this.pro_cod = pro_cod;
+            }
+
+            public String getPro_direccion() {
+                return pro_direccion;
+            }
+
+            public void setPro_direccion(String pro_direccion) {
+                this.pro_direccion = pro_direccion;
+            }
+
+            public boolean isPro_estado() {
+                return pro_estado;
+            }
+
+            public void setPro_estado(boolean pro_estado) {
+                this.pro_estado = pro_estado;
+            }
+
+            public String getPro_nombre() {
+                return pro_nombre;
+            }
+
+            public void setPro_nombre(String pro_nombre) {
+                this.pro_nombre = pro_nombre;
+            }
+
+            public String getPro_telefono() {
+                return pro_telefono;
+            }
+
+            public void setPro_telefono(String pro_telefono) {
+                this.pro_telefono = pro_telefono;
+            }
         }
 
         public static class Ubicacion {
@@ -196,8 +262,29 @@ public class FechaBienResponse {
             private boolean usu_estado;
             private String usuario;
 
-            // Getters y setters
-            // ...
+            public void setContrasenia(String contrasenia) {
+                this.contrasenia = contrasenia;
+            }
+
+            public void setPersona(Persona persona) {
+                this.persona = persona;
+            }
+
+            public void setRoles(List<Rol> roles) {
+                this.roles = roles;
+            }
+
+            public void setUsu_cod(int usu_cod) {
+                this.usu_cod = usu_cod;
+            }
+
+            public void setUsu_estado(boolean usu_estado) {
+                this.usu_estado = usu_estado;
+            }
+
+            public void setUsuario(String usuario) {
+                this.usuario = usuario;
+            }
 
             public static class Persona {
                 private String perApellidoMater;
@@ -211,8 +298,45 @@ public class FechaBienResponse {
                 private String perSegundoNom;
                 private String perTelefono;
 
-                // Getters y setters
-                // ...
+                public void setPerApellidoMater(String perApellidoMater) {
+                    this.perApellidoMater = perApellidoMater;
+                }
+
+                public void setPerApellidoPater(String perApellidoPater) {
+                    this.perApellidoPater = perApellidoPater;
+                }
+
+                public void setPerCedula(String perCedula) {
+                    this.perCedula = perCedula;
+                }
+
+                public void setPerCod(int perCod) {
+                    this.perCod = perCod;
+                }
+
+                public void setPerEmail(String perEmail) {
+                    this.perEmail = perEmail;
+                }
+
+                public void setPerFechaNac(String perFechaNac) {
+                    this.perFechaNac = perFechaNac;
+                }
+
+                public void setPerGenero(String perGenero) {
+                    this.perGenero = perGenero;
+                }
+
+                public void setPerPrimerNom(String perPrimerNom) {
+                    this.perPrimerNom = perPrimerNom;
+                }
+
+                public void setPerSegundoNom(String perSegundoNom) {
+                    this.perSegundoNom = perSegundoNom;
+                }
+
+                public void setPerTelefono(String perTelefono) {
+                    this.perTelefono = perTelefono;
+                }
             }
 
             public static class Rol {

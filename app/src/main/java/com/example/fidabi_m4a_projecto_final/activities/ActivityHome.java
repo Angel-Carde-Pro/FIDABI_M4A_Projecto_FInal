@@ -1,8 +1,12 @@
 package com.example.fidabi_m4a_projecto_final.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -26,6 +30,8 @@ import com.example.fidabi_m4a_projecto_final.service.UserService;
 import com.google.zxing.integration.android.IntentResult;
 import com.google.zxing.integration.android.IntentIntegrator;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.List;
 
@@ -42,11 +48,12 @@ public class ActivityHome extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        fechasproximas();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(ContextCompat.getColor(this, R.color.statusbar_1));
+            //window.setStatusBarColor(ContextCompat.getColor(this, R.color.statusbar_1));
         }
 
         super.onCreate(savedInstanceState);
@@ -153,20 +160,60 @@ public class ActivityHome extends AppCompatActivity {
         call.enqueue(new Callback<List<FechaBienResponse>>() {
             @Override
             public void onResponse(Call<List<FechaBienResponse>> call, Response<List<FechaBienResponse>> response) {
+                LocalDate fechaActual = LocalDate.now();
                 List<FechaBienResponse> fechaBienResponses = response.body();
-                for (FechaBienResponse fechas : fechaBienResponses){
-                    String nombre = fechas.getBien_detalles();
-                    String fechaprox = fechas.getBien_fecha_consta();
 
+                if (response.isSuccessful() && fechaBienResponses != null) {
+                    // La respuesta del servidor fue exitosa y los datos no son nulos
+                    // Procede con el resto del código
+                    String fechaprox = null;
+                    for (FechaBienResponse fechas : fechaBienResponses) {
+                        String nombre = fechas.getBien_detalles();
+                        fechaprox = fechas.getBien_fecha_consta();
+                        LocalDate fechaObjetivo = LocalDate.parse(fechaprox);
+                        long diasrestantes = ChronoUnit.DAYS.between(fechaActual, fechaObjetivo);
+                        System.out.println(diasrestantes+"dias");
+                        if (diasrestantes <= 7) {
+                            notificaciones("Constatacion", nombre + " se debera hacer la constatacion en " + diasrestantes);
+                        } else {
+                            System.out.println("Nada aun xd");
+                        }
+                    }
+                } else {
+                    // La respuesta del servidor no fue exitosa o los datos son nulos
+                    // Puedes manejar el caso de error aquí
+                    System.out.println("Error en la respuesta del servidor");
                 }
-
             }
 
             @Override
             public void onFailure(Call<List<FechaBienResponse>> call, Throwable t) {
-
-            }   
+                t.printStackTrace();
+            }
         });
+    }
+    private void notificaciones(String titulo, String Contenido){
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+        // Crear un canal de notificación para Android 8.0 (Oreo) y superior
+        String channelId = "mi_canal_id";
+        CharSequence channelName = "Mi Canal";
+        int importance = NotificationManager.IMPORTANCE_DEFAULT;
+        NotificationChannel channel = new NotificationChannel(channelId, channelName, importance);
+        notificationManager.createNotificationChannel(channel);
+
+        // Crear la notificación usando NotificationCompat.Builder
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "mi_canal_id")
+                .setSmallIcon(R.drawable.admin_icon)
+                .setContentTitle(titulo)
+                .setContentText(Contenido)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setAutoCancel(true); // Auto cancelar la notificación al tocarla
+
+        // Mostrar la notificación
+        int notificationId = 1; // Puedes usar un ID único para cada notificación
+        notificationManager.notify(notificationId, builder.build());
+
     }
 }
 
