@@ -18,8 +18,9 @@ public class Bottomenu {
     private RelativeLayout contenedorDesplegable;
     private RelativeLayout layoutDesplegable;
     private static boolean desplegue = false;
-    public static void configurationMenu(View view, View categView){
-        Button home,categ,admi, profile,plus;
+
+    public static void configurationMenu(View view, View categView) {
+        Button home, categ, admi, profile, plus;
         ImageView scaner;
         categView.setVisibility(View.INVISIBLE);
 
@@ -46,14 +47,14 @@ public class Bottomenu {
         scaner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            if (!desplegue){
-                desplegarLayout(categView);
-                System.out.println("holabola");
-            }else{
-                contraerLayout(categView);
-                System.out.println("holabola21");
+                if (!desplegue) {
+                    desplegarLayout(categView);
+                    System.out.println("holabola");
+                } else {
+                    contraerLayout(categView);
+                    System.out.println("holabola21");
 
-            }
+                }
             }
         });
         profile = view.findViewById(R.id.user_settings);
@@ -66,8 +67,7 @@ public class Bottomenu {
             }
         });
 
-        }
-
+    }
 
 
     private static void desplegarLayout(View layout) {
@@ -88,21 +88,20 @@ public class Bottomenu {
     }
 
 
-
     private static void contraerLayout(View layout) {
-            // Calcula la altura del layout
-            int height = layout.getHeight();
+        // Calcula la altura del layout
+        int height = layout.getHeight();
 
-            // Crea la animación de desplazamiento hacia abajo
-            Animation slideDownAnimation = new TranslateAnimation(0, 0, 0, height);
-            slideDownAnimation.setDuration(500); // Duración de la animación en milisegundos
+        // Crea la animación de desplazamiento hacia abajo
+        Animation slideDownAnimation = new TranslateAnimation(0, 0, 0, height);
+        slideDownAnimation.setDuration(500); // Duración de la animación en milisegundos
 
-            // Aplica la animación al layout
-            layout.startAnimation(slideDownAnimation);
+        // Aplica la animación al layout
+        layout.startAnimation(slideDownAnimation);
 
-            // Establece la visibilidad del layout como invisible al final de la animación
-            layout.setVisibility(View.INVISIBLE);
+        // Establece la visibilidad del layout como invisible al final de la animación
+        layout.setVisibility(View.INVISIBLE);
 
-            desplegue = false;
-        }
+        desplegue = false;
+    }
 }

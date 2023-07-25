@@ -1,5 +1,7 @@
 package com.example.fidabi_m4a_projecto_final.activities;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,11 +22,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
         //cambiar color barra de estado
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.blancoSplash));
-            getWindow().setNavigationBarColor(getResources().getColor(R.color.blancoSplash));
-        }
+        getWindow().setStatusBarColor(getResources().getColor(R.color.blancoSplash));
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.blancoSplash));
 
         ImageView imgWave3 = findViewById(R.id.img_wave3);
         ImageView imgWave2 = findViewById(R.id.img_wave2);

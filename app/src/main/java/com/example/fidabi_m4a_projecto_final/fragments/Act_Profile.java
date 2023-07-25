@@ -1,24 +1,22 @@
 package com.example.fidabi_m4a_projecto_final.fragments;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.example.fidabi_m4a_projecto_final.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Act_Profile#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class Act_Profile extends Fragment {
+import kotlin.jvm.internal.Intrinsics;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+public class Act_Profile extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -30,15 +28,6 @@ public class Act_Profile extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Act_Profile.
-     */
-    // TODO: Rename and change types and number of parameters
     public static Act_Profile newInstance(String param1, String param2) {
         Act_Profile fragment = new Act_Profile();
         Bundle args = new Bundle();
@@ -57,10 +46,49 @@ public class Act_Profile extends Fragment {
         }
     }
 
+    public final void shareApp(Fragment fragment) {
+        Intrinsics.checkParameterIsNotNull(fragment, "$this$shareApp");
+        StringBuilder sb = new StringBuilder();
+        sb.append(fragment.getString(R.string.base_link_apk));
+        Context context = fragment.getContext();
+        if (context == null) {
+            Intrinsics.throwNpe();
+        }
+        Intrinsics.checkExpressionValueIsNotNull(context, "context!!");
+        sb.append(context.getPackageName());
+        String sb2 = sb.toString();
+        String string = fragment.getString(R.string.app_name);
+        Intrinsics.checkExpressionValueIsNotNull(string, "getString(R.string.app_name)");
+        Log.d("Link_Apk", sb2);
+        Intent intent = new Intent("android.intent.action.SEND");
+        intent.setType("text/plain");
+        intent.putExtra("android.intent.extra.SUBJECT", fragment.getString(R.string.app_name));
+        StringBuilder sb3 = new StringBuilder();
+        sb3.append(string);
+        sb3.append(" : ");
+        sb3.append(fragment.getString(R.string.app_name));
+        sb3.append(": ");
+        sb3.append(sb2);
+        intent.putExtra("android.intent.extra.TEXT", sb3.toString());
+        fragment.startActivity(Intent.createChooser(intent, fragment.getString(R.string.share_via)));
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_act__profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_act_profile, container, false);
+
+        LinearLayout myLayout = view.findViewById(R.id.share_app);
+
+        myLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Llama al método shareApp() cuando se haga clic en tu LinearLayout
+                shareApp(Act_Profile.this);
+            }
+        });
+
+        return view;
     }
 }

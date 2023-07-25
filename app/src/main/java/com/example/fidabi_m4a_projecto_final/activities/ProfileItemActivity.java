@@ -1,23 +1,28 @@
 package com.example.fidabi_m4a_projecto_final.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.RelativeLayout;
 
 import com.example.fidabi_m4a_projecto_final.GlobalData;
 import com.example.fidabi_m4a_projecto_final.R;
+import com.example.fidabi_m4a_projecto_final.fragments.Act_Profile;
+
+import kotlin.jvm.internal.Intrinsics;
 
 public class ProfileItemActivity extends AppCompatActivity {
-    RelativeLayout signup, setting;
+    RelativeLayout signup, setting, shareApp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_act__profile);
+        setContentView(R.layout.fragment_act_profile);
         signup = findViewById(R.id.log_out);
         setting = findViewById(R.id.ajustes);
 
