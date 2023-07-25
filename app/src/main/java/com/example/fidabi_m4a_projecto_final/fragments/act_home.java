@@ -70,7 +70,7 @@ public class act_home extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_act_home, container, false);
-//        Bundle arguments = getArguments();
+        Bundle arguments = getArguments();
 
         msjWelcome = root.findViewById(R.id.welcome_mss2);
         role = root.findViewById(R.id.role_id);
