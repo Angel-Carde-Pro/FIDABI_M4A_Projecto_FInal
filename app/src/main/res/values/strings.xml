@@ -30,7 +30,7 @@
     <string name="ringtone_with_vibrate">Tono con vibración</string>
     <string name="recent_activity">Actividad Reciente</string>
     <string name="welcome_mss">Bienvenido a FIBADI ⭐</string>
-    <string name="welcome_user_name">Hola, bienvenid@\n</string>
+    <string name="welcome_user_name">Hola, bienvenid@\n{user name}</string>
     <string name="role_id">Administrador</string>
     <string name="categories">Categorías</string>
     <string name="list_custodios">Listar Custodios</string>

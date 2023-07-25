@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,32 +9,28 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="330dp">
+                android:layout_height="match_parent">
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="-15dp"
-                    android:src="@drawable/backgroup_popup" />
+                    android:layout_height="299dp"
+                    android:layout_gravity="top"
+                    android:foregroundGravity="top"
+                    android:src="@drawable/top_background2" />
 
-
-                <ImageView
-                    android:id="@+id/user_profile_photo"
-                    android:layout_width="60dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="20dp"
-                    android:src="@drawable/thumb_swith"
-                    tools:src="@drawable/user_profile" />
 
                 <ImageView
                     android:id="@+id/noti_icon"
@@ -45,6 +42,47 @@
                     android:src="@drawable/notification_icon_off" />
 
                 <ImageView
+                    android:id="@+id/scanner"
+                    android:layout_width="39dp"
+                    android:layout_height="39dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginRight="75dp"
+                    android:onClick="onclick"
+                    android:src="@drawable/scanner" />
+
+                <ImageView
+                    android:id="@+id/user_profile_photo"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/thumb_swith"
+                    tools:src="@drawable/user_profile" />
+
+                <TextView
+                    android:id="@+id/welcome_mss"
+                    android:layout_width="203dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="190dp"
+                    android:text="@string/welcome_mss"
+                    android:textColor="@color/blancoSplash"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/welcome_mss2"
+                    android:layout_width="203dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="105dp"
+                    android:text="@string/welcome_user_name"
+                    android:textColor="@color/blancoSplash"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
                     android:id="@+id/imageView9"
                     android:layout_width="110dp"
                     android:layout_height="20dp"
@@ -53,12 +91,19 @@
                     android:background="#FEB31D" />
 
                 <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="80dp"
+                    android:layout_height="6dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="160dp"
+                    android:src="@drawable/linea_oran" />
+
+                <ImageView
                     android:id="@+id/imageView6"
                     android:layout_width="157dp"
                     android:layout_height="149dp"
                     android:layout_gravity="right"
-                    android:layout_marginTop="130dp"
-                    android:layout_marginBottom="-15dp"
+                    android:layout_marginTop="140dp"
                     android:paddingRight="-130dp"
                     android:src="@drawable/hoja_2" />
 
@@ -67,20 +112,9 @@
                     android:layout_width="157dp"
                     android:layout_height="149dp"
                     android:layout_gravity="right"
-                    android:layout_marginTop="190dp"
-                    android:layout_marginBottom="-15dp"
+                    android:layout_marginTop="200dp"
                     android:paddingRight="-100dp"
                     android:src="@drawable/hoja_1" />
-
-                <ImageView
-                    android:id="@+id/scanner"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_gravity="right"
-                    android:layout_marginTop="35dp"
-                    android:layout_marginRight="75dp"
-                    android:onClick="onclick"
-                    android:src="@drawable/escaner" />
 
                 <TextView
                     android:id="@+id/role_id"
@@ -95,60 +129,34 @@
                     android:textStyle="bold"
                     tools:context=".activities.ActivityHome" />
 
+                <TextView
+                    android:id="@+id/recent_activiy"
+                    android:layout_width="203dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="310dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/recent_activity"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
                 <ImageView
-                    android:id="@+id/imageView7"
-                    android:layout_width="80dp"
-                    android:layout_height="6dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="160dp"
-                    android:src="@drawable/linea_oran" />
-
-                <TextView
-                    android:id="@+id/welcome_mss"
-                    android:layout_width="203dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="220dp"
-                    android:text="@string/welcome_mss"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/welcome_mss2"
-                    android:layout_width="203dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="105dp"
-                    android:text="@string/welcome_user_name"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:id="@+id/more_btn"
+                    android:layout_width="65dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="300dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginBottom="0dp"
+                    android:src="@drawable/more_items_icon" />
 
             </FrameLayout>
 
-            <TextView
-                android:id="@+id/recent_activiy"
-                android:layout_width="203dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:text="@string/recent_activity"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/more_btn"
-                android:layout_width="65dp"
-                android:layout_height="60dp"
-                android:layout_gravity="end"
-                android:layout_marginTop="300dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="0dp"
-                android:src="@drawable/more_items_icon" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
         </LinearLayout>
     </ScrollView>
-</FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
