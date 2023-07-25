@@ -70,19 +70,23 @@ public class act_home extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_act_home, container, false);
-        Bundle arguments = getArguments();
+
+//        /* DATOS GLOBALES */
+        GlobalData glob = GlobalData.getInstance();
+
+        String primerNombre = getArguments() != null ? getArguments().getString("primerNombre") : "Default Value";
+        String rol = getArguments() != null ? getArguments().getString("primerNombre") : "Default Value";
+        Long usuariosnick = getArguments() != null ? getArguments().getLong("usuariosnick") : 0L;
+
+        glob.setRol(rol);
+        glob.setPrimerNombre(primerNombre);
+        glob.setUsuarios(usuariosnick);
 
         msjWelcome = root.findViewById(R.id.welcome_mss2);
         role = root.findViewById(R.id.role_id);
 
-//        msjWelcome.setText("Hola!, bienvenid@ \n" + arguments.getString("primerNombre"));
-//        role.setText(arguments.getString("rol"));
-//
-//        /* DATOS GLOBALES */
-//        GlobalData glob = GlobalData.getInstance();
-//        glob.setRol(arguments.getString("rol"));
-//        glob.setPrimerNombre(arguments.getString("primerNombre"));
-//        glob.setUsuarios(arguments.getLong("usuariosnick", 0));
+        role.setText(rol);
+        msjWelcome.setText("Hola!, bienvenid@ \n" + primerNombre);
 
         /*CONFIGURACION DE BOTONES*/
         scan = root.findViewById(R.id.scanner_btn);

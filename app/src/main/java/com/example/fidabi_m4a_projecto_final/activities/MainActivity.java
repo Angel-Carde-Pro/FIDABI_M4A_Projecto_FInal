@@ -8,6 +8,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -15,11 +16,13 @@ import androidx.fragment.app.Fragment;
 
 import com.example.fidabi_m4a_projecto_final.R;
 import com.example.fidabi_m4a_projecto_final.fragments.Act_Profile;
+import com.example.fidabi_m4a_projecto_final.fragments.act_Inventory;
 import com.example.fidabi_m4a_projecto_final.fragments.act_home;
 
 public class MainActivity extends AppCompatActivity {
 
     private int selectedTab = 0;
+    private int backButtonCount = 0;
 
     // Aquí están las referencias a los elementos de la UI que se necesita para cada pestaña
     private class Tab {
@@ -47,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         // *CONFIGURACIÓN DE LOS BOTONES DE LA BARRA DE OPCIONES*
         setUpTab(tabs[1], findViewById(R.id.homebtn), act_home.class, ContextCompat.getColor(this, R.color.blueista), R.drawable.icon_home, R.drawable.icon_home);
-        setUpTab(tabs[2], findViewById(R.id.btn_plus), act_home.class, ContextCompat.getColor(this, R.color.blueista), R.drawable.icon_home, R.drawable.icon_home);
+        setUpTab(tabs[2], findViewById(R.id.btn_plus), act_Inventory.class, ContextCompat.getColor(this, R.color.blueista), R.drawable.icon_home, R.drawable.icon_home);
         setUpTab(tabs[3], findViewById(R.id.btn_plus), act_home.class, ContextCompat.getColor(this, R.color.blueista), R.drawable.icon_home, R.drawable.icon_home);
         setUpTab(tabs[4], findViewById(R.id.user_settings), act_home.class, ContextCompat.getColor(this, R.color.blueista), R.drawable.icon_home, R.drawable.icon_home);
         setUpTab(tabs[5], findViewById(R.id.user_settings), Act_Profile.class, ContextCompat.getColor(this, R.color.statusbar_profile), R.drawable.user_icon, R.drawable.user_icon);
@@ -56,6 +59,16 @@ public class MainActivity extends AppCompatActivity {
 
         // Selecciona la pestaña de Home por defecto
         selectTab(1);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (backButtonCount >= 1) {
+            finishAffinity(); // Cerrar aplicación
+        } else {
+            Toast.makeText(this, "Presiona de nuevo para salir", Toast.LENGTH_SHORT).show();
+            backButtonCount++;
+        }
     }
 
     // ----------------------------- TABS SETTINGS -----------------------------
@@ -81,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void selectTab(Tab tab) {
+
+        System.out.println("SASASA"+tab.actionBtn.getAccessibilityClassName());
         // Anula la selección de la pestaña anteriormente seleccionada
         Tab oldTab = tabs[selectedTab];
         // TODO: CAMBIAR EL ICONO DE SELECCIONADO AL NORMAL

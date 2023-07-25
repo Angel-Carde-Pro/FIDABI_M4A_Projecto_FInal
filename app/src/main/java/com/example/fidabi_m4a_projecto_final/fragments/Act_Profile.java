@@ -10,10 +10,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.fidabi_m4a_projecto_final.GlobalData;
 import com.example.fidabi_m4a_projecto_final.R;
+import com.example.fidabi_m4a_projecto_final.activities.LoginActivity;
+import com.example.fidabi_m4a_projecto_final.activities.TimerContaActivity;
 
 import kotlin.jvm.internal.Intrinsics;
 
@@ -21,6 +24,7 @@ public class Act_Profile extends Fragment {
 
     TextView msjWelcome, role;
     private View scan;
+    RelativeLayout sign_out, setting, shareApp;
 
     public Act_Profile() {
         // Required empty public constructor
@@ -35,6 +39,28 @@ public class Act_Profile extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_act_profile, container, false);
+
+        sign_out = root.findViewById(R.id.log_out);
+        setting = root.findViewById(R.id.ajustes);
+
+        sign_out.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GlobalData data = GlobalData.getInstance();
+                Intent close = new Intent(getActivity(), LoginActivity.class);
+                close.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(close);
+                data.cerrarsesion();
+            }
+        });
+
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent timer = new Intent(getActivity(), TimerContaActivity.class);
+                startActivity(timer);
+            }
+        });
 
         root.setOnClickListener(new View.OnClickListener() {
             @Override
