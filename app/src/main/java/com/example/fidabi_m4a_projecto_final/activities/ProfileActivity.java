@@ -1,22 +1,16 @@
 package com.example.fidabi_m4a_projecto_final.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.example.fidabi_m4a_projecto_final.GlobalData;
 import com.example.fidabi_m4a_projecto_final.R;
-import com.example.fidabi_m4a_projecto_final.fragments.Act_Profile;
 
-import kotlin.jvm.internal.Intrinsics;
-
-public class ProfileItemActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
     RelativeLayout signup, setting, shareApp;
 
     @Override
@@ -30,7 +24,7 @@ public class ProfileItemActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 GlobalData data = GlobalData.getInstance();
-                Intent close = new Intent(ProfileItemActivity.this, LoginActivity.class);
+                Intent close = new Intent(ProfileActivity.this, LoginActivity.class);
                 close.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(close);
                 data.cerrarsesion();
@@ -40,7 +34,7 @@ public class ProfileItemActivity extends AppCompatActivity {
         setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent timer = new Intent(ProfileItemActivity.this, TimerContaActivity.class);
+                Intent timer = new Intent(ProfileActivity.this, TimerContaActivity.class);
                 startActivity(timer);
             }
         });

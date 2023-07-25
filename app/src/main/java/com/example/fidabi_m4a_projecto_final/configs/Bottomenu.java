@@ -10,8 +10,7 @@ import android.widget.RelativeLayout;
 
 import com.example.fidabi_m4a_projecto_final.R;
 import com.example.fidabi_m4a_projecto_final.activities.InventoryActivity;
-import com.example.fidabi_m4a_projecto_final.activities.ListActivity;
-import com.example.fidabi_m4a_projecto_final.activities.ProfileItemActivity;
+import com.example.fidabi_m4a_projecto_final.activities.ProfileActivity;
 
 public class Bottomenu {
 
@@ -61,7 +60,7 @@ public class Bottomenu {
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent profile = new Intent(view.getContext(), ProfileItemActivity.class);
+                Intent profile = new Intent(view.getContext(), ProfileActivity.class);
                 view.getContext().startActivity(profile);
 
             }

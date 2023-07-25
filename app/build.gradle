@@ -36,6 +36,9 @@ android {
             exclude group: 'com.android.support', module: 'support-v4'
         }
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
