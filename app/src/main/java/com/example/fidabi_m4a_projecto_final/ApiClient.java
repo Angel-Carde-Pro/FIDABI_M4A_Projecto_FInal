@@ -16,8 +16,8 @@ public class ApiClient {
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
 
-                //colocar ip personal (ipconfig en cmd)(http://ip:8080/) esto para localhost
-                .baseUrl("http://192.168.18.57:8080/")
+                //colocar ip personal (ipconfig en cmd)(http://ip:8080/)
+                .baseUrl("http://192.168.20.57:8080/")
                 .client(okHttpClient)
                 .build();
         return retrofit;

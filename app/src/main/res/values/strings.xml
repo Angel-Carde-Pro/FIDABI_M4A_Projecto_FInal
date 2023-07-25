@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="app_name">FIDABI TECAZUAY</string>
+    <string name="share_via">Compartir via</string>
     <string name="base_link_apk">https://play.google.com/store/apps/details?id=</string>
     <string name="cancel">Cancelar</string>
     <string name="signin_button_text">Iniciar sesión</string>
@@ -30,7 +32,7 @@
     <string name="ringtone_with_vibrate">Tono con vibración</string>
     <string name="recent_activity">Actividad Reciente</string>
     <string name="welcome_mss">Bienvenido a FIBADI ⭐</string>
-    <string name="welcome_user_name">Hola, bienvenid@\n</string>
+    <string name="welcome_user_name">Hola, bienvenid@\n{user name}</string>
     <string name="role_id">Administrador</string>
     <string name="categories">Categorías</string>
     <string name="list_custodios">Listar Custodios</string>
@@ -58,5 +60,7 @@
         <item>No se encuentra en el lugar correcto</item>
     </string-array>
     <string name="select_option">Seleccione una opción</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

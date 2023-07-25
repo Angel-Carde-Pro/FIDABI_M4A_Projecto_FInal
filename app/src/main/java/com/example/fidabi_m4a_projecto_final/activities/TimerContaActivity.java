@@ -36,7 +36,7 @@ public class TimerContaActivity extends AppCompatActivity {
         aceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (TextUtils.isEmpty(cantidad.getText().toString())||cantidad.getText().toString().equals("0")) {
+                if (TextUtils.isEmpty(cantidad.getText().toString()) || cantidad.getText().toString().equals("0")) {
                     Toast.makeText(TimerContaActivity.this, "Ingrese un valor correcto", Toast.LENGTH_SHORT).show();
                 } else {
                     // Obtener el texto ingresado en el EditText como String
