@@ -150,6 +150,7 @@
             </FrameLayout>
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recent_items"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 

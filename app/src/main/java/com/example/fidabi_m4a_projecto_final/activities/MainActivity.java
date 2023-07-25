@@ -109,27 +109,30 @@ public class MainActivity extends AppCompatActivity {
 
         // ** Para pasar datos que fueron traidos del login **
         Bundle bundle = new Bundle();
-        Fragment fragment = null;
-        switch (selectedTab)
-        {
-            case 1:
-//                bundle.putString("usuariosnick", usuario);
-//                 Adjunta los argumentos al Fragment
-//                tab.fragmentClass.setArguments(bundle);
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
+        try {
+            // crea una nueva instancia de tu fragmento
+            Fragment fragment = tab.fragmentClass.newInstance();
+            switch (selectedTab) {
+                case 1:
+                    // Adjunta los argumentos al fragmento
+                    bundle.putString("primerNombre", getIntent().getStringExtra("primerNombre"));
+                    bundle.putString("segundoNombre", getIntent().getStringExtra("segundoNombre"));
+                    bundle.putString("rol", getIntent().getStringExtra("rol"));
+                    bundle.putLong("usuariosnick", getIntent().getLongExtra("usuariosnick", 0));
+                    fragment.setArguments(bundle);
+                    break;
+            }
+
+            // Reemplaza el fragmento en el contenedor
+            getSupportFragmentManager().beginTransaction()
+                    .setReorderingAllowed(true)
+                    .replace(R.id.fragment_container, fragment, null)
+                    .commit();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
         }
-        getSupportFragmentManager().beginTransaction()
-                .setReorderingAllowed(true)
-                .replace(R.id.fragment_container, tab.fragmentClass, null)
-                .commit();
 
         // Actualiza la pestaña seleccionada
         for (int i = 1; i < tabs.length; i++) {

@@ -21,6 +21,7 @@ import android.widget.TextView;
 import com.example.fidabi_m4a_projecto_final.*;
 import com.example.fidabi_m4a_projecto_final.activities.ActivityInformacionBien;
 import com.example.fidabi_m4a_projecto_final.activities.CustomScannerActivity;
+import com.example.fidabi_m4a_projecto_final.configs.RecentActiv;
 import com.example.fidabi_m4a_projecto_final.request.FechaBienResponse;
 import com.example.fidabi_m4a_projecto_final.service.UserService;
 import com.google.zxing.integration.android.IntentResult;
@@ -73,10 +74,12 @@ public class act_home extends Fragment {
 
 //        /* DATOS GLOBALES */
         GlobalData glob = GlobalData.getInstance();
+        Bundle arguments = getArguments();
 
-        String primerNombre = getArguments() != null ? getArguments().getString("primerNombre") : "Default Value";
-        String rol = getArguments() != null ? getArguments().getString("primerNombre") : "Default Value";
-        Long usuariosnick = getArguments() != null ? getArguments().getLong("usuariosnick") : 0L;
+        String primerNombre = arguments != null ? arguments.getString("primerNombre") : "Default Value";
+//        System.out.println("HOLAAAA"+arguments.getString("primerNombre"));
+        String rol = arguments != null ? arguments.getString("rol") : "Default Value";
+        Long usuariosnick = arguments != null ? arguments.getLong("usuariosnick") : 0L;
 
         glob.setRol(rol);
         glob.setPrimerNombre(primerNombre);
@@ -96,12 +99,17 @@ public class act_home extends Fragment {
                 InitScanButton();
             }
         });
+
+        // ** CONFIGURACIÓN DE LAS LISTAS
+
+        InstanciarRecentItems(root);
         return root;
     }
 
-    private void InstanciarRecentItems()
+    private void InstanciarRecentItems(View root)
     {
-
+        View recentView = LayoutInflater.from(getContext()).inflate(R.layout.recent_item, null);
+        RecentActiv.configurationRecentAc(recentView);
     }
 
     public void InitScanButton() {
