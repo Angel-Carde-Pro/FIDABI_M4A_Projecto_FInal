@@ -35,7 +35,7 @@ public class InventoryActivity extends AppCompatActivity {
         switch (tag) {
             case "bienes":
                 optionName = "Bienes";
-                Intent profile = new Intent(InventoryActivity.this, Activity_Profile.class);
+                Intent profile = new Intent(InventoryActivity.this, ListActivity.class);
                 startActivity(profile);
                 break;
             case "categoria":

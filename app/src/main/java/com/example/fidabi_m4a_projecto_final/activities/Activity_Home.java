@@ -23,7 +23,7 @@ import com.google.zxing.integration.android.IntentIntegrator;
 
 public class Activity_Home extends AppCompatActivity {
     TextView msjWelcome, role;
-    private View scan;
+    private View scan, notifications;
 
     Button settings;
 
@@ -86,6 +86,16 @@ public class Activity_Home extends AppCompatActivity {
 
         /*CONFIGURACION DE BOTONES*/
         scan = findViewById(R.id.scanner);
+        notifications = findViewById(R.id.noti_icon);
+
+        notifications.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Activity_Home.this, Activity_Notificaciones.class);
+                startActivity(intent);
+            }
+        });
+
         scan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
