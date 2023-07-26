@@ -9,7 +9,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <!-- CollapsingToolbarLayout -->
@@ -24,8 +24,8 @@
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
+                android:layout_height="80dp"
+                android:background="@color/blueistadark"
                 app:layout_collapseMode="pin"
                 app:title="Listados"
                 app:titleTextColor="@color/colorWhite" />
@@ -36,7 +36,9 @@
     <!-- NestedScrollView -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="650dp"
+        android:layout_gravity="top"
+        android:layout_marginTop="80dp"
         android:clipToPadding="false"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
@@ -59,8 +61,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:gravity="center"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
                     <ImageView
@@ -95,8 +97,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:gravity="center"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
                     <ImageView
@@ -131,8 +133,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:gravity="center"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
                     <ImageView
@@ -167,8 +169,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:gravity="center"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
                     <ImageView
@@ -203,8 +205,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:gravity="center"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
                     <ImageView
@@ -228,7 +230,6 @@
             </androidx.cardview.widget.CardView>
 
 
-
             <!-- Opción "Ubicaciones" -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -241,8 +242,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:gravity="center"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
                     <ImageView
@@ -277,8 +278,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:gravity="center"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
                     <ImageView

@@ -21,6 +21,7 @@ import com.google.zxing.integration.android.IntentResult;
 import com.google.zxing.integration.android.IntentIntegrator;
 
 
+
 public class Activity_Home extends AppCompatActivity {
     TextView msjWelcome, role;
     private View scan;
@@ -44,13 +45,13 @@ public class Activity_Home extends AppCompatActivity {
         GlobalData glob = GlobalData.getInstance();
         glob.setRol(getIntent().getStringExtra("rol"));
         glob.setPrimerNombre(getIntent().getStringExtra("primerNombre"));
-        glob.setUsuarios(getIntent().getLongExtra("usuariosnick", 0));
+        glob.setUsuarios(getIntent().getLongExtra("usuariosnick",0));
 
         // Container donde esta ubicado el menubottom
 
         /*ESTO*/
         RelativeLayout container = findViewById(R.id.bottomcointainer);
-        RelativeLayout container2 = findViewById(R.id.layoutrelativ);
+        RelativeLayout container2= findViewById(R.id.layoutrelativ);
 
         // Estas views son los layouts a ocupar para el menú y categorías desplegables
         View menuView = LayoutInflater.from(this).inflate(R.layout.activity_bottom_menu, container, false);
@@ -79,10 +80,12 @@ public class Activity_Home extends AppCompatActivity {
         container2.addView(recentView);
 
         // Se llama la configuración de los botones
-        Bottomenu.configurationMenu(menuView, categView, glob);
+        Bottomenu.configurationMenu(menuView, categView);
         Categories.configurationCategory(categView);
         Profile.configurationPerfil(categView);
         RecentActiv.configurationRecentAc(recentView);
+
+
 
         /*CONFIGURACION DE BOTONES*/
         scan = findViewById(R.id.scanner);

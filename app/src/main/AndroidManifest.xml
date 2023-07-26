@@ -38,14 +38,6 @@
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".activities.Activity_Profile_Settings"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".activities.Activity_Notifications"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
             android:name=".activities.Activity_Profile"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

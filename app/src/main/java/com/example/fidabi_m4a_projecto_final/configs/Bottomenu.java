@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.example.fidabi_m4a_projecto_final.GlobalData;
 import com.example.fidabi_m4a_projecto_final.R;
 import com.example.fidabi_m4a_projecto_final.activities.Activity_Profile;
 import com.example.fidabi_m4a_projecto_final.activities.InventoryActivity;
@@ -19,7 +18,7 @@ public class Bottomenu {
     private RelativeLayout layoutDesplegable;
     private static boolean desplegue = false;
 
-    public static void configurationMenu(View view, View categView, GlobalData globalData) {
+    public static void configurationMenu(View view, View categView) {
         Button home, categ, admi, profile, plus, scaner;
         categView.setVisibility(View.INVISIBLE);
 
@@ -62,11 +61,13 @@ public class Bottomenu {
             @Override
             public void onClick(View v) {
                 Intent profile = new Intent(view.getContext(), Activity_Profile.class);
-                profile.putExtra("primerNombre", globalData.getPrimerNombre());
                 view.getContext().startActivity(profile);
+
             }
         });
+
     }
+
 
     private static void desplegarLayout(View layout) {
         // Obtener la altura del layout

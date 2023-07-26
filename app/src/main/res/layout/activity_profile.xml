@@ -33,7 +33,7 @@
             app:srcCompat="@drawable/persona" />
 
         <TextView
-            android:id="@+id/welc_user_txt"
+            android:id="@+id/welcome_user_txt2"
             android:layout_width="220dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
@@ -79,7 +79,7 @@
                 android:background="#ededed" />
 
             <RelativeLayout
-                android:id="@+id/notifications_sett"
+                android:id="@+id/Item_1"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="10dp"

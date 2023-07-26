@@ -1,48 +1,31 @@
 package com.example.fidabi_m4a_projecto_final.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
-import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.example.fidabi_m4a_projecto_final.GlobalData;
 import com.example.fidabi_m4a_projecto_final.R;
 
+import kotlin.jvm.internal.Intrinsics;
+
 public class Activity_Profile extends AppCompatActivity {
-    RelativeLayout signup, setting, shareApp, visit_play_store, profile_settings, notifications;
-    TextView msjWelcome;
+    RelativeLayout signup, setting, shareApp, visit_play_store;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.statusbar_profile));
-        }
-
         setContentView(R.layout.activity_profile);
         signup = findViewById(R.id.log_out);
         setting = findViewById(R.id.ajustes);
         shareApp = findViewById(R.id.share_app);
         visit_play_store = findViewById(R.id.play_store);
-        profile_settings = findViewById(R.id.data_user);
-        notifications = findViewById(R.id.notifications_sett);
-        msjWelcome = findViewById(R.id.welc_user_txt);
-        msjWelcome.setText("¡ Bienvenido ! \n" + getIntent().getStringExtra("primerNombre"));
-
-        notifications.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent profile = new Intent(Activity_Profile.this, Activity_Notifications.class);
-                startActivity(profile);
-            }
-        });
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,14 +61,6 @@ public class Activity_Profile extends AppCompatActivity {
                 openAppInPlayStore();
             }
         });
-
-        profile_settings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent timer = new Intent(Activity_Profile.this, Activity_Profile_Settings.class);
-                startActivity(timer);
-            }
-        });
     }
 
     public final void shareApp() {
@@ -99,12 +74,13 @@ public class Activity_Profile extends AppCompatActivity {
         intent.putExtra("android.intent.extra.SUBJECT", getString(R.string.app_name));
         StringBuilder sb3 = new StringBuilder();
         sb3.append(string);
+        sb3.append(" : ");
+        sb3.append(getString(R.string.app_name));
         sb3.append(": ");
         sb3.append(sb2);
         intent.putExtra("android.intent.extra.TEXT", sb3.toString());
         startActivity(Intent.createChooser(intent, getString(R.string.share_via)));
     }
-
 
     public void openAppInPlayStore() {
         try {
