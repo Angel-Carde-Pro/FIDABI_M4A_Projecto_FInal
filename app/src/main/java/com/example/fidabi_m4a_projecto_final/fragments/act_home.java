@@ -1,29 +1,28 @@
 package com.example.fidabi_m4a_projecto_final.fragments;
 
-import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.fragment.app.Fragment;
 
 import com.example.fidabi_m4a_projecto_final.R;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.fidabi_m4a_projecto_final.*;
-import com.example.fidabi_m4a_projecto_final.activities.ActivityInformacionBien;
-import com.example.fidabi_m4a_projecto_final.activities.CustomScannerActivity;
-import com.example.fidabi_m4a_projecto_final.configs.RecentActiv;
-import com.example.fidabi_m4a_projecto_final.request.FechaBienResponse;
-import com.example.fidabi_m4a_projecto_final.service.UserService;
 import com.google.zxing.integration.android.IntentResult;
 import com.google.zxing.integration.android.IntentIntegrator;
 
@@ -34,115 +33,39 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class act_home extends Fragment {
-    private ActivityResultLauncher<Intent> mActivityResultLauncher;
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
 
-    private Button scanner_btn;
-    TextView msjWelcome, role;
-    private View scan;
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
+
+    public act_home() {
+        // Required empty public constructor
+    }
+
+    public static act_home newInstance(String param1, String param2) {
+        act_home fragment = new act_home();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mActivityResultLauncher = registerForActivityResult(
-                new ActivityResultContracts.StartActivityForResult(),
-                new ActivityResultCallback<ActivityResult>() {
-                    @Override
-                    public void onActivityResult(ActivityResult result) {
-                        if (result.getResultCode() == Activity.RESULT_OK) {
-                            Intent data = result.getData();
-
-                            // Obtener el resultado del escaneo del código QR
-                            IntentResult scanResult = IntentIntegrator.parseActivityResult(result.getResultCode(), data);
-                            if (scanResult != null) {
-                                if (scanResult.getContents() != null) {
-                                    // Crear un intent para abrir la actividad de información del bien
-                                    Intent informacionBienIntent = new Intent(getActivity(), ActivityInformacionBien.class);
-                                    informacionBienIntent.putExtra("scanned_data", scanResult.getContents());
-                                    startActivity(informacionBienIntent);
-                                }
-                            }
-                        }
-                    }
-                }
-        );
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_act_home, container, false);
-
-//        /* DATOS GLOBALES */
-        GlobalData glob = GlobalData.getInstance();
-        Bundle arguments = getArguments();
-
-        String primerNombre = arguments != null ? arguments.getString("primerNombre") : "Default Value";
-//        System.out.println("HOLAAAA"+arguments.getString("primerNombre"));
-        String rol = arguments != null ? arguments.getString("rol") : "Default Value";
-        Long usuariosnick = arguments != null ? arguments.getLong("usuariosnick") : 0L;
-
-        glob.setRol(rol);
-        glob.setPrimerNombre(primerNombre);
-        glob.setUsuarios(usuariosnick);
-
-        msjWelcome = root.findViewById(R.id.welcome_mss2);
-        role = root.findViewById(R.id.role_id);
-
-        role.setText(rol);
-        msjWelcome.setText("Hola!, bienvenid@ \n" + primerNombre);
-
-        /*CONFIGURACION DE BOTONES*/
-        scan = root.findViewById(R.id.scanner_btn);
-        scan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                InitScanButton();
-            }
-        });
-
-        // ** CONFIGURACIÓN DE LAS LISTAS
-
-        InstanciarRecentItems(root);
-        return root;
-    }
-
-    private void InstanciarRecentItems(View root)
-    {
-        View recentView = LayoutInflater.from(getContext()).inflate(R.layout.recent_item, null);
-        RecentActiv.configurationRecentAc(recentView);
-    }
-
-    public void InitScanButton() {
-        IntentIntegrator integrator = IntentIntegrator.forSupportFragment(this);
-        integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
-        integrator.setPrompt("Escanear código de barras del Bien");
-        integrator.setCameraId(0);  // Usar el scanner por defecto del teléfono
-        integrator.setBeepEnabled(false);
-        integrator.setOrientationLocked(false);
-        integrator.setCaptureActivity(CustomScannerActivity.class); // Actividad personalizada para el escaneo
-        integrator.setBarcodeImageEnabled(true); // Mostrar el código escaneado en la pantalla
-        Intent scanIntent = integrator.createScanIntent();
-        mActivityResultLauncher.launch(scanIntent);
-    }
-
-    public void fechasproximas() {
-        UserService userService = ApiClient.getUserService();
-
-        Call<List<FechaBienResponse>> call = userService.fechprox();
-        call.enqueue(new Callback<List<FechaBienResponse>>() {
-            @Override
-            public void onResponse(Call<List<FechaBienResponse>> call, Response<List<FechaBienResponse>> response) {
-                List<FechaBienResponse> fechaBienResponses = response.body();
-                for (FechaBienResponse fechas : fechaBienResponses) {
-                    String nombre = fechas.getBien_detalles();
-                    String fechaprox = fechas.getBien_fecha_consta();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<FechaBienResponse>> call, Throwable t) {
-
-            }
-        });
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_act_home, container, false);
     }
 }

@@ -10,6 +10,8 @@ import android.widget.RelativeLayout;
 
 import com.example.fidabi_m4a_projecto_final.R;
 import com.example.fidabi_m4a_projecto_final.activities.InventoryActivity;
+import com.example.fidabi_m4a_projecto_final.activities.ListActivity;
+import com.example.fidabi_m4a_projecto_final.activities.ProfileItemActivity;
 
 public class Bottomenu {
 
@@ -41,7 +43,7 @@ public class Bottomenu {
             }
         });
         //
-        scaner = view.findViewById(R.id.categorias_btn);
+        scaner = view.findViewById(R.id.categorias);
         scaner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,9 +61,8 @@ public class Bottomenu {
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO: REVISAR
-//                Intent profile = new Intent(view.getContext(), ProfileActivity.class);
-//                view.getContext().startActivity(profile);
+                Intent profile = new Intent(view.getContext(), ProfileItemActivity.class);
+                view.getContext().startActivity(profile);
 
             }
         });

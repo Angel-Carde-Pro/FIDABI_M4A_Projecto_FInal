@@ -72,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
 
                 if (response.isSuccessful()) {
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, ActivityHome.class);
 
                     Toast.makeText(LoginActivity.this, "Login Correcto", Toast.LENGTH_LONG).show();
                     loginResponse = response.body();
@@ -86,6 +86,7 @@ public class LoginActivity extends AppCompatActivity {
                     String telefono = persona.getPerTelefono();
                     //intent para pasar el response a otro activity
 
+
                     List<LoginResponse.Rol> roles = loginResponse.getRoles();
                     for (LoginResponse.Rol rol : roles) {
                         int codigoRol = rol.getRolCod();
@@ -95,6 +96,8 @@ public class LoginActivity extends AppCompatActivity {
                         intent.putExtra("primerNombre", primerNombre);
                         intent.putExtra("segundoNombre", segundoNombre);
                         intent.putExtra("rol", nombreRol);
+
+
                     }
                     // Otros campos de LoginResponse
                     Long usuario = loginResponse.getUsuCod();
@@ -103,7 +106,10 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(intent);
                     String contrasenia = loginResponse.getContrasenia();
                     boolean estadoUsuario = loginResponse.isUsuEstado();
+
+
                     // Continuar con el flujo de tu aplicación, como iniciar una nueva actividad
+
                 } else {
                     Toast.makeText(LoginActivity.this, "Login Fallo", Toast.LENGTH_LONG).show();
                 }
