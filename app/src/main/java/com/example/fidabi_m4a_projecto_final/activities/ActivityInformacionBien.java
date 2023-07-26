@@ -22,10 +22,18 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ActivityInformacionBien extends AppCompatActivity {
+    private TextView txt_codigoBien;
     private TextView txtDescripcion;
-    private TextView txtCodigo;
+    private TextView txtCodigoBarras;
     private TextView txtCategoria;
     private TextView txtEstado;
+    private TextView txt_Modelo;
+    private TextView txt_Marca;
+    private TextView txt_Ubicacion;
+    private TextView txt_Departamento;
+    private TextView txt_idCus;
+    private TextView txt_nombCus;
+
     private ApiClient apiClient;
     String scannedData;
     String selectedOption;
@@ -57,9 +65,18 @@ public class ActivityInformacionBien extends AppCompatActivity {
             }
         });
         txtDescripcion = findViewById(R.id.txt_descripcion);
-        txtCodigo = findViewById(R.id.cod_txt);
+        txtCodigoBarras = findViewById(R.id.cod_txt);
         txtCategoria = findViewById(R.id.txt_categoria);
         txtEstado = findViewById(R.id.txt_estadoBien);
+        txt_Marca = findViewById(R.id.txt_marca);
+        txt_Modelo = findViewById(R.id.txt_modelo);
+        txt_idCus = findViewById(R.id.txt_cedula);
+        txt_nombCus = findViewById(R.id.txt_custodio);
+        txt_Ubicacion = findViewById(R.id.txt_ubicacion);
+        txt_Departamento = findViewById(R.id.txt_departamento);
+        txt_codigoBien = findViewById(R.id.txt_codigoBien);
+
+
         apiClient = new ApiClient();
 
         if (scannedData != null) {
@@ -124,15 +141,20 @@ public class ActivityInformacionBien extends AppCompatActivity {
     }
 
     private void mostrarInformacionBien(BienResponse bien) {
-        txtDescripcion.setText(bien.getBien_descripcion());
-        txtCodigo.setText(bien.getBien_codigoG());
-        txtCategoria.setText(String.valueOf(bien.getBien_cat_cod()));
-        txtEstado.setText(bien.getBien_estado());
-        txtDescripcion.setText(bien.getBien_descripcion());
-        txtCodigo.setText(bien.getBien_codigoG());
-        System.out.println(bien.getBien_cat_cod() + "jose ");
-        txtCategoria.setText(String.valueOf(bien.getBien_cat_cod()));
-        txtEstado.setText(bien.getBien_estado());
+        txt_codigoBien.setText(bien.getBienCod());
+        txtDescripcion.setText(bien.getBienDescripcion());
+        txtCodigoBarras.setText(bien.getBienCodigoG());
+        txtCategoria.setText(bien.getCategoria().getCatNombre());
+        txtEstado.setText(bien.getBienEstado());
+        txt_Marca.setText(bien.getBienMarca());
+        txt_Modelo.setText(bien.getBienModelo());
+        txt_idCus.setText(bien.getUsuario().getPersona().getPerCedula());
+        txt_nombCus.setText(bien.getUsuario().getPersona().getPerPrimerNom()+(" ")+bien.getUsuario().getPersona().getPerApellidoPater());
+        txt_Ubicacion.setText(bien.getUbicacion().getUbiNombre());
+        txt_Departamento.setText(bien.getUbicacion().getDepartamento());
+
+
+
     }
 
     private void mostrarErrorbien() {

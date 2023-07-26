@@ -268,8 +268,37 @@ public class BienResponse {
         @SerializedName("cat_estado")
         private boolean catEstado;
 
-        // Constructor, getters, and setters
-        // ...
+        public int getCatCod() {
+            return catCod;
+        }
+
+        public void setCatCod(int catCod) {
+            this.catCod = catCod;
+        }
+
+        public String getCatNombre() {
+            return catNombre;
+        }
+
+        public void setCatNombre(String catNombre) {
+            this.catNombre = catNombre;
+        }
+
+        public String getCatDescripcion() {
+            return catDescripcion;
+        }
+
+        public void setCatDescripcion(String catDescripcion) {
+            this.catDescripcion = catDescripcion;
+        }
+
+        public boolean isCatEstado() {
+            return catEstado;
+        }
+
+        public void setCatEstado(boolean catEstado) {
+            this.catEstado = catEstado;
+        }
     }
 
     public class Usuario {
@@ -291,8 +320,53 @@ public class BienResponse {
         @SerializedName("usu_estado")
         private boolean usuEstado;
 
-        // Constructor, getters, and setters
-        // ...
+        public int getUsuCod() {
+            return usuCod;
+        }
+
+        public void setUsuCod(int usuCod) {
+            this.usuCod = usuCod;
+        }
+
+        public Persona getPersona() {
+            return persona;
+        }
+
+        public void setPersona(Persona persona) {
+            this.persona = persona;
+        }
+
+        public List<Rol> getRoles() {
+            return roles;
+        }
+
+        public void setRoles(List<Rol> roles) {
+            this.roles = roles;
+        }
+
+        public String getUsuario() {
+            return usuario;
+        }
+
+        public void setUsuario(String usuario) {
+            this.usuario = usuario;
+        }
+
+        public String getContrasenia() {
+            return contrasenia;
+        }
+
+        public void setContrasenia(String contrasenia) {
+            this.contrasenia = contrasenia;
+        }
+
+        public boolean isUsuEstado() {
+            return usuEstado;
+        }
+
+        public void setUsuEstado(boolean usuEstado) {
+            this.usuEstado = usuEstado;
+        }
 
         public class Persona {
             @SerializedName("perCod")
@@ -325,8 +399,85 @@ public class BienResponse {
             @SerializedName("perFechaNac")
             private String perFechaNac;
 
-            // Constructor, getters, and setters
-            // ...
+            public int getPerCod() {
+                return perCod;
+            }
+
+            public void setPerCod(int perCod) {
+                this.perCod = perCod;
+            }
+
+            public String getPerCedula() {
+                return perCedula;
+            }
+
+            public void setPerCedula(String perCedula) {
+                this.perCedula = perCedula;
+            }
+
+            public String getPerPrimerNom() {
+                return perPrimerNom;
+            }
+
+            public void setPerPrimerNom(String perPrimerNom) {
+                this.perPrimerNom = perPrimerNom;
+            }
+
+            public String getPerSegundoNom() {
+                return perSegundoNom;
+            }
+
+            public void setPerSegundoNom(String perSegundoNom) {
+                this.perSegundoNom = perSegundoNom;
+            }
+
+            public String getPerApellidoPater() {
+                return perApellidoPater;
+            }
+
+            public void setPerApellidoPater(String perApellidoPater) {
+                this.perApellidoPater = perApellidoPater;
+            }
+
+            public String getPerApellidoMater() {
+                return perApellidoMater;
+            }
+
+            public void setPerApellidoMater(String perApellidoMater) {
+                this.perApellidoMater = perApellidoMater;
+            }
+
+            public String getPerTelefono() {
+                return perTelefono;
+            }
+
+            public void setPerTelefono(String perTelefono) {
+                this.perTelefono = perTelefono;
+            }
+
+            public String getPerGenero() {
+                return perGenero;
+            }
+
+            public void setPerGenero(String perGenero) {
+                this.perGenero = perGenero;
+            }
+
+            public String getPerEmail() {
+                return perEmail;
+            }
+
+            public void setPerEmail(String perEmail) {
+                this.perEmail = perEmail;
+            }
+
+            public String getPerFechaNac() {
+                return perFechaNac;
+            }
+
+            public void setPerFechaNac(String perFechaNac) {
+                this.perFechaNac = perFechaNac;
+            }
         }
 
         public class Rol {
