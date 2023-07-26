@@ -6,13 +6,13 @@ public class Ubicación implements Serializable {
 
     private Long ubi_cod;
     private String ubi_nombre;
-    private String ubi_departamento;
+    private String departamento;
     private Boolean ubi_estado;
 
     public Ubicación(Long ubi_cod, String ubi_nombre, String ubi_departamento, Boolean ubi_estado) {
         this.ubi_cod = ubi_cod;
         this.ubi_nombre = ubi_nombre;
-        this.ubi_departamento = ubi_departamento;
+        this.departamento = ubi_departamento;
         this.ubi_estado = ubi_estado;
     }
 
@@ -33,11 +33,11 @@ public class Ubicación implements Serializable {
     }
 
     public String getUbi_departamento() {
-        return ubi_departamento;
+        return departamento;
     }
 
     public void setUbi_departamento(String ubi_departamento) {
-        this.ubi_departamento = ubi_departamento;
+        this.departamento = ubi_departamento;
     }
 
     public Boolean getUbi_estado() {
