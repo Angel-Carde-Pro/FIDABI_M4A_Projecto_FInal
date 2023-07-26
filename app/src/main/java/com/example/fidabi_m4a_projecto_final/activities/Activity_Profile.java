@@ -41,7 +41,7 @@ public class Activity_Profile extends AppCompatActivity {
         notifications.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent profile = new Intent(Activity_Profile.this, Activity_Notificaciones.class);
+                Intent profile = new Intent(Activity_Profile.this, Activity_Noti_Settigs.class);
                 startActivity(profile);
             }
         });
