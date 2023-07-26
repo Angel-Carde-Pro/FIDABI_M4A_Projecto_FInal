@@ -21,6 +21,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ListActivity extends AppCompatActivity {
+    private RecyclerView recyclerView;
+    private PropietarioAdapter propietarioAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,5 +31,30 @@ public class ListActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.statusbar_profile));
         }
+
+        recyclerView = findViewById(R.id.listRecyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        loadPropietarios();
+    }
+
+    private void loadPropietarios() {
+        UserService userService = ApiClient.getUserService();
+        Call<List<Propietario>> call = userService.index();
+
+        call.enqueue(new Callback<List<Propietario>>() {
+            @Override
+            public void onResponse(Call<List<Propietario>> call, Response<List<Propietario>> response) {
+                if (response.isSuccessful()) {
+                    List<Propietario> propietarios = response.body();
+                    propietarioAdapter = new PropietarioAdapter(propietarios);
+                    recyclerView.setAdapter(propietarioAdapter);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Propietario>> call, Throwable t) {
+            }
+        });
     }
 }
