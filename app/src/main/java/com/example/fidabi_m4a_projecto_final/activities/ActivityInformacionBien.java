@@ -128,6 +128,11 @@ public class ActivityInformacionBien extends AppCompatActivity {
         txtCodigo.setText(bien.getBien_codigoG());
         txtCategoria.setText(String.valueOf(bien.getBien_cat_cod()));
         txtEstado.setText(bien.getBien_estado());
+        txtDescripcion.setText(bien.getBien_descripcion());
+        txtCodigo.setText(bien.getBien_codigoG());
+        System.out.println(bien.getBien_cat_cod() + "jose ");
+        txtCategoria.setText(String.valueOf(bien.getBien_cat_cod()));
+        txtEstado.setText(bien.getBien_estado());
     }
 
     private void mostrarErrorbien() {

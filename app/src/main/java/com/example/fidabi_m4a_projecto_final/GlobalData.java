@@ -44,7 +44,7 @@ public class GlobalData {
         this.usuarios = usuarios;
     }
 
-    public void cerrarsesion(){
+    public void cerrarsesion() {
         setPrimerNombre("");
         setRol("");
         setUsuarios(null);

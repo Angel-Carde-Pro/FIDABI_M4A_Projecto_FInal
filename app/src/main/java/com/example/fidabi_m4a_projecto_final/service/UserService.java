@@ -24,23 +24,30 @@ public interface UserService {
     @POST("tecazuay/logina/")
     Call<LoginResponse> userLogin(@Body LoginRequest loginRequest);
 
-
     @GET("/tecazuay/categoria")
     Call<List<CatResponse>> catList();
 
     @POST("/tecazuay/historialactividades/{his_usu_cod}")
     Call<List<RecentActResponse>> recentActList(@Path("his_usu_cod") int his_usu_cod);
+
     @POST("/tecazuay/actividadrecs/")
     Call<List<RecentActResponse>> recentActList(@Body RecentActRequest recentActRequest);
+
     @GET("/tecazuay/bien/codigo-barras")
     Call<BienResponse> obtenerDatosBienPorCodigoBarras(@Query("codigoBarras") String codigoBarras);
+
     @GET("/tecazuay/propietarios")
     Call<List<Propietario>> index();
+
     @PUT("/tecazuay/bien/actualizar-descripcion-lugar/{bien_codigoG}")
     Call<Void> actualizarDescripcionLugar(@Path("bien_codigoG") String bienCodigoG, @Body UdescripcionLugar udescripcionLugar);
+
     @PUT("/tecazuay/bien/actualizartodos/{intervalo}")
     Call<Void> updatevalido(@Path("intervalo") int intervalo);
 
     @GET("/tecazuay/bien/fechasprox")
-    Call<List<FechaBienResponse>> fechprox ();
+    Call<List<FechaBienResponse>> fechprox();
+
+    @GET("/tecazuay/categoria/{categoriaCod}")
+    Call<CatResponse> obtenerNombreCategoria(@Path("categoriaCod") int categoriaCod);
 }
