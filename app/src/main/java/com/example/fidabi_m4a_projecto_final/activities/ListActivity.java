@@ -1,6 +1,9 @@
 package com.example.fidabi_m4a_projecto_final.activities;
 
+import android.os.Build;
 import android.os.Bundle;
+
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,39 +22,12 @@ import retrofit2.Response;
 
 public class ListActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    private PropietarioAdapter propietarioAdapter;
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.listactivity);
-
-        recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        loadPropietarios();
-    }
-
-    private void loadPropietarios() {
-        UserService userService = ApiClient.getUserService();
-        Call<List<Propietario>> call = userService.index();
-
-        call.enqueue(new Callback<List<Propietario>>() {
-            @Override
-            public void onResponse(Call<List<Propietario>> call, Response<List<Propietario>> response) {
-                if (response.isSuccessful()) {
-                    List<Propietario> propietarios = response.body();
-                    propietarioAdapter = new PropietarioAdapter(propietarios);
-                    recyclerView.setAdapter(propietarioAdapter);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Propietario>> call, Throwable t) {
-
-
-            }
-        });
+        setContentView(R.layout.activity_listar);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(getResources().getColor(R.color.statusbar_profile));
+        }
     }
 }

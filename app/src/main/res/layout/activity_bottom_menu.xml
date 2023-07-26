@@ -27,7 +27,7 @@
                 android:layout_marginBottom="-15dp"
                 android:src="@drawable/backgroup_popup" />
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
@@ -36,7 +36,9 @@
                     android:id="@+id/homebtn"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="30dp"
                     android:background="@drawable/icon_home"
                     android:backgroundTint="#402CB1"
                     android:clickable="true"
@@ -47,8 +49,9 @@
                     android:id="@+id/btn_plus"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginLeft="30dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="100dp"
                     android:background="@drawable/button_add"
                     android:contentDescription="@string/scan_dsc_btn" />
 
@@ -56,8 +59,8 @@
                     android:id="@+id/categorias_btn"
                     android:layout_width="72dp"
                     android:layout_height="72dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="22dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="20dp"
                     android:background="@drawable/home_center_button_bg"
                     android:contentDescription="@string/categories_dsc_btn" />
 
@@ -65,7 +68,9 @@
                     android:id="@+id/admin"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_marginEnd="22dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="100dp"
                     android:background="@drawable/admin_icon"
                     android:contentDescription="@string/admin_dsc_btn" />
 
@@ -73,11 +78,14 @@
                     android:id="@+id/user_settings"
                     android:layout_width="52dp"
                     android:layout_height="52dp"
-                    android:layout_marginRight="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="false"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="20dp"
                     android:background="@drawable/user_icon"
                     android:contentDescription="@string/user_profile_dsc_btn" />
 
-            </LinearLayout>
+            </RelativeLayout>
 
         </FrameLayout>
     </RelativeLayout>
