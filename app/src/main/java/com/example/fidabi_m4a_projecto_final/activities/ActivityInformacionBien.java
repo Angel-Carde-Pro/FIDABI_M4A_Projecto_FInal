@@ -141,7 +141,7 @@ public class ActivityInformacionBien extends AppCompatActivity {
     }
 
     private void mostrarInformacionBien(BienResponse bien) {
-        txt_codigoBien.setText(bien.getBienCod());
+        txt_codigoBien.setText(String.valueOf(bien.getBienCod()));
         txtDescripcion.setText(bien.getBienDescripcion());
         txtCodigoBarras.setText(bien.getBienCodigoG());
         txtCategoria.setText(bien.getCategoria().getCatNombre());

@@ -7,7 +7,7 @@ import java.util.List;
 public class BienResponse {
 
     @SerializedName("bien_cod")
-    private int bienCod;
+    private Long bienCod;
 
     @SerializedName("bien_codigoG")
     private String bienCodigoG;
@@ -58,11 +58,11 @@ public class BienResponse {
     // ...
 
 
-    public int getBienCod() {
+    public Long getBienCod() {
         return bienCod;
     }
 
-    public void setBienCod(int bienCod) {
+    public void setBienCod(Long bienCod) {
         this.bienCod = bienCod;
     }
 
