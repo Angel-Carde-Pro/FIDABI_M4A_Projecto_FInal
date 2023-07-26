@@ -1,14 +1,19 @@
 package com.example.fidabi_m4a_projecto_final.service;
 
+import com.example.fidabi_m4a_projecto_final.request.Bien;
 import com.example.fidabi_m4a_projecto_final.request.BienResponse;
 import com.example.fidabi_m4a_projecto_final.request.CatResponse;
+import com.example.fidabi_m4a_projecto_final.request.Categoria;
 import com.example.fidabi_m4a_projecto_final.request.FechaBienResponse;
 import com.example.fidabi_m4a_projecto_final.request.LoginRequest;
 import com.example.fidabi_m4a_projecto_final.request.LoginResponse;
+import com.example.fidabi_m4a_projecto_final.request.Persona;
 import com.example.fidabi_m4a_projecto_final.request.Propietario;
 import com.example.fidabi_m4a_projecto_final.request.RecentActRequest;
 import com.example.fidabi_m4a_projecto_final.request.RecentActResponse;
+import com.example.fidabi_m4a_projecto_final.request.Ubicación;
 import com.example.fidabi_m4a_projecto_final.request.UdescripcionLugar;
+import com.example.fidabi_m4a_projecto_final.request.Usuario;
 
 import java.util.List;
 
@@ -50,4 +55,21 @@ public interface UserService {
 
     @GET("/tecazuay/categoria/{categoriaCod}")
     Call<CatResponse> obtenerNombreCategoria(@Path("categoriaCod") int categoriaCod);
+
+
+
+    @GET("/tecazuay/categoria")
+    Call<List<Categoria>> categoriaList();
+
+    @GET("/tecazuay/bien")
+    Call<List<Bien>> bienList();
+
+    @GET("/tecazuay/personas")
+    Call<List<Persona>> personaList();
+
+    @GET("/tecazuay/usuarios")
+    Call<List<Usuario>> usuarioList();
+
+    @GET("/tecazuay/ubicacion")
+    Call<List<Ubicación>> ubicacionList();
 }

@@ -77,6 +77,37 @@
             android:name=".activities.InventoryActivity"
             android:exported="false"
             android:theme="@style/AppThemeBarra" />
+
+        <activity
+            android:name=".activities.ListActivityCategoria"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:label="false"/>
+
+        <activity
+            android:name=".activities.ListActivityBien"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:label="false"/>
+
+
+
+        <activity
+            android:name=".activities.ListActivityPersona"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:label="false"/>
+
+        <activity
+            android:name=".activities.ListActivityUbicacion"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:label="false"/>
+
+        <activity
+            android:name=".activities.ListActivityUsuario"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:label="false"/>
+
+
+
+
     </application>
 
 </manifest>

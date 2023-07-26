@@ -35,29 +35,41 @@ public class InventoryActivity extends AppCompatActivity {
         switch (tag) {
             case "bienes":
                 optionName = "Bienes";
-                Intent profile = new Intent(InventoryActivity.this, ListActivity.class);
+                Intent profile = new Intent(InventoryActivity.this, ListActivityBien.class);
                 startActivity(profile);
                 break;
             case "categoria":
                 optionName = "Categoría";
+                Intent profile1 = new Intent(InventoryActivity.this, ListActivityCategoria.class);
+                startActivity(profile1);
+
+
                 break;
             case "historial":
                 optionName = "Historial";
                 break;
             case "persona":
                 optionName = "Persona";
+                Intent profile2 = new Intent(InventoryActivity.this, ListActivityPersona.class);
+                startActivity(profile2);
                 break;
             case "propietario":
                 optionName = "Propietario";
+                Intent profile3 = new Intent(InventoryActivity.this, ListActivity.class);
+                startActivity(profile3);
                 break;
             case "roles":
                 optionName = "Roles";
                 break;
             case "ubicaciones":
                 optionName = "Ubicaciones";
+                Intent profile6 = new Intent(InventoryActivity.this, ListActivityUbicacion.class);
+                startActivity(profile6);
                 break;
             case "usuarios":
                 optionName = "Usuarios";
+                Intent profile5 = new Intent(InventoryActivity.this, ListActivityUsuario.class);
+                startActivity(profile5);
                 break;
             default:
                 optionName = "";
