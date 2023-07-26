@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 import com.example.fidabi_m4a_projecto_final.R;
 
@@ -15,7 +17,9 @@ public class InventoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventory);
 
+
         androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
+
 
         toolbar.setTitle("Listados");
 

@@ -43,4 +43,8 @@ public interface UserService {
 
     @GET("/tecazuay/bien/fechasprox")
     Call<List<FechaBienResponse>> fechprox ();
+
+    @GET("/tecazuay/categoria/{categoriaCod}")
+    Call<CatResponse> obtenerNombreCategoria(@Path("categoriaCod") int categoriaCod);
+
 }
