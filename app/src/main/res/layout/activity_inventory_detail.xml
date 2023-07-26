@@ -74,7 +74,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txt_descripcion" />
 
     <RelativeLayout
-        android:id="@+id/Item_1"
+        android:id="@+id/notifications_sett"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginTop="44dp"
@@ -129,7 +129,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Item_1">
+        app:layout_constraintTop_toBottomOf="@+id/notifications_sett">
 
         <View
             android:layout_width="match_parent"
@@ -177,7 +177,7 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.0"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/Item_1">
+    app:layout_constraintTop_toBottomOf="@+id/notifications_sett">
 
     <View
         android:layout_width="match_parent"

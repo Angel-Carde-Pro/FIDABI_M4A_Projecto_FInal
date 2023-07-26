@@ -60,7 +60,16 @@
         <item>No se encuentra en el lugar correcto</item>
     </string-array>
     <string name="select_option">Seleccione una opción</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="usu_txt">Usuario:</string>
+    <string name="usu_hint">Ingresa tu nombre de usuario.</string>
+    <string name="lastname_txt">Apellido:</string>
+    <string name="lastname_hint">Ingresa tu apellido.</string>
+    <string name="phone_number_txt">Telefono:</string>
+    <string name="phone_number_hint">Ingrese su numero de telefono.</string>
+    <string name="name_txt">Nombre:</string>
+    <string name="name_hint">Ingresa tu nombre.</string>
+    <string name="state_txt">Estado:</string>
+    <string name="notification_settings_txt">Ajustes De Las Notificaciones</string>
+    <string name="notification_txt">Notificaciones</string>
 
 </resources>
