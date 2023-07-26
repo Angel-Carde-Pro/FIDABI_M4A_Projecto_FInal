@@ -34,8 +34,8 @@ public class PersonaAdapter extends RecyclerView.Adapter<PersonaAdapter.PersonaV
         Persona persona = personas.get(position);
 
         holder.txtCedula.setText(persona.getPerCedula());
-        holder.txtNombre.setText(persona.getPerPrimerNom());
-        holder.txtNombre2.setText(persona.getPerApellidoPater());
+        holder.txtNombre.setText(persona.getPerPrimerNom()+" "+persona.getPerApellidoPater());
+        holder.txtNombre2.setText(persona.getPerEmail());
 
     }
 

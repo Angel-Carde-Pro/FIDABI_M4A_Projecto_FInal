@@ -33,7 +33,7 @@ public class BienAdapter extends RecyclerView.Adapter<BienAdapter.BienViewHolder
         Bien bien = bienes.get(position);
 
         holder.txtDescripcion.setText(bien.getBien_descripcion());
-        holder.txtModelo.setText(bien.getBien_modelo());
+        holder.txtModelo.setText(bien.getBien_codigoG());
 
     }
 
