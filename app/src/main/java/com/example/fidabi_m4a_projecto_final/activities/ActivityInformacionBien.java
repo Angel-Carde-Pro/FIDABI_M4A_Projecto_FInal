@@ -124,10 +124,10 @@ public class ActivityInformacionBien extends AppCompatActivity {
     }
 
     private void mostrarInformacionBien(BienResponse bien) {
-        txtDescripcion.setText(bien.getBien_descripcion());
-        txtCodigo.setText(bien.getBien_codigoG());
-        txtCategoria.setText(String.valueOf(bien.getBien_cat_cod()));
-        txtEstado.setText(bien.getBien_estado());
+        txtDescripcion.setText(bien.getBienDescripcion());
+        txtCodigo.setText(bien.getBienCodigoG());
+        txtCategoria.setText(String.valueOf(bien.getCategoria().getCatNombre()));
+        txtEstado.setText(bien.getBienEstado());
     }
 
     private void mostrarErrorbien() {

@@ -56,6 +56,135 @@ public class BienResponse {
     // Constructor, getters, and setters
     // ...
 
+
+    public int getBienCod() {
+        return bienCod;
+    }
+
+    public void setBienCod(int bienCod) {
+        this.bienCod = bienCod;
+    }
+
+    public String getBienCodigoG() {
+        return bienCodigoG;
+    }
+
+    public void setBienCodigoG(String bienCodigoG) {
+        this.bienCodigoG = bienCodigoG;
+    }
+
+    public String getBienModelo() {
+        return bienModelo;
+    }
+
+    public void setBienModelo(String bienModelo) {
+        this.bienModelo = bienModelo;
+    }
+
+    public String getBienMarca() {
+        return bienMarca;
+    }
+
+    public void setBienMarca(String bienMarca) {
+        this.bienMarca = bienMarca;
+    }
+
+    public String getBienEstado() {
+        return bienEstado;
+    }
+
+    public void setBienEstado(String bienEstado) {
+        this.bienEstado = bienEstado;
+    }
+
+    public String getBienDetalles() {
+        return bienDetalles;
+    }
+
+    public void setBienDetalles(String bienDetalles) {
+        this.bienDetalles = bienDetalles;
+    }
+
+    public String getBienDescripcion() {
+        return bienDescripcion;
+    }
+
+    public void setBienDescripcion(String bienDescripcion) {
+        this.bienDescripcion = bienDescripcion;
+    }
+
+    public String getBienSerie() {
+        return bienSerie;
+    }
+
+    public void setBienSerie(String bienSerie) {
+        this.bienSerie = bienSerie;
+    }
+
+    public double getBienPrecio() {
+        return bienPrecio;
+    }
+
+    public void setBienPrecio(double bienPrecio) {
+        this.bienPrecio = bienPrecio;
+    }
+
+    public boolean isBienEstadoA() {
+        return bienEstadoA;
+    }
+
+    public void setBienEstadoA(boolean bienEstadoA) {
+        this.bienEstadoA = bienEstadoA;
+    }
+
+    public String getBienEstadoAsignado() {
+        return bienEstadoAsignado;
+    }
+
+    public void setBienEstadoAsignado(String bienEstadoAsignado) {
+        this.bienEstadoAsignado = bienEstadoAsignado;
+    }
+
+    public String getBienDescripcionLugar() {
+        return bienDescripcionLugar;
+    }
+
+    public void setBienDescripcionLugar(String bienDescripcionLugar) {
+        this.bienDescripcionLugar = bienDescripcionLugar;
+    }
+
+    public Ubicacion getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(Ubicacion ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+
+    public Propietario getPropietario() {
+        return propietario;
+    }
+
+    public void setPropietario(Propietario propietario) {
+        this.propietario = propietario;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
     public class Ubicacion {
         @SerializedName("ubi_cod")
         private int ubiCod;
@@ -108,6 +237,39 @@ public class BienResponse {
 
         // Constructor, getters, and setters
         // ...
+
+
+        public int getCatCod() {
+            return catCod;
+        }
+
+        public void setCatCod(int catCod) {
+            this.catCod = catCod;
+        }
+
+        public String getCatNombre() {
+            return catNombre;
+        }
+
+        public void setCatNombre(String catNombre) {
+            this.catNombre = catNombre;
+        }
+
+        public String getCatDescripcion() {
+            return catDescripcion;
+        }
+
+        public void setCatDescripcion(String catDescripcion) {
+            this.catDescripcion = catDescripcion;
+        }
+
+        public boolean isCatEstado() {
+            return catEstado;
+        }
+
+        public void setCatEstado(boolean catEstado) {
+            this.catEstado = catEstado;
+        }
     }
 
     public class Usuario {
