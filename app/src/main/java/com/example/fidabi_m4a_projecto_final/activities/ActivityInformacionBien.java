@@ -124,15 +124,15 @@ public class ActivityInformacionBien extends AppCompatActivity {
     }
 
     private void mostrarInformacionBien(BienResponse bien) {
-        txtDescripcion.setText(bien.getBienDescripcion());
-        txtCodigo.setText(bien.getBienCodigoG());
-        txtCategoria.setText(String.valueOf(bien.getCategoria().getCatNombre()));
-        txtEstado.setText(bien.getBienEstado());
+        txtDescripcion.setText(bien.getBien_descripcion());
+        txtCodigo.setText(bien.getBien_codigoG());
+        txtCategoria.setText(String.valueOf(bien.getBien_cat_cod()));
+        txtEstado.setText(bien.getBien_estado());
     }
 
     private void mostrarErrorbien() {
         View errorView = getLayoutInflater().inflate(R.layout.dialog_fail, null);
-        errorView.setAlpha(0f);
+        errorView.setAlpha(0f); // Inicialmente, configurar la transparencia a 0
 
         TextView tvErrorMessage = errorView.findViewById(R.id.tvErrorMessage);
         tvErrorMessage.setText("El bien no fue encontrado en la base de datos.");

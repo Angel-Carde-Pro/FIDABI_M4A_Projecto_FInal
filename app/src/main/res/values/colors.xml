@@ -17,4 +17,5 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="statusbar_1">#5D5DFF</color>
+    <color name="statusbar_profile">#7228d5</color>
 </resources>

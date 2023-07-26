@@ -5,6 +5,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.fidabi_m4a_projecto_final.ApiClient;
 import com.example.fidabi_m4a_projecto_final.GlobalData;
 import com.example.fidabi_m4a_projecto_final.R;
@@ -16,10 +18,11 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
-
 public class RecentActiv {
-    public static void configurationRecentAc(View view){
+
+    private RecyclerView recyclerView;
+
+    public static void configurationRecentAc(View view) {
         RecentActRequest reacres = new RecentActRequest();
         GlobalData glob = GlobalData.getInstance();
         reacres.setUsu_cod(glob.getUsuarios());
@@ -28,12 +31,10 @@ public class RecentActiv {
         TextView fecha = view.findViewById(R.id.date_txt);
         TextView usuario = view.findViewById(R.id.usu_txt);
 
-
         //OJO AGREGAR VALIDACION DE USUARIO CON UN IF AL CALL
 
         //Obtener la llamada hacia el API
         retrofit2.Call<List<RecentActResponse>> call = ApiClient.getUserService().recentActList(reacres);
-
 
         //Obtenenmos JSON
         call.enqueue(new Callback<List<RecentActResponse>>() {
@@ -41,9 +42,9 @@ public class RecentActiv {
             public void onResponse(Call<List<RecentActResponse>> call, Response<List<RecentActResponse>> response) {
                 List<RecentActResponse> actList = response.body();
                 if (actList != null && !actList.isEmpty()) { // Check if the list is not null and not empty
-                    LinearLayout containerrecent = view.findViewById(R.id.itemlayout);
+                    LinearLayout containerrecent = view.findViewById(R.id.recent_items);
 
-                    for (RecentActResponse recentActRes : actList){
+                    for (RecentActResponse recentActRes : actList) {
                         View recentView = LayoutInflater.from(view.getContext()).inflate(R.layout.recent_item, null);
 
                         //accion.setText(recentActRes.getAct_accion());
@@ -57,7 +58,6 @@ public class RecentActiv {
                     descripcion.setText("");
                     fecha.setText("");
                     usuario.setText("");
-
                 }
             }
 
