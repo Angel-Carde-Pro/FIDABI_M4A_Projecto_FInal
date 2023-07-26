@@ -5,6 +5,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.fidabi_m4a_projecto_final.ApiClient;
 import com.example.fidabi_m4a_projecto_final.GlobalData;
 import com.example.fidabi_m4a_projecto_final.R;
@@ -17,6 +19,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 public class RecentActiv {
+
+    private RecyclerView recyclerView;
+
     public static void configurationRecentAc(View view) {
         RecentActRequest reacres = new RecentActRequest();
         GlobalData glob = GlobalData.getInstance();
@@ -37,7 +42,7 @@ public class RecentActiv {
             public void onResponse(Call<List<RecentActResponse>> call, Response<List<RecentActResponse>> response) {
                 List<RecentActResponse> actList = response.body();
                 if (actList != null && !actList.isEmpty()) { // Check if the list is not null and not empty
-                    LinearLayout containerrecent = view.findViewById(R.id.itemlayout);
+                    LinearLayout containerrecent = view.findViewById(R.id.recent_items);
 
                     for (RecentActResponse recentActRes : actList) {
                         View recentView = LayoutInflater.from(view.getContext()).inflate(R.layout.recent_item, null);
@@ -53,7 +58,6 @@ public class RecentActiv {
                     descripcion.setText("");
                     fecha.setText("");
                     usuario.setText("");
-
                 }
             }
 
