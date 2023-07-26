@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.fidabi_m4a_projecto_final.GlobalData;
 import com.example.fidabi_m4a_projecto_final.R;
@@ -24,6 +25,7 @@ import com.google.zxing.integration.android.IntentIntegrator;
 public class Activity_Home extends AppCompatActivity {
     TextView msjWelcome, role;
     private View scan, notifications;
+    private int backButtonCount = 0;
 
     Button settings;
 
@@ -114,6 +116,16 @@ public class Activity_Home extends AppCompatActivity {
                 integrator.initiateScan();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (backButtonCount >= 1) {
+            finishAffinity(); // Cerrar aplicación
+        } else {
+            Toast.makeText(this, "Presiona de nuevo para salir", Toast.LENGTH_SHORT).show();
+            backButtonCount++;
+        }
     }
 
     @Override

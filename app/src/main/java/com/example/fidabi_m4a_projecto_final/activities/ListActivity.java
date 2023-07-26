@@ -24,7 +24,7 @@ public class ListActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private PropietarioAdapter propietarioAdapter;
 
-    @Override
+    @Override 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar);
