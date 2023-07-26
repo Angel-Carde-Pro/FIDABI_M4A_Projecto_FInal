@@ -1,139 +1,184 @@
 package com.example.fidabi_m4a_projecto_final.request;
 
 import com.google.gson.annotations.SerializedName;
-
-import java.math.BigInteger;
+import java.util.List;
 
 public class BienResponse {
+
     @SerializedName("bien_cod")
-    private Long bien_cod;
+    private int bienCod;
 
     @SerializedName("bien_codigoG")
-    private String bien_codigoG;
+    private String bienCodigoG;
 
     @SerializedName("bien_modelo")
-    private String bien_modelo;
-
-    @SerializedName("bien_cat_cod")
-    private BigInteger bien_cat_cod;
+    private String bienModelo;
 
     @SerializedName("bien_marca")
-    private String bien_marca;
+    private String bienMarca;
 
     @SerializedName("bien_estado")
-    private String bien_estado;
+    private String bienEstado;
 
     @SerializedName("bien_detalles")
-    private String bien_detalles;
+    private String bienDetalles;
 
     @SerializedName("bien_descripcion")
-    private String bien_descripcion;
+    private String bienDescripcion;
 
     @SerializedName("bien_serie")
-    private String bien_serie;
+    private String bienSerie;
 
     @SerializedName("bien_precio")
-    private Double bien_precio;
+    private double bienPrecio;
 
     @SerializedName("bien_estadoA")
-    private Boolean bien_estadoA;
+    private boolean bienEstadoA;
 
     @SerializedName("bien_estado_asignado")
-    private Boolean bien_estado_asignado;
+    private String bienEstadoAsignado;
 
-    public Long getBien_cod() {
-        return bien_cod;
+    @SerializedName("bien_descripcion_lugar")
+    private String bienDescripcionLugar;
+
+    @SerializedName("ubicacion")
+    private Ubicacion ubicacion;
+
+    @SerializedName("propietario")
+    private Propietario propietario;
+
+    @SerializedName("categoria")
+    private Categoria categoria;
+
+    @SerializedName("usuario")
+    private Usuario usuario;
+
+    // Constructor, getters, and setters
+    // ...
+
+    public class Ubicacion {
+        @SerializedName("ubi_cod")
+        private int ubiCod;
+
+        @SerializedName("ubi_nombre")
+        private String ubiNombre;
+
+        @SerializedName("departamento")
+        private String departamento;
+
+        @SerializedName("ubi_estado")
+        private boolean ubiEstado;
+
+        // Constructor, getters, and setters
+        // ...
     }
 
-    public void setBien_cod(Long bien_cod) {
-        this.bien_cod = bien_cod;
+    public class Propietario {
+        @SerializedName("pro_cod")
+        private int proCod;
+
+        @SerializedName("pro_nombre")
+        private String proNombre;
+
+        @SerializedName("pro_direccion")
+        private String proDireccion;
+
+        @SerializedName("pro_telefono")
+        private String proTelefono;
+
+        @SerializedName("pro_estado")
+        private boolean proEstado;
+
+        // Constructor, getters, and setters
+        // ...
     }
 
-    public String getBien_codigoG() {
-        return bien_codigoG;
+    public class Categoria {
+        @SerializedName("cat_cod")
+        private int catCod;
+
+        @SerializedName("cat_nombre")
+        private String catNombre;
+
+        @SerializedName("cat_descripcion")
+        private String catDescripcion;
+
+        @SerializedName("cat_estado")
+        private boolean catEstado;
+
+        // Constructor, getters, and setters
+        // ...
     }
 
-    public void setBien_codigoG(String bien_codigoG) {
-        this.bien_codigoG = bien_codigoG;
-    }
+    public class Usuario {
+        @SerializedName("usu_cod")
+        private int usuCod;
 
-    public String getBien_modelo() {
-        return bien_modelo;
-    }
+        @SerializedName("persona")
+        private Persona persona;
 
-    public void setBien_modelo(String bien_modelo) {
-        this.bien_modelo = bien_modelo;
-    }
+        @SerializedName("roles")
+        private List<Rol> roles;
 
-    public String getBien_marca() {
-        return bien_marca;
-    }
+        @SerializedName("usuario")
+        private String usuario;
 
-    public void setBien_marca(String bien_marca) {
-        this.bien_marca = bien_marca;
-    }
+        @SerializedName("contrasenia")
+        private String contrasenia;
 
-    public String getBien_estado() {
-        return bien_estado;
-    }
+        @SerializedName("usu_estado")
+        private boolean usuEstado;
 
-    public void setBien_estado(String bien_estado) {
-        this.bien_estado = bien_estado;
-    }
+        // Constructor, getters, and setters
+        // ...
 
-    public String getBien_detalles() {
-        return bien_detalles;
-    }
+        public class Persona {
+            @SerializedName("perCod")
+            private int perCod;
 
-    public void setBien_detalles(String bien_detalles) {
-        this.bien_detalles = bien_detalles;
-    }
+            @SerializedName("perCedula")
+            private String perCedula;
 
-    public String getBien_descripcion() {
-        return bien_descripcion;
-    }
+            @SerializedName("perPrimerNom")
+            private String perPrimerNom;
 
-    public void setBien_descripcion(String bien_descripcion) {
-        this.bien_descripcion = bien_descripcion;
-    }
+            @SerializedName("perSegundoNom")
+            private String perSegundoNom;
 
-    public String getBien_serie() {
-        return bien_serie;
-    }
+            @SerializedName("perApellidoPater")
+            private String perApellidoPater;
 
-    public void setBien_serie(String bien_serie) {
-        this.bien_serie = bien_serie;
-    }
+            @SerializedName("perApellidoMater")
+            private String perApellidoMater;
 
-    public Double getBien_precio() {
-        return bien_precio;
-    }
+            @SerializedName("perTelefono")
+            private String perTelefono;
 
-    public void setBien_precio(Double bien_precio) {
-        this.bien_precio = bien_precio;
-    }
+            @SerializedName("perGenero")
+            private String perGenero;
 
-    public Boolean getBien_estadoA() {
-        return bien_estadoA;
-    }
+            @SerializedName("perEmail")
+            private String perEmail;
 
-    public void setBien_estadoA(Boolean bien_estadoA) {
-        this.bien_estadoA = bien_estadoA;
-    }
+            @SerializedName("perFechaNac")
+            private String perFechaNac;
 
-    public Boolean getBien_estado_asignado() {
-        return bien_estado_asignado;
-    }
+            // Constructor, getters, and setters
+            // ...
+        }
 
-    public void setBien_estado_asignado(Boolean bien_estado_asignado) {
-        this.bien_estado_asignado = bien_estado_asignado;
-    }
+        public class Rol {
+            @SerializedName("rol_cod")
+            private int rolCod;
 
-    public BigInteger getBien_cat_cod() {
-        return bien_cat_cod;
-    }
+            @SerializedName("rol_nombre")
+            private String rolNombre;
 
-    public void setBien_cat_cod(BigInteger bien_cat_cod) {
-        this.bien_cat_cod = bien_cat_cod;
+            @SerializedName("rol_estado")
+            private boolean rolEstado;
+
+            // Constructor, getters, and setters
+            // ...
+        }
     }
 }

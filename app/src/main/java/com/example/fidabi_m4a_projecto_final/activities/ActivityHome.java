@@ -175,6 +175,8 @@ public class ActivityHome extends AppCompatActivity {
             int notificationId = 1; // Puedes usar un ID único para cada notificación
             notificationManager.notify(notificationId, builder.build());
 
+            /*HECHO SOLO POR JOSELUIS EL PEPAS*/
+
         }
     }
 
