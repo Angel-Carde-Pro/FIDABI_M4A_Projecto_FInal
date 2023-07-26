@@ -1,11 +1,14 @@
 package com.example.fidabi_m4a_projecto_final.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Toast;
+
 import com.example.fidabi_m4a_projecto_final.R;
 
 public class InventoryActivity extends AppCompatActivity {
@@ -32,6 +35,8 @@ public class InventoryActivity extends AppCompatActivity {
         switch (tag) {
             case "bienes":
                 optionName = "Bienes";
+                Intent profile = new Intent(InventoryActivity.this, Activity_Profile.class);
+                startActivity(profile);
                 break;
             case "categoria":
                 optionName = "Categoría";
