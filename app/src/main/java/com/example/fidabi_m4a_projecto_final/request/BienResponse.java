@@ -53,10 +53,6 @@ public class BienResponse {
     @SerializedName("usuario")
     private Usuario usuario;
 
-    // Constructor, getters, and setters
-    // ...
-
-
     public int getBienCod() {
         return bienCod;
     }
@@ -185,6 +181,9 @@ public class BienResponse {
         this.usuario = usuario;
     }
 
+    // Constructor, getters, and setters
+    // ...
+
     public class Ubicacion {
         @SerializedName("ubi_cod")
         private int ubiCod;
@@ -237,7 +236,6 @@ public class BienResponse {
 
         // Constructor, getters, and setters
         // ...
-
 
         public int getCatCod() {
             return catCod;
