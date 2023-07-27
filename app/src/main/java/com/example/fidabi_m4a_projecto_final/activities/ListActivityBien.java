@@ -2,6 +2,7 @@ package com.example.fidabi_m4a_projecto_final.activities;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.widget.SearchView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,6 +16,7 @@ import com.example.fidabi_m4a_projecto_final.request.Bien;
 import com.example.fidabi_m4a_projecto_final.request.Categoria;
 import com.example.fidabi_m4a_projecto_final.service.UserService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -37,6 +39,28 @@ public class ListActivityBien extends AppCompatActivity {
         recyclerViewBien = findViewById(R.id.listRecyclerView);
         recyclerViewBien.setLayoutManager(new LinearLayoutManager(this));
 
+        // Obtener referencia al SearchView
+        SearchView searchView = findViewById(R.id.searchView);
+
+        // Crear una instancia del adapter con una lista vacía inicial
+        bienAdapter = new BienAdapter(new ArrayList<>());
+        recyclerViewBien.setAdapter(bienAdapter);
+
+        // Agregar el OnQueryTextListener al SearchView
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                // Llamar al método de filtrado con el texto ingresado
+                bienAdapter.filterByCedula(newText);
+                return false;
+            }
+        });
+
         loadBienes();
     }
 
@@ -49,15 +73,13 @@ public class ListActivityBien extends AppCompatActivity {
             public void onResponse(Call<List<Bien>> call, Response<List<Bien>> response) {
                 if (response.isSuccessful()) {
                     List<Bien> bienes = response.body();
-                    bienAdapter = new BienAdapter(bienes);
-                    recyclerViewBien.setAdapter(bienAdapter);
+                    bienAdapter.setBienes(bienes); // Actualizar los datos del adapter con la lista de bienes obtenida
                 }
             }
 
             @Override
             public void onFailure(Call<List<Bien>> call, Throwable t) {
-
-
+                // Manejo del error en caso de que falle la llamada a la API
             }
         });
     }

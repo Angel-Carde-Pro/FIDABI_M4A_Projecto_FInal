@@ -8,6 +8,7 @@ public class Usuario implements Serializable {
     private String usuario;
     private String contrasenia;
     private Boolean usu_estado;
+    private Persona persona;
 
     public Long getUsu_cod() {
         return usu_cod;
@@ -42,4 +43,12 @@ public class Usuario implements Serializable {
         this.usu_estado = usu_estado;
     }
 
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
 }

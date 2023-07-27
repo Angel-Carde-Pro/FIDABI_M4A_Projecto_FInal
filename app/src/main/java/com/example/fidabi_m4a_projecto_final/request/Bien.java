@@ -13,6 +13,7 @@ public class Bien {
     private Double bien_precio;
     private Boolean bien_estadoA;
     private Boolean bien_estado_asignado;
+    private Usuario usuario;
 
 
 
@@ -102,6 +103,13 @@ public class Bien {
 
     public void setBien_estado_asignado(Boolean bien_estado_asignado) {
         this.bien_estado_asignado = bien_estado_asignado;
+    }
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
 
