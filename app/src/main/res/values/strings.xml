@@ -72,5 +72,6 @@
     <string name="notification_settings_txt">Ajustes De Las Notificaciones</string>
     <string name="notification_txt">Notificaciones</string>
     <string name="app_settings_txt">Ajustes De La App</string>
+    <string name="timer_txt">Tiempo de actualización</string>
 
 </resources>

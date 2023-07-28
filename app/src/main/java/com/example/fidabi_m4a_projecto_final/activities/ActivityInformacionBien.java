@@ -33,7 +33,6 @@ public class ActivityInformacionBien extends AppCompatActivity {
     private TextView txt_Departamento;
     private TextView txt_idCus;
     private TextView txt_nombCus;
-
     private ApiClient apiClient;
     String scannedData;
     String selectedOption;
@@ -64,6 +63,7 @@ public class ActivityInformacionBien extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+
         txtDescripcion = findViewById(R.id.txt_descripcion);
         txtCodigoBarras = findViewById(R.id.cod_txt);
         txtCategoria = findViewById(R.id.txt_categoria);
@@ -75,7 +75,6 @@ public class ActivityInformacionBien extends AppCompatActivity {
         txt_Ubicacion = findViewById(R.id.txt_ubicacion);
         txt_Departamento = findViewById(R.id.txt_departamento);
         txt_codigoBien = findViewById(R.id.txt_codigoBien);
-
 
         apiClient = new ApiClient();
 
@@ -149,12 +148,9 @@ public class ActivityInformacionBien extends AppCompatActivity {
         txt_Marca.setText(bien.getBienMarca());
         txt_Modelo.setText(bien.getBienModelo());
         txt_idCus.setText(bien.getUsuario().getPersona().getPerCedula());
-        txt_nombCus.setText(bien.getUsuario().getPersona().getPerPrimerNom()+(" ")+bien.getUsuario().getPersona().getPerApellidoPater());
+        txt_nombCus.setText(bien.getUsuario().getPersona().getPerPrimerNom() + (" ") + bien.getUsuario().getPersona().getPerApellidoPater());
         txt_Ubicacion.setText(bien.getUbicacion().getUbiNombre());
         txt_Departamento.setText(bien.getUbicacion().getDepartamento());
-
-
-
     }
 
     private void mostrarErrorbien() {

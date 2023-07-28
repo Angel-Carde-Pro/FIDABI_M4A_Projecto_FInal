@@ -38,6 +38,7 @@ public class Bottomenu {
 
                 System.out.println("aqui se abre los listados");
                 Intent listActivityIntent = new Intent(view.getContext(), InventoryActivity.class);
+                listActivityIntent.putExtra("rol", globalData.getRol());
                 view.getContext().startActivity(listActivityIntent);
             }
         });

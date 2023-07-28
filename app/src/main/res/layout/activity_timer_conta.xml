@@ -7,6 +7,7 @@
     tools:context=".activities.TimerContaActivity">
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="5dp"
@@ -40,12 +41,27 @@
 
     </RelativeLayout>
 
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="30dp"
+        android:text="@string/timer_txt"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
     <EditText
         android:id="@+id/txtdias"
-        android:layout_width="229dp"
+        android:layout_width="310dp"
         android:layout_height="78dp"
-        android:layout_marginTop="157dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginTop="105dp"
+        android:layout_marginEnd="70dp"
         android:layout_marginBottom="529dp"
         android:ems="10"
         android:hint="dias"
@@ -53,15 +69,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="107dp"
-        android:layout_height="72dp"
-        android:layout_marginEnd="152dp"
-        android:layout_marginBottom="428dp"
-        android:text="Button"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="132dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/rounded_button"
+        android:text="Guardar"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

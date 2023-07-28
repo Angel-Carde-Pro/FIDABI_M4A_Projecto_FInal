@@ -21,7 +21,6 @@ import com.example.fidabi_m4a_projecto_final.configs.RecentActiv;
 import com.google.zxing.integration.android.IntentResult;
 import com.google.zxing.integration.android.IntentIntegrator;
 
-
 public class Activity_Home extends AppCompatActivity {
     TextView msjWelcome, role;
     private View scan, notifications;
@@ -89,6 +88,10 @@ public class Activity_Home extends AppCompatActivity {
         /*CONFIGURACION DE BOTONES*/
         scan = findViewById(R.id.scanner);
         notifications = findViewById(R.id.noti_icon);
+
+        if (!role.getText().toString().contains("Super Usuario")) {
+            scan.setVisibility(View.GONE);
+        }
 
         notifications.setOnClickListener(new View.OnClickListener() {
             @Override

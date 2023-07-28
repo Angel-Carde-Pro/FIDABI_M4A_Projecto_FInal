@@ -49,6 +49,7 @@
 
             <!-- Tarjeta para la opción "Bienes" -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/bienes_card_v"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -59,8 +60,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:gravity="center"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
                     <ImageView
@@ -85,6 +86,7 @@
 
             <!-- Opción "Categoría" -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/categ_card_v"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -95,8 +97,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:gravity="center"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
                     <ImageView
@@ -121,6 +123,7 @@
 
             <!-- Opción "Historial" -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/historial_card_v"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -131,8 +134,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:gravity="center"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
                     <ImageView
@@ -157,6 +160,7 @@
 
             <!-- Opción "Persona" -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/persona_card_v"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -167,8 +171,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:gravity="center"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
                     <ImageView
@@ -193,6 +197,7 @@
 
             <!-- Opción "Propietario" -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/prop_card_v"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -203,8 +208,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:gravity="center"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
                     <ImageView
@@ -231,6 +236,7 @@
 
             <!-- Opción "Ubicaciones" -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/ubicaciones_card_v"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -241,8 +247,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:gravity="center"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
                     <ImageView
@@ -267,6 +273,7 @@
 
             <!-- Opción "Usuarios" -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/usu_card_v"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -277,8 +284,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:gravity="center"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
                     <ImageView

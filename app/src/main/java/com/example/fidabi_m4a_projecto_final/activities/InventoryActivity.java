@@ -1,6 +1,7 @@
 package com.example.fidabi_m4a_projecto_final.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +20,23 @@ public class InventoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_inventory);
 
         androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
+
+        CardView bienes_card_v = findViewById(R.id.bienes_card_v);
+        CardView categ_card_v = findViewById(R.id.categ_card_v);
+        CardView historial_card_v = findViewById(R.id.historial_card_v);
+        CardView persona_card_v = findViewById(R.id.persona_card_v);
+        CardView prop_card_v = findViewById(R.id.prop_card_v);
+        CardView ubicaciones_card_v = findViewById(R.id.ubicaciones_card_v);
+        CardView usu_card_v = findViewById(R.id.usu_card_v);
+
+        if (getIntent().getStringExtra("rol").contains("Custodio")) {
+            categ_card_v.setVisibility(View.GONE);
+            historial_card_v.setVisibility(View.GONE);
+            persona_card_v.setVisibility(View.GONE);
+            prop_card_v.setVisibility(View.GONE);
+            ubicaciones_card_v.setVisibility(View.GONE);
+            usu_card_v.setVisibility(View.GONE);
+        }
 
         toolbar.setTitle("Listados");
 
@@ -42,8 +60,6 @@ public class InventoryActivity extends AppCompatActivity {
                 optionName = "Categoría";
                 Intent profile1 = new Intent(InventoryActivity.this, ListActivityCategoria.class);
                 startActivity(profile1);
-
-
                 break;
             case "historial":
                 optionName = "Historial";
