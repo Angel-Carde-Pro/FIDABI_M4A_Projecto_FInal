@@ -110,6 +110,17 @@
             android:theme="@style/Theme.AppCompat" >
         </activity>
 
+        <activity
+            android:name=".activities.DetalleUbicacionActivity"
+            android:label="Detalle Ubicacion"
+            android:parentActivityName=".activities.ListActivityUbicacion"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".activities.DetallePersonaActivity"
+            android:label="Detalle Persona"
+            android:parentActivityName=".activities.ListActivityPersona"
+            android:theme="@style/AppTheme.NoActionBar" />
 
     </application>
 

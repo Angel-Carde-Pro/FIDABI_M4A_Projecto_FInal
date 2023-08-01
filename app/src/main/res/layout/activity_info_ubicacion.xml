@@ -118,7 +118,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="30dp"
                 android:fontFamily="sans-serif-thin"
-                android:text="DESCRIPCION"
+                android:text="DEPARTAMENTO"
                 android:textAlignment="viewStart"
                 android:textColor="@color/black"
                 android:textSize="12sp"

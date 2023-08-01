@@ -25,10 +25,10 @@ public class DetalleCatActivity extends AppCompatActivity {
             // Comprobar si el objeto catResponse no es null
             if (catResponse != null) {
                 // Vincular las vistas del XML con las variables Java
-                TextView txtcodigoCat = findViewById(R.id.txt_codigoCat);
-                TextView txtNombreCat = findViewById(R.id.txt_catNombre);
-                TextView txtDescripcionCat = findViewById(R.id.txt_descripcion_cat);
-                TextView txtcatestado = findViewById(R.id.txt_cat_estado);
+                TextView txtcodigoCat = findViewById(R.id.txt_codUbi);
+                TextView txtNombreCat = findViewById(R.id.txt_cedula);
+                TextView txtDescripcionCat = findViewById(R.id.txt_departamento_ubi);
+                TextView txtcatestado = findViewById(R.id.txt_ubi_estado);
 
                 // Actualizar los datos en las vistas
                 txtcodigoCat.setText(String.valueOf(catResponse.getCat_cod()));

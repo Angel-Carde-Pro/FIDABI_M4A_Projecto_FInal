@@ -9,21 +9,25 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fidabi_m4a_projecto_final.R;
 import com.example.fidabi_m4a_projecto_final.request.BienResponse;
+import com.example.fidabi_m4a_projecto_final.request.Persona;
+import com.example.fidabi_m4a_projecto_final.request.RecentActResponse;
 
-public class DetalleBienActivity extends AppCompatActivity {
+import java.text.SimpleDateFormat;
+
+public class DetallePersonaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info_bien);
+        setContentView(R.layout.activity_info_persona);
 
         // Obtén los datos del intent
         Intent intent = getIntent();
         if (intent != null) {
-            BienResponse bienResponse = (BienResponse) intent.getSerializableExtra("bien_objeto");
+            Persona persona = (Persona) intent.getSerializableExtra("persona_objeto");
 
-            // Comprobar si el objeto bienResponse no es null
-            if (bienResponse != null) {
+            // Comprobar si el objeto persona no es null
+            if (persona != null) {
                 // Vincular las vistas del XML con las variables Java
                 TextView txtCodigoBien = findViewById(R.id.txt_codUbi);
                 TextView txtDescripcionBien = findViewById(R.id.txt_cedula);
@@ -37,19 +41,21 @@ public class DetalleBienActivity extends AppCompatActivity {
                 TextView txtNombreBien = findViewById(R.id.txt_nomcustodio_bien);
                 TextView txtDescripcionLugBien = findViewById(R.id.txt_descripcion_lugar);
 
-
                 // Actualiza los datos en las vistas
-                txtCodigoBien.setText("#" + bienResponse.getBienCod());
-                txtDescripcionBien.setText(bienResponse.getBienDescripcion());
-                txtCategoriaBien.setText(bienResponse.getCategoria().getCatNombre());
-                txtEstadoBien.setText(bienResponse.getBienEstado());
-                txtModeloBien.setText(bienResponse.getBienModelo());
-                txtMarcaBien.setText(bienResponse.getBienMarca());
-                txtUbicacionBien.setText(bienResponse.getUbicacion().getUbiNombre());
-                txtDepartamentoBien.setText(bienResponse.getBienDescripcion());
-                txtCedulaBien.setText(bienResponse.getUsuario().getPersona().getPerCedula());
-                txtNombreBien.setText(bienResponse.getUsuario().getPersona().getPerPrimerNom());
-                txtDescripcionLugBien.setText(bienResponse.getBienDescripcionLugar());
+                txtCodigoBien.setText("#" + persona.getPerCedula());
+                txtDescripcionBien.setText(persona.getPerCedula());
+                txtCategoriaBien.setText(persona.getPerPrimerNom());
+                txtEstadoBien.setText(persona.getPerSegundoNom());
+                txtModeloBien.setText(persona.getPerApellidoPater());
+                txtMarcaBien.setText(persona.getPerApellidoMater());
+                txtUbicacionBien.setText(persona.getPerTelefono());
+                txtDepartamentoBien.setText(persona.getPerGenero());
+                txtCedulaBien.setText(persona.getPerEmail());
+
+                // Formatear y establecer la fecha de nacimiento en el TextView
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                String fechaNacimiento = sdf.format(persona.getPerFechaNac());
+                txtNombreBien.setText(fechaNacimiento);
 
                 Button buttonAceptar = findViewById(R.id.button_aceptar);
                 buttonAceptar.setOnClickListener(view -> {
@@ -57,8 +63,8 @@ public class DetalleBienActivity extends AppCompatActivity {
                     finish();
                 });
             } else {
-                // Manejar el caso cuando el objeto bienResponse es null, por ejemplo, mostrar un mensaje de error.
-                // Otra opción sería finalizar esta actividad si el objeto bienResponse no está presente.
+                // Manejar el caso cuando el objeto persona es null, por ejemplo, mostrar un mensaje de error.
+                // Otra opción sería finalizar esta actividad si el objeto persona no está presente.
                 // finish();
             }
         }
