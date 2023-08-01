@@ -121,42 +121,6 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Opción "Historial" -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/historial_card_v"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:onClick="onOptionClicked"
-                android:tag="historial">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/historial" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Historial"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/tvHistorialCount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="20 registros" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
             <!-- Opción "Persona" -->
             <androidx.cardview.widget.CardView
@@ -183,7 +147,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Persona"
+                        android:text="Custodios"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -194,44 +158,6 @@
                         android:text="80 registros" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-
-            <!-- Opción "Propietario" -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/prop_card_v"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:onClick="onOptionClicked"
-                android:tag="propietario">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/propietario" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Propietario"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/tvPropietarioCount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="60 registros" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
 
 
             <!-- Opción "Ubicaciones" -->
@@ -271,42 +197,6 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Opción "Usuarios" -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/usu_card_v"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:onClick="onOptionClicked"
-                android:tag="usuarios">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/usuarios" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Usuarios"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/tvUsuariosCount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="90 registros" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
