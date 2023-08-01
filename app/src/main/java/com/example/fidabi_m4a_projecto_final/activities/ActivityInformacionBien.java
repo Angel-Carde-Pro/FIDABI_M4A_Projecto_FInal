@@ -65,15 +65,15 @@ public class ActivityInformacionBien extends AppCompatActivity {
         });
 
         txtDescripcion = findViewById(R.id.txt_descripcion);
-        txtCodigoBarras = findViewById(R.id.cod_txt);
-        txtCategoria = findViewById(R.id.txt_categoria);
-        txtEstado = findViewById(R.id.txt_estadoBien);
-        txt_Marca = findViewById(R.id.txt_marca);
-        txt_Modelo = findViewById(R.id.txt_modelo);
-        txt_idCus = findViewById(R.id.txt_cedula);
-        txt_nombCus = findViewById(R.id.txt_custodio);
+        txtCodigoBarras = findViewById(R.id.txtcodBien);
+        txtCategoria = findViewById(R.id.txt_modelo_bien);
+        txtEstado = findViewById(R.id.txt_marca_bien);
+        txt_Marca = findViewById(R.id.txt_detalle_bien);
+        txt_Modelo = findViewById(R.id.txt_estado_bien);
+        txt_idCus = findViewById(R.id.txt_serie_bien);
+        txt_nombCus = findViewById(R.id.txt_precio_bien);
         txt_Ubicacion = findViewById(R.id.txt_ubicacion);
-        txt_Departamento = findViewById(R.id.txt_departamento);
+        txt_Departamento = findViewById(R.id.txt_descripcion_bien);
         txt_codigoBien = findViewById(R.id.txt_codigoBien);
 
         apiClient = new ApiClient();

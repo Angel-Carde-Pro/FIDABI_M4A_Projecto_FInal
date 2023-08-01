@@ -1,5 +1,6 @@
 package com.example.fidabi_m4a_projecto_final.adapters;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,21 +10,20 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fidabi_m4a_projecto_final.R;
+import com.example.fidabi_m4a_projecto_final.activities.DetalleBienActivity;
 import com.example.fidabi_m4a_projecto_final.request.Bien;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BienAdapter extends RecyclerView.Adapter<BienAdapter.BienViewHolder> {
+public class  BienAdapter extends RecyclerView.Adapter<BienAdapter.BienViewHolder> {
 
     private List<Bien> bienes;
     private List<Bien> filteredBienes; // Lista para almacenar los bienes filtrados por cédula
 
-
-
-    public BienAdapter() {
-        this.bienes = new ArrayList<>(); // Inicializar la lista de bienes vacía
-        this.filteredBienes = new ArrayList<>(); // Inicializar la lista de bienes filtrados vacía
+    public BienAdapter(List<Bien> bienes) {
+        this.bienes = bienes;
+        this.filteredBienes = new ArrayList<>(bienes); // Inicializar la lista de bienes filtrados con todos los bienes
     }
 
     // Método para actualizar los datos del adaptador con una nueva lista de bienes
@@ -31,12 +31,6 @@ public class BienAdapter extends RecyclerView.Adapter<BienAdapter.BienViewHolder
         this.bienes = bienes;
         this.filteredBienes = new ArrayList<>(bienes); // Actualizar la lista de bienes filtrados con la nueva lista de bienes
         notifyDataSetChanged(); // Notificar al adaptador que los datos han cambiado
-    }
-
-
-    public BienAdapter(List<Bien> bienes) {
-        this.bienes = bienes;
-        this.filteredBienes = new ArrayList<>(bienes); // Inicializar la lista de bienes filtrados con todos los bienes
     }
 
     @NonNull
@@ -49,6 +43,18 @@ public class BienAdapter extends RecyclerView.Adapter<BienAdapter.BienViewHolder
     @Override
     public void onBindViewHolder(@NonNull BienViewHolder holder, int position) {
         Bien bien = filteredBienes.get(position); // Usar la lista de bienes filtrados en lugar de la lista original
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Crear una Intent para abrir "DetalleBienActivity"
+                Intent intent = new Intent(view.getContext(), DetalleBienActivity.class);
+                // Pasa el objeto "Bien" completo como extra a "DetalleBienActivity"
+                intent.putExtra("bien_objeto", bien);
+                // Inicia la actividad
+                view.getContext().startActivity(intent);
+            }
+        });
 
         holder.txtDescripcion.setText(bien.getBien_descripcion());
         holder.txtModelo.setText(bien.getBien_codigoG());

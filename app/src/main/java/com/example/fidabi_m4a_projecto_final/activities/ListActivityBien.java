@@ -43,6 +43,7 @@ public class ListActivityBien extends AppCompatActivity {
         SearchView searchView = findViewById(R.id.searchView);
 
         // Crear una instancia del adapter con una lista vacía inicial
+        // Utilizar el nuevo constructor que acepta una lista de bienes
         bienAdapter = new BienAdapter(new ArrayList<>());
         recyclerViewBien.setAdapter(bienAdapter);
 
