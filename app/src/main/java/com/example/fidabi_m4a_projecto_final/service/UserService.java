@@ -62,7 +62,7 @@ public interface UserService {
     Call<List<Categoria>> categoriaList();
 
     @GET("/tecazuay/bien")
-    Call<List<Bien>> bienList();
+    Call<List<BienResponse>> bienList();
 
     @GET("/tecazuay/personas")
     Call<List<Persona>> personaList();

@@ -13,6 +13,7 @@ import com.example.fidabi_m4a_projecto_final.R;
 import com.example.fidabi_m4a_projecto_final.adapters.BienAdapter;
 import com.example.fidabi_m4a_projecto_final.adapters.CategoriaAdapter;
 import com.example.fidabi_m4a_projecto_final.request.Bien;
+import com.example.fidabi_m4a_projecto_final.request.BienResponse;
 import com.example.fidabi_m4a_projecto_final.request.Categoria;
 import com.example.fidabi_m4a_projecto_final.service.UserService;
 
@@ -25,7 +26,7 @@ import retrofit2.Response;
 
 public class ListActivityBien extends AppCompatActivity {
 
-    private RecyclerView recyclerViewBien;
+    private RecyclerView recyclerViewBienes;
     private BienAdapter bienAdapter;
 
     @Override
@@ -36,8 +37,8 @@ public class ListActivityBien extends AppCompatActivity {
             getWindow().setStatusBarColor(getResources().getColor(R.color.statusbar_profile));
         }
 
-        recyclerViewBien = findViewById(R.id.listRecyclerView);
-        recyclerViewBien.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewBienes = findViewById(R.id.listRecyclerView);
+        recyclerViewBienes.setLayoutManager(new LinearLayoutManager(this));
 
         // Obtener referencia al SearchView
         SearchView searchView = findViewById(R.id.searchView);
@@ -45,7 +46,7 @@ public class ListActivityBien extends AppCompatActivity {
         // Crear una instancia del adapter con una lista vacía inicial
         // Utilizar el nuevo constructor que acepta una lista de bienes
         bienAdapter = new BienAdapter(new ArrayList<>());
-        recyclerViewBien.setAdapter(bienAdapter);
+        recyclerViewBienes.setAdapter(bienAdapter);
 
         // Agregar el OnQueryTextListener al SearchView
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -67,19 +68,25 @@ public class ListActivityBien extends AppCompatActivity {
 
     private void loadBienes() {
         UserService userService = ApiClient.getUserService();
-        Call<List<Bien>> call = userService.bienList();
+        Call<List<BienResponse>> call = userService.bienList();
 
-        call.enqueue(new Callback<List<Bien>>() {
+        call.enqueue(new Callback<List<BienResponse>>() {
             @Override
-            public void onResponse(Call<List<Bien>> call, Response<List<Bien>> response) {
+            public void onResponse(Call<List<BienResponse>> call, Response<List<BienResponse>> response) {
                 if (response.isSuccessful()) {
-                    List<Bien> bienes = response.body();
-                    bienAdapter.setBienes(bienes); // Actualizar los datos del adapter con la lista de bienes obtenida
+                    List<BienResponse> bienes = response.body();
+                    if (bienes != null) {
+                        bienAdapter.setBienes(bienes); // Actualizar los datos del adapter con la lista de bienes obtenida
+                    } else {
+                        // Manejo del caso en que no se puedan obtener bienes
+                    }
+                } else {
+                    // Manejo del caso en que la respuesta no sea exitosa
                 }
             }
 
             @Override
-            public void onFailure(Call<List<Bien>> call, Throwable t) {
+            public void onFailure(Call<List<BienResponse>> call, Throwable t) {
                 // Manejo del error en caso de que falle la llamada a la API
             }
         });

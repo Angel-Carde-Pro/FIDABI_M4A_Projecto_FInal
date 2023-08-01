@@ -1,6 +1,8 @@
 package com.example.fidabi_m4a_projecto_final.request;
 
-public class LoginRequest {
+import java.io.Serializable;
+
+public class LoginRequest implements Serializable {
     private String usuario;
     private String password;
 

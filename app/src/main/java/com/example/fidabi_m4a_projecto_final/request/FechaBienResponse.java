@@ -1,7 +1,8 @@
 package com.example.fidabi_m4a_projecto_final.request;
+import java.io.Serializable;
 import java.util.List;
 
-public class FechaBienResponse {
+public class FechaBienResponse implements Serializable  {
 
         private int bien_cod;
         private String bien_codigoG;

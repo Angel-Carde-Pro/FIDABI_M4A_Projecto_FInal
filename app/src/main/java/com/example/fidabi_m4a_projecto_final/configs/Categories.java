@@ -16,6 +16,7 @@
         import org.json.JSONException;
         import org.json.JSONObject;
 
+        import java.io.Serializable;
         import java.util.ArrayList;
         import java.util.List;
         import java.util.Locale;
@@ -23,7 +24,7 @@
         import retrofit2.Call;
         import retrofit2.Response;
 
-public class  Categories {
+public class  Categories implements Serializable {
 
     public static void configurationCategory(View view){
 

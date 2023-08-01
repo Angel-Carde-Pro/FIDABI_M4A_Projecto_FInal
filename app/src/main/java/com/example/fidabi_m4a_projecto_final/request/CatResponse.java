@@ -1,6 +1,8 @@
 package com.example.fidabi_m4a_projecto_final.request;
 
-public class CatResponse {
+import java.io.Serializable;
+
+public class CatResponse implements Serializable  {
     private int cat_cod;
     private String cat_nombre;
     private String cat_descripcion;
@@ -33,7 +35,7 @@ public class CatResponse {
         this.cat_descripcion = cat_descripcion;
     }
 
-    public boolean isCat_estado() {
+    public boolean getCat_estado() {
         return cat_estado;
     }
 

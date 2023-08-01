@@ -50,7 +50,7 @@
 
 
         <TextView
-            android:id="@+id/txt_codigoBien"
+            android:id="@+id/txt_codigoCat"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -62,10 +62,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_descripcion" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_catNombre" />
 
         <TextView
-            android:id="@+id/txt_descripcion"
+            android:id="@+id/txt_catNombre"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="56dp"
@@ -92,7 +92,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_descripcion" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_catNombre" />
 
         <RelativeLayout
             android:id="@+id/Item_categoria"
@@ -125,7 +125,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txt_modelo_bien"
+                android:id="@+id/txt_descripcion_cat"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -171,7 +171,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txt_marca_bien"
+                android:id="@+id/txt_cat_estado"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -219,7 +219,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txt_detalle_bien"
+                android:id="@+id/txt_marca_bien"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -265,7 +265,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txt_estado_bien"
+                android:id="@+id/txt_bien_modelo"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -312,7 +312,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txt_ubicacion"
+                android:id="@+id/txt_ubicacion_bien"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -359,7 +359,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txt_descripcion_bien"
+                android:id="@+id/txt_departamento_bien"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -406,7 +406,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txt_precio_bien"
+                android:id="@+id/txt_nomcustodio_bien"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -453,7 +453,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txt_serie_bien"
+                android:id="@+id/txt_cedula_custodio"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"

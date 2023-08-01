@@ -1,6 +1,8 @@
 package com.example.fidabi_m4a_projecto_final.request;
 
-public class UdescripcionLugar {
+import java.io.Serializable;
+
+public class UdescripcionLugar implements Serializable {
         private String bien_codigoG;
         private String bien_descripcion_lugar;
 

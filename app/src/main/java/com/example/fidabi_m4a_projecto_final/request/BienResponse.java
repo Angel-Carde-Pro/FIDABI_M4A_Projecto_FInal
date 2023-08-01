@@ -2,9 +2,10 @@ package com.example.fidabi_m4a_projecto_final.request;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class BienResponse {
+public class BienResponse implements Serializable {
 
     @SerializedName("bien_cod")
     private Long bienCod;
@@ -186,7 +187,7 @@ public class BienResponse {
         this.usuario = usuario;
     }
 
-    public class Ubicacion {
+    public class Ubicacion implements Serializable {
         @SerializedName("ubi_cod")
         private int ubiCod;
 
@@ -235,7 +236,7 @@ public class BienResponse {
         }
     }
 
-    public class Propietario {
+    public class Propietario implements Serializable{
         @SerializedName("pro_cod")
         private int proCod;
 
@@ -255,7 +256,7 @@ public class BienResponse {
         // ...
     }
 
-    public class Categoria {
+    public class Categoria implements Serializable {
         @SerializedName("cat_cod")
         private int catCod;
 
@@ -301,7 +302,7 @@ public class BienResponse {
         }
     }
 
-    public class Usuario {
+    public class Usuario implements Serializable{
         @SerializedName("usu_cod")
         private int usuCod;
 
@@ -368,7 +369,7 @@ public class BienResponse {
             this.usuEstado = usuEstado;
         }
 
-        public class Persona {
+        public class Persona implements Serializable {
             @SerializedName("perCod")
             private int perCod;
 
@@ -480,7 +481,7 @@ public class BienResponse {
             }
         }
 
-        public class Rol {
+        public class Rol implements Serializable {
             @SerializedName("rol_cod")
             private int rolCod;
 

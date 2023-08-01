@@ -2,51 +2,63 @@ package com.example.fidabi_m4a_projecto_final.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fidabi_m4a_projecto_final.R;
-import com.example.fidabi_m4a_projecto_final.request.Bien;
+import com.example.fidabi_m4a_projecto_final.request.BienResponse;
 
 public class DetalleBienActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inventory_detail_bienes);
+        setContentView(R.layout.activity_info_bien);
 
         // Obtén los datos del intent
         Intent intent = getIntent();
         if (intent != null) {
-            Bien bien = (Bien) intent.getSerializableExtra("bien_objeto");
+            BienResponse bienResponse = (BienResponse) intent.getSerializableExtra("bien_objeto");
 
-            // Comprobar si el objeto bien no es null
-            if (bien != null) {
+            // Comprobar si el objeto bienResponse no es null
+            if (bienResponse != null) {
                 // Vincular las vistas del XML con las variables Java
-                TextView txtCodigoBien = findViewById(R.id.txtcodBien);
-                TextView txtDescripcionBien = findViewById(R.id.txt_descripcion_bien);
-                TextView txtModeloBien = findViewById(R.id.txt_modelo_bien);
+                TextView txtCodigoBien = findViewById(R.id.txt_codigoCat);
+                TextView txtDescripcionBien = findViewById(R.id.txt_catNombre);
+                TextView txtCategoriaBien = findViewById(R.id.txt_descripcion_cat);
+                TextView txtEstadoBien = findViewById(R.id.txt_cat_estado);
+                TextView txtModeloBien = findViewById(R.id.txt_bien_modelo);
                 TextView txtMarcaBien = findViewById(R.id.txt_marca_bien);
-                TextView txtEstadoBien = findViewById(R.id.txt_estado_bien);
-                TextView txtDetallesBien = findViewById(R.id.txt_detalle_bien);
-                TextView txtSerieBien = findViewById(R.id.txt_serie_bien);
-                TextView txtPrecioBien = findViewById(R.id.txt_precio_bien);
+                TextView txtUbicacionBien = findViewById(R.id.txt_ubicacion_bien);
+                TextView txtDepartamentoBien = findViewById(R.id.txt_departamento_bien);
+                TextView txtCedulaBien = findViewById(R.id.txt_cedula_custodio);
+                TextView txtNombreBien = findViewById(R.id.txt_nomcustodio_bien);
+                TextView txtDescripcionLugBien = findViewById(R.id.txt_descripcion_lugar);
+
 
                 // Actualiza los datos en las vistas
-                txtCodigoBien.setText("#" + bien.getBien_cod());
-                txtDescripcionBien.setText(bien.getBien_descripcion());
-                txtModeloBien.setText(bien.getBien_modelo());
-                txtMarcaBien.setText(bien.getBien_marca());
-                txtEstadoBien.setText(bien.getBien_estado());
-                txtDetallesBien.setText(bien.getBien_detalles());
-                txtSerieBien.setText(bien.getBien_serie());
-                txtPrecioBien.setText(String.valueOf(bien.getBien_precio()));
+                txtCodigoBien.setText("#" + bienResponse.getBienCod());
+                txtDescripcionBien.setText(bienResponse.getBienDescripcion());
+                txtCategoriaBien.setText(bienResponse.getCategoria().getCatNombre());
+                txtEstadoBien.setText(bienResponse.getBienEstado());
+                txtModeloBien.setText(bienResponse.getBienModelo());
+                txtMarcaBien.setText(bienResponse.getBienMarca());
+                txtUbicacionBien.setText(bienResponse.getUbicacion().getUbiNombre());
+                txtDepartamentoBien.setText(bienResponse.getBienDescripcion());
+                txtCedulaBien.setText(bienResponse.getUsuario().getPersona().getPerCedula());
+                txtNombreBien.setText(bienResponse.getUsuario().getPersona().getPerPrimerNom());
+                txtDescripcionLugBien.setText(bienResponse.getBienDescripcionLugar());
 
-                // Puedes seguir actualizando las demás vistas según sea necesario.
+                Button buttonAceptar = findViewById(R.id.button_aceptar);
+                buttonAceptar.setOnClickListener(view -> {
+                    // Finalizar esta actividad y regresar a la actividad anterior
+                    finish();
+                });
             } else {
-                // Manejar el caso cuando el objeto bien es null, por ejemplo, mostrar un mensaje de error.
-                // Otra opción sería finalizar esta actividad si el objeto bien no está presente.
+                // Manejar el caso cuando el objeto bienResponse es null, por ejemplo, mostrar un mensaje de error.
+                // Otra opción sería finalizar esta actividad si el objeto bienResponse no está presente.
                 // finish();
             }
         }

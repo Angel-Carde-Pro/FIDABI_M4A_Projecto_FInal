@@ -64,17 +64,17 @@ public class ActivityInformacionBien extends AppCompatActivity {
             }
         });
 
-        txtDescripcion = findViewById(R.id.txt_descripcion);
+        txtDescripcion = findViewById(R.id.txt_catNombre);
         txtCodigoBarras = findViewById(R.id.txtcodBien);
-        txtCategoria = findViewById(R.id.txt_modelo_bien);
-        txtEstado = findViewById(R.id.txt_marca_bien);
-        txt_Marca = findViewById(R.id.txt_detalle_bien);
-        txt_Modelo = findViewById(R.id.txt_estado_bien);
-        txt_idCus = findViewById(R.id.txt_serie_bien);
-        txt_nombCus = findViewById(R.id.txt_precio_bien);
-        txt_Ubicacion = findViewById(R.id.txt_ubicacion);
-        txt_Departamento = findViewById(R.id.txt_descripcion_bien);
-        txt_codigoBien = findViewById(R.id.txt_codigoBien);
+        txtCategoria = findViewById(R.id.txt_descripcion_cat);
+        txtEstado = findViewById(R.id.txt_cat_estado);
+        txt_Marca = findViewById(R.id.txt_marca_bien);
+        txt_Modelo = findViewById(R.id.txt_bien_modelo);
+        txt_idCus = findViewById(R.id.txt_cedula_custodio);
+        txt_nombCus = findViewById(R.id.txt_nomcustodio_bien);
+        txt_Ubicacion = findViewById(R.id.txt_ubicacion_bien);
+        txt_Departamento = findViewById(R.id.txt_departamento_bien);
+        txt_codigoBien = findViewById(R.id.txt_codigoCat);
 
         apiClient = new ApiClient();
 

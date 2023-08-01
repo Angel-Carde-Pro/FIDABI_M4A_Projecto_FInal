@@ -1,8 +1,9 @@
 package com.example.fidabi_m4a_projecto_final.request;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class RecentActResponse {
+public class RecentActResponse implements Serializable {
     private long his_cod;
     private String his_fecha;
     private String his_detalles;

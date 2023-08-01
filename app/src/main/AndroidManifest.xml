@@ -103,6 +103,16 @@
             android:label="Detalle Bien"
             android:parentActivityName=".activities.ListActivityBien"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".activities.DetalleCatActivity"
+            android:label="Detalle de Categoría"
+            android:theme="@style/Theme.AppCompat" >
+        </activity>
+
+
     </application>
+
+
 
 </manifest>
