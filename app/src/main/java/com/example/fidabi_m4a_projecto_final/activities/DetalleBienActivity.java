@@ -25,7 +25,7 @@ public class DetalleBienActivity extends AppCompatActivity {
             if (bien != null) {
                 // Vincular las vistas del XML con las variables Java
                 TextView txtCodigoBien = findViewById(R.id.txtcodBien);
-                TextView txtDescripcionBien = findViewById(R.id.txt_descripcion);
+                TextView txtDescripcionBien = findViewById(R.id.txt_descripcion_bien);
                 TextView txtModeloBien = findViewById(R.id.txt_modelo_bien);
                 TextView txtMarcaBien = findViewById(R.id.txt_marca_bien);
                 TextView txtEstadoBien = findViewById(R.id.txt_estado_bien);

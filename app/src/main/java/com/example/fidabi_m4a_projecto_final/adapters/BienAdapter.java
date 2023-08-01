@@ -79,7 +79,7 @@ public class  BienAdapter extends RecyclerView.Adapter<BienAdapter.BienViewHolde
                 }
             }
         }
-        notifyDataSetChanged(); // Notificar al adaptador que la lista de datos ha cambiado
+        notifyDataSetChanged(); //
     }
 
     static class BienViewHolder extends RecyclerView.ViewHolder {

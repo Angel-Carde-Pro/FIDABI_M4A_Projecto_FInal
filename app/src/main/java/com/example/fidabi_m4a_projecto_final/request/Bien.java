@@ -1,6 +1,8 @@
 package com.example.fidabi_m4a_projecto_final.request;
 
-public class Bien {
+import java.io.Serializable;
+
+public class Bien implements Serializable {
 
     private Long bien_cod;
     private String bien_codigoG;
